@@ -11,4 +11,4 @@ Today I Learned
 
 * [2020-01-20](https://github.com/cjdtjr6rl/TIL/blob/master/HTML5/20200120.md)
 * [2020-01-22](https://github.com/cjdtjr6rl/TIL/blob/master/HTML5/20200122.md)
-* [2020-01-24](https://github.com/cjdtjr6rl/TIL/blob/master/HTML5/20200124.md#input)
+* [2020-01-24](https://github.com/cjdtjr6rl/TIL/blob/master/HTML5/20200124.md)
