@@ -22,3 +22,4 @@ Today I Learned...
 
 - [2020-01-27](https://github.com/cjdtjr6rl/TIL/blob/master/CSS3/20200127.md)
 - [2020-01-28](https://github.com/cjdtjr6rl/TIL/blob/master/CSS3/20200128.md)
+- [2020-01-28](https://github.com/cjdtjr6rl/TIL/blob/master/CSS3/20200129.md)
