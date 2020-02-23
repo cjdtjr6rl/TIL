@@ -51,4 +51,5 @@ Today I Learned...
 - [03.layout03](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/page_example/03.layout03.html)
 - [04.layout04](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/page_example/04.layout04.html)
 - [05.layout05](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/page_example/05.layout05.html)
+- [layout06](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/page_example/layout06.html)
 
