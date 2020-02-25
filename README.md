@@ -54,3 +54,10 @@ Today I Learned...
 - [layout06](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/page_example/layout06.html)
 - [layout07](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/page_example/layout07.html)
 
+<br/>
+
+### study_web
+
+- [study_web](https://github.com/cjdtjr6rl/TIL/tree/master/personal_study/web)
+
+  --> [출처 : Webstoryboy - 웹표준 사이트 만들기(2019)](https://www.youtube.com/playlist?list=PL4UVBBIc6giKixok-bC7XVEx0ZFsngr5Z)
