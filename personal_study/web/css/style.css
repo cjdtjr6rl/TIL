@@ -7,30 +7,28 @@
 #skip a:focus { top: 0; }
 
 /*레이아웃*/
-#wrap { width: 100%; }
+#wrap { }
 /*배경은 화면을 유동적으로 움직여도 고정*/
-#header { width: 100%; height: 325px; background: url(../img/header_bg.jpg) center top repeat-x; }
-#contents { width: 100%; height: 800px; background: #222; }
-#footer { width: 100%; height: 200px; background: #333; }
+#header { height: 325px; background: url(../img/header_bg.jpg) center top repeat-x; }
+#contents { }
+#footer { height: 200px; background: #333; }
 
 /*컨텐츠 레이아웃*/
-#cont_nav { width: 100%; height: 200px; background: #333; }
-#cont_tit { width: 100%; height: 200px; background: #444; }
-#cont_ban { width: 100%; height: 200px; background: #555; }
+#cont_nav { background-color: #f6fdff; }
+#cont_tit { background-color: #EAF7FD; }
+#cont_ban { background-color: #dceff7; }
 #cont_cont { width: 100%; height: 200px; background: #666; }
 
 /*컨테이너*/
 .container { width: 990px; margin: 0 auto; height: inherit; /*background: rgba(255,255,255,0.3);*/ }
 
 /*헤더*/
-.header { }
 .header .header-menu { text-align: right; }
 .header .header-menu a { color: #fff; padding: 10px 0px 10px 13px; display: inline-block; }
 .header .header-menu a:hover { color: #666; }
 .header .header_tit { text-align: center; }
 .header .header_tit h1 { background-color: #4aa8d4; font-size: 28px; padding: 5px 20px 6px 20px; display: inline-block; color: #fff; margin-top: 40px; font-weight: normal; text-transform: uppercase; }
 .header .header_tit a { display: inline-block; background-color: #2698cb; font-size: 18px; color: #fff; padding: 5px 20px 6px 20px; margin-top: -5px; }
-
 .header .header_icon { text-align: center; margin-top: 30px; }
 .header .header_icon a { width: 60px; height: 60px; display: inline-block; background: url(../img/icon.png); margin: 0 3px; }
 .header .header_icon a.icon1 { background-position: 0 0; }
@@ -41,3 +39,44 @@
 .header .header_icon a.icon2:hover { background-position: -60px -60px; }
 .header .header_icon a.icon3:hover { background-position: -60px -120px; }
 .header .header_icon a.icon4:hover { background-position: -60px -180px; }
+
+/*float: left로 인한 영역깨짐(height:0) 방지법
+    1. 깨지는 영역에 똑같이 float: left;를 사용한다. (X) --> 모든 박스에 float: left;를 사용하게 된다.
+    2. float의 성질을 차단하는 clear: both;를 사용한다. (X) --> 어떤 영역이 깨졌는지 찾기 어렵다.
+    3. float을 사용한 상위 박스한테 overflow: hidden;을 사용한다. (O) --> 현재는 제일 많이 사용한다.
+    4. clearfix를 사용한다. (O)
+*/
+
+
+/*전체 메뉴*/
+.nav { overflow: hidden; padding: 30px 0; }
+.nav > div { float: left; width: 40%; }
+.nav > div:last-child { width: 20%; } /*ie9부터 사용 가능*/
+.nav > div:last { width: 20%; } /*ie8도 사용 가능*/
+.nav > div h3 { font-size: 18px; color: #25a2d0; margin-bottom: 4px; }
+.nav > div ol { overflow: hidden; }
+.nav > div ol li { float: left; width: 50%; }
+.nav > div:last ol li { width: 100%; }
+.nav > div ol li a:hover { text-decoration: underline; }
+
+/*타이틀*/
+.tit { position: relative; }
+.tit h2 { font-size: 40px; text-align: center; padding: 5px 0; letter-spacing: 2px; color: #2c94c4; font-family: 'Nanum Brush Script'; }
+.tit .btn { position: absolute; top: 5px; right: 0; width: 60px; height: 60px; background: url(../img/icon.png) no-repeat 0 -600px; }
+
+/*배너*/
+.ban { position: relative; padding: 24px 0 20px; }
+.ban a.prev { position: absolute; left: -80px; top: 60px; width: 43px; height: 43px; background: url(../img/icon.png) no-repeat -150px 0; }
+.ban a.next { position: absolute; right: -80px; top: 60px; width: 43px; height: 43px; background: url(../img/icon.png) no-repeat -150px -43px; }
+.btn a.prev:hover { background-position: -193px 0; }
+.btn a.next:hover { background-position: -193px -43; }
+
+.ban ul { overflow: hidden; }
+.ban ul li { float: left; width: 330px; }
+.ban ul li:last-child { text-align: right; } /*ie9부터 사용 가능*/
+.ban ul li:nth-child(2) { text-align: center; } /*ie9부터 사용 가능*/
+.ban ul li.ban_img1 { text-align: left; }
+.ban ul li.ban_img2 { text-align: center; }
+.ban ul li.ban_img3 { text-align: right; }
+.ban ul li img { border: 4px solid #dcdcdc; }
+.ban ul li img:hover { border-color: #98bcdc; }
