@@ -60,4 +60,6 @@ Today I Learned...
 
 - [study_web](https://github.com/cjdtjr6rl/TIL/tree/master/personal_study/web)
 
+- [my_web](http://cjdtjr6rl.dothome.co.kr/web/index.html)
+
   --> [출처 : Webstoryboy - 웹표준 사이트 만들기(2019)](https://www.youtube.com/playlist?list=PL4UVBBIc6giKixok-bC7XVEx0ZFsngr5Z)
