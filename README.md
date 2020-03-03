@@ -63,3 +63,22 @@ Today I Learned...
 - [my_web](http://cjdtjr6rl.dothome.co.kr/web/index.html)
 
   --> [출처 : Webstoryboy - 웹표준 사이트 만들기(2019)](https://www.youtube.com/playlist?list=PL4UVBBIc6giKixok-bC7XVEx0ZFsngr5Z)
+
+<br/>
+
+---
+
+### responsive_layout_example
+
+- [layout1](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/responsive/layout1.html)
+- [layout2](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/responsive/layout2.html)
+- [layout3_1](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/responsive/layout3_1.html)
+- [layout4_1](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/responsive/layout4_1.html)
+- [layout5_1](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/responsive/layout5_1.html)
+
+<br/>
+
+### study_web
+
+- 
+
