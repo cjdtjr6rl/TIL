@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>layout5_1</title>
+    <style>
+        * { padding: 0; margin: 0; }
+        #wrap { width: 1200px; margin: 0 auto; }
+        body { background-color: #e3f2fd; }
+        header { width: 100%; height: 100px; background: #81d4fa; }
+        aside { float: left; width: 30%; height: 900px; background: #4fc3f7; }
+        .sec1 { float: left; width: 70%; height: 300px; background: #29b6f6; }
+        .sec2 { float: left; width: 70%; height: 300px; background: #03a9f4; }
+        .sec3 { float: left; width: 70%; height: 300px; background: #039be5; }
+        footer { clear: both; width: 100%; height: 100px; background: #0288d1; }
+        
+        /*화면 너비 : 0 ~ 1200px*/
+        @media (max-width: 1240px){
+            #wrap { width: 100%; }
+            .sec1 { height: 450px; }
+            .sec2 { height: 450px; }
+            .sec3 { float: none; clear: both; width: 100%; }
+        }
+        
+        /*화면 너비 : 0 ~ 768px*/
+        @media (max-width: 768px){
+            aside { width: 100%; height: 300px;}
+            .sec1 { width: 50%; }
+            .sec2 { width: 50%; }
+        }
+        
+        /*화면 너비 : 0 ~ 480px*/
+        @media (max-width: 480px){
+            .sec1 { width: 100%; }
+            .sec2 { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header></header>
+        <aside></aside>
+        <section class="sec1"></section>        
+        <section class="sec2"></section>        
+        <section class="sec3"></section>
+        <footer></footer>        
+    </div>
+</body>
+</html>
