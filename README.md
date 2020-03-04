@@ -75,6 +75,8 @@ Today I Learned...
 - [layout3_1](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/responsive/layout3_1.html)
 - [layout4_1](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/responsive/layout4_1.html)
 - [layout5_1](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/responsive/layout5_1.html)
+- [layout6_1](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/responsive/layout6_1.html)
+- [layout7_1](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/responsive/layout7_1.html)
 
 <br/>
 
