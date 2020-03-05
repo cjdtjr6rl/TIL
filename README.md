@@ -82,5 +82,7 @@ Today I Learned...
 
 ### study_web
 
-- 
+- [responsive_web](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/responsive/html5/index.html)
+
+  --> [출처 : Webstoryboy - 반응형 사이트 만들기(2019)](https://www.youtube.com/playlist?list=PL4UVBBIc6giL7ygRa-P7UExEKqZgx4t9K)
 
