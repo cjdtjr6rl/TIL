@@ -158,15 +158,15 @@ body { background: url(../img/header_bg.jpg) repeat-x center top; }
 	line-height: 18px; 
 }
 
-.column .col1 {  }
-.column .col2 {  }
-.column .col3 { border-bottom: 0; }
-.column .col4 {  }
-.column .col5 {  }
-.column .col6 { border-bottom: 0; }
-.column .col7 {  }
-.column .col8 {  }
-.column .col9 { border-bottom: 0; }
+.column.col1 {  }
+.column.col2 {  }
+.column.col3 { border-bottom: 0; }
+.column.col4 {  }
+.column.col5 {  }
+.column.col6 { border-bottom: 0; }
+.column.col7 {  }
+.column.col8 {  }
+.column.col9 { border-bottom: 0; }
 
 /* 메뉴 */
 .menu li { position: relative; }
@@ -264,7 +264,7 @@ body { background: url(../img/header_bg.jpg) repeat-x center top; }
 }
 
 /* 이미지 슬라이드 */
-.slider figure { position: relative; }
+/* .slider figure { position: relative; }
 .slider figcaption {
 	position: absolute; bottom: 0; left: 0; width: 100%; padding: 20px;
 	box-sizing: border-box;
@@ -304,7 +304,7 @@ body { background: url(../img/header_bg.jpg) repeat-x center top; }
 	width: 30px; height: 30px;
 	display: inline-block;
 	background: #fff;
-	/* 글씨를 없애기 위해 */
+	글씨를 없애기 위해
 	text-indent: -9999px;
 	font: normal normal normal 14px/1 FontAwesome;
 }
@@ -319,7 +319,7 @@ body { background: url(../img/header_bg.jpg) repeat-x center top; }
 	width: 30px; height: 30px;
 	display: inline-block;
 	background: #fff;
-	/* 글씨를 없애기 위해 */
+	글씨를 없애기 위해
 	text-indent: -9999px;
 	font: normal normal normal 14px/1 FontAwesome
 }
@@ -328,6 +328,71 @@ body { background: url(../img/header_bg.jpg) repeat-x center top; }
 	color: #5dbfeb;
 	text-indent: 0;
 	position: absolute; left: 11px; top: 8px;
+} */
+
+.slider figure {position: relative;}
+.slider figcaption {position: absolute; bottom: 0; left: 0; width: 100%; padding: 20px;
+    box-sizing: border-box;
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    font-size: 18px;
+}
+.slider figcaption em {
+    display: block; 
+    font-weight: bold; font-size: 28px; text-transform: uppercase; font-family: 'Abel', sans-serif;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all .84s ease;
+}
+.slider figcaption span {
+    display: block;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all .84s 0.2s ease;
+}
+.slider .slick-active figcaption em {opacity: 1; transform: translateX(0)}
+.slider .slick-active figcaption span {opacity: 1; transform: translateX(0)}
+
+.slider .slick-dots {display: block; width: 100%; text-align: center;}
+.slider .slick-dots li {display: inline-block; width: 15px; height: 15px; margin: 5px;}
+.slider .slick-dots li button {
+    font-size: 0; 
+    line-height: 0; 
+    display: block; 
+    width: 15px; height: 15px;
+    cursor: pointer; 
+    background: #5dbfeb; 
+    border-radius: 50%;
+}
+.slider .slick-dots li.slick-active button {background: #2b91c8;}
+.slider .slick-prev {
+    position: absolute; left: 0; bottom: 0; 
+    z-index: 1000;
+    width: 30px; height: 30px; 
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    text-indent: -9999px;
+}
+.slider .slick-prev::before {
+    content: "\f053";
+    color: #5dbfeb;
+    text-indent: 0;
+    position: absolute; left: 9px; top: 8px;
+}
+.slider .slick-next {
+    position: absolute; right: 0; bottom: 0; 
+    z-index: 1000;
+    width: 30px; height: 30px; 
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    text-indent: -9999px;
+}
+.slider .slick-next::before {
+    content: "\f054";
+    color: #5dbfeb;
+    text-indent: 0;
+    position: absolute; left: 11px; top: 8px;
 }
 
 /* 라이트 박스 */
@@ -357,17 +422,99 @@ body { background: url(../img/header_bg.jpg) repeat-x center top; }
 .footer li:first-child:before { width: 0; }
 .footer address { padding-top: 15px; }
 
+/* 사이드 이펙트1 */
+/* 3d로 만들기에 perspective(원근점)을 주어야 함 */
+.side1 { position: relative; display: block; perspective: 600px; }
+.side1 .front {
+	/* 3d로 만들거다 */
+	transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    transition: all 0.5s ease-in-out;
+    backface-visibility: hidden;
+}
+.side1 .back {
+	position: absolute; top: 0; left: 0; 
+    width: 100%; height: 100%; z-index: -1;
+    transform-style: preserve-3d;
+    color: #fff;
+    background: #4038DC;
+    text-align: center;
+    transform: rotateY(-180deg);
+    transition: all 0.5s ease-in-out;
+    backface-visibility: hidden;
+}
+.side1 .back i { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+.side1:hover .front { transform: rotateY(180deg); }
+.side1:hover .back { transform: rotateY(0deg); z-index: 1; }
+
+/* 사이드 이펙트2 */
+.side2 { position: relative; display: block; perspective: 600px; }
+.side2 .front {
+	transform-style: preserve-3d;
+	transform: rotateY(0deg);
+	transition: all 0.5s ease-in-out;
+	backface-visibility: hidden;
+}
+.side2 .back {
+	position: absolute; top: 0; left: 0;
+	width: 100%; height: 100%; z-index: -1;
+	transform-style: preserve-3d;
+	transform: rotateY(-180deg);
+	transition: all 0.5s ease-in-out;
+	backface-visibility: hidden;
+}
+.side2 .front figcaption {
+	position: absolute; left: 50%; top: 50%;
+	transform: translate(-50%, -50%) translateZ(100px);
+	display: block;
+	text-align: center;
+}
+.side2 .back figcaption {
+	position: absolute; left: 50%; top: 50%;
+	transform: translate(-50%, -50%) translateZ(100px);
+	display: block;
+	text-align: center;
+}
+.side2 figcaption { width: 60%; color: #fff; font-size: 20px; font-family: 'Abel'; font-weight: bold; background: rgba(0,0,0,0.4); padding: 3px 10px; }
+.side2:hover .front { transform: rotateY(180deg); }
+.side2:hover .back { transform: rotateY(0deg); z-index: 1; }
+
+/* 사이드 이펙트3 */
+/* overflow: hidden값을 주면 안보이는데에서 나오는 값을 차지하는 것을 숨겨줘서 아래 스크롤바를 사라지게 할 수 있음 */
+.side3 { position: relative; overflow: hidden; background: #fff; }
+.side3 figcaption {
+	position: absolute; top: 50%; left: 50%;
+	color: #fff; text-align: center;
+	opacity: 0;
+	text-transform: uppercase;
+	transition: all 0.3s ease;
+	transform: translate(350%, -50%) rotate(180deg);
+}
+.side3 figcaption:after {
+	content: '';
+	width: 100px; height: 100px;
+	background: #000; border-radius: 50%;
+	position: absolute; left: 50%; top: 50%; z-index: -1;
+	transform: translate(-50%, -50%);
+}
+.side3 figcaption h3 { font-size: 16px; }
+.side3 figcaption em { display: block; font-weight: bold; }
+.side3 img { display: block; transition: all 0.3s ease; }
+.side3:hover img { opacity: 0.4; }
+.side3:hover figcaption { transform: translate(-50%, -50%) rotate(0deg); opacity: 1; }
 
 /* mediaquery */
 /* 화면 너비 0 ~ 1220px */
 @media (max-width: 1220px){
 	.container { width: 100%; }
 	.row { padding: 0 15px; }
+	#cont_center {min-height: 1350px;}
 	#contents .container { border: 0; }
 
 	.title .btn { right: 5px; }
 	.square a { width: 24%; }
 	.square a:nth-child(5n) { display: none; }
+
 }
 
 /* 화면 너비 0 ~ 1024px */
