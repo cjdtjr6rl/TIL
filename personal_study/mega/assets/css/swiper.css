@@ -55,7 +55,7 @@
     width: 100%;
     height: 100%;
     position: relative;
-    transition-property: transform;
+    transition-property: transform opacity;
     z-index: 5;
 }
 .swiper-slide .container {z-index: 20;}
@@ -66,12 +66,8 @@
     left: 0; top: 0; 
     width: 100%; height: 100%; 
     background: #000; 
-    opacity: .2;
+    opacity: .5;
 }
-.swiper-container2 .swiper-slide:after {
-    opacity: 0;
-}
-
 .swiper-slide-invisible-blank {
     visibility: hidden;
 }
@@ -208,5 +204,3 @@ button.swiper-pagination-bullet {
 .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
     margin: 0 4px;
 }
-
-
