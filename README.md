@@ -49,6 +49,8 @@ Today I Learned...
 
 - [2020-03-09](https://github.com/cjdtjr6rl/TIL/blob/master/JavaScript/20200309.md)
 - [2020-03-10](https://github.com/cjdtjr6rl/TIL/blob/master/JavaScript/20200310.md)
+- [2020-03-12](https://github.com/cjdtjr6rl/TIL/blob/master/JavaScript/20200312.md)
+- [2020-03-13](https://github.com/cjdtjr6rl/TIL/blob/master/JavaScript/20200313.md)
 
 <br/>
 
