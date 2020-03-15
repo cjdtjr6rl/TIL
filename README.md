@@ -118,4 +118,6 @@ Today I Learned...
 
 - [Megabit_site07](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/mega/index07.html)
 
+- [Megabit_site08](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/mega/index08.html)
+
   --> [출처 : Webstoryboy - 메가박스 사이트 만들기(2019) - 코딩](https://www.youtube.com/playlist?list=PL4UVBBIc6giLfFeY-8w5PWJ6z7iFoVu6G)
