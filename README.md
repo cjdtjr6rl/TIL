@@ -106,20 +106,30 @@ Today I Learned...
 
 ### Megabox_site
 
-- [Megabit_site01](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/mega/index01.html)
+- [Megabox_site01](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/mega/index01.html)
 
-- [Megabit_site02](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/mega/index02.html)
+- [Megabox_site02](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/mega/index02.html)
 
-- [Megabit_site03](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/mega/index03.html)
+- [Megabox_site03](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/mega/index03.html)
 
-- [Megabit_site04](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/mega/index04.html)
+- [Megabox_site04](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/mega/index04.html)
 
-- [Megabit_site05](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/mega/index05.html)
+- [Megabox_site05](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/mega/index05.html)
 
-- [Megabit_site06](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/mega/index06.html)
+- [Megabox_site06](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/mega/index06.html)
 
-- [Megabit_site07](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/mega/index07.html)
+- [Megabox_site07](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/mega/index07.html)
 
-- [Megabit_site08](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/mega/index08.html)
+- [Megabox_site08](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/mega/index08.html)
+
+- [Megabox_site09](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/mega/index09.html)
+
+- [Megabox_site10](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/mega/index10.html)
+
+- [Megabox_site11](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/mega/index11.html)
+
+- [Megabox_site12](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/mega/index12.html)
+
+- [Megabox_site13](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/mega/index13.html)
 
   --> [출처 : Webstoryboy - 메가박스 사이트 만들기(2019) - 코딩](https://www.youtube.com/playlist?list=PL4UVBBIc6giLfFeY-8w5PWJ6z7iFoVu6G)
