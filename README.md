@@ -138,4 +138,6 @@ Today I Learned...
 
 - [Megabox_site15](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/mega/index15.html)
 
+- [Megabox_site16](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/mega/index16.html)
+
   --> [출처 : Webstoryboy - 메가박스 사이트 만들기(2019) - 코딩](https://www.youtube.com/playlist?list=PL4UVBBIc6giLfFeY-8w5PWJ6z7iFoVu6G)
