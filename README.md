@@ -59,6 +59,7 @@ Today I Learned...
 - [2020-03-25](https://github.com/cjdtjr6rl/TIL/blob/master/JavaScript/20200325.md)
 - [2020-03-26](https://github.com/cjdtjr6rl/TIL/blob/master/JavaScript/20200326.md)
 - [2020-03-27](https://github.com/cjdtjr6rl/TIL/blob/master/JavaScript/20200327.md)
+- [2020-03-29](https://github.com/cjdtjr6rl/TIL/blob/master/JavaScript/20200329.md)
 
 <br/>
 
@@ -151,5 +152,7 @@ Today I Learned...
 - [Megabox_site19](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/mega/index19.html)
 
 - [Megabox_site20](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/mega/index20.html)
+
+- [Megabox_site21](https://github.com/cjdtjr6rl/TIL/blob/master/personal_study/mega/index21.html)
 
   --> [출처 : Webstoryboy - 메가박스 사이트 만들기(2019) - 코딩](https://www.youtube.com/playlist?list=PL4UVBBIc6giLfFeY-8w5PWJ6z7iFoVu6G)
