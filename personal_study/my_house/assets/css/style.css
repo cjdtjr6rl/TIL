@@ -1,0 +1,158 @@
+@charset "utf-8";
+
+/* 레이아웃 */
+#mNav {display: none; position: absolute; top: 12px; left: 14px; padding: 10px 0;}
+#header {width: 100%; height: 80px; border-bottom: 1px solid #c6c6c6; background: rgba(0,0,0,0);}
+
+/* 가운데 영역 */
+.container {position: relative; width: 1280px; margin: 0 auto; background: rgba(0,0,0,0);}
+
+/* 로우 영역 */
+.row {padding: 0 24px;}
+
+/* 모바일 메뉴 */
+.ham {display: block; width: 23px; height: 10px; background: rgba(0,0,0,0); padding: 7px 8.5px 10px;}
+.ham span {position: relative; display: block; width: 23px; height: 2px; background: #35C5F0;}
+.ham span:before {
+    content: '';
+    width: 23px; height: 2px; background: #35C5F0;
+    position: absolute; left: 0; bottom: -9px;
+}
+.ham span:after {
+    content: '';
+    width: 23px; height: 2px; background: #35C5F0;
+    position: absolute; left: 0; top: -9px;
+}
+
+/* 헤더 영역 */
+.header .logo {position: static; float: left;}
+.header .logo h1 {}
+.header .logo h1 a {}
+.header .logo h1 a em {padding: 11px 20px 0 0; display: inline-block;}
+.header .logo h1 a em img {width: 120px;}
+.header .nav {float: left;}
+.header .nav ul {padding-top: 15px}
+.header .nav ul li {float: left; width: 100px; text-align: center; padding: 11px 0;}
+.header .nav ul li.first a {color: #35C5F0;}
+.header .nav ul li a {display: block; font-size: 18px; font-weight: 700; color: #444;}
+.header .right {position: static; float: right; padding: 18px 0;}
+.header .right .search {position: relative; float: left; padding-right: 5px;}
+.header .right .search .search_thing::placeholder {
+  color: #dbdbdb;
+  opacity: 1;
+}
+.header .right .search .search_thing{
+    width: 200px;
+    font-size: 15px;
+    border: 1px solid #dbdbdb;
+    color: #424242;
+    padding: 10px 10px 10px 42px;
+}
+.header .right .search .search_thing:hover {
+    background: #FAFAFA;
+}
+.header .right .search i {
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    font-size: 20px;
+    color: #9E9E9E;
+}
+.header .right a.write {
+    float: left;
+    display: inline-block;
+    width: 74px;
+    box-sizing: border-box;
+    margin: 5px 5px;
+    padding: 4px 0 6px;
+    border: 1px solid #35c5f0;
+    border-radius: 16px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #09addb;
+    text-align: center;
+}
+.header .right a.write:hover {
+    background: #09addb;
+    color: #fff;
+    transition: 0.3s ease all
+}
+.header .right button.btn {
+    float: left;
+    display: none;
+    color: #757575;
+    text-align: center;
+}
+.header .right button.btn:hover {
+    background: #09addb;
+    color: #fff;
+    transition: background .3s;
+    width: 40px; height: 40px;
+    border-radius: 100%
+}
+.header .right button.btn i {
+    font-size: 25px;
+    font-weight: 700;
+    margin: 7px 8.5px 10px;
+    color: #757575;
+}
+.header .right .side {float: left;}
+.header .right .side .shopping {
+    float: left; 
+    display: inline-block;
+}
+.header .right .side .shopping:hover {
+    background: #09addb;
+    color: #fff;
+    transition: background .3s;
+    width: 40px; height: 40px;
+    border-radius: 100%;
+}
+.header .right .side .shopping i {
+    font-size: 25px;
+    font-weight: 700;
+    margin: 7px 8.5px 10px;
+    color: #757575;
+}
+.header .right .side ul {float: left;}
+.header .right .side ul li {
+    float: left; 
+    padding: 11px 0;
+}
+.header .right .side ul li a {
+    display: block; 
+    text-align: center; 
+    font-size: 15px; font-weight: 500; 
+    color: #757575;
+    border-right: 1px solid #757575;
+    padding: 0 10px;
+}
+.header .right .side ul li a:hover {
+    color: #09addb
+}
+
+/* 미디어 쿼리 */
+@media (max-width: 1290px) {
+    .container {width: 100%;}
+}
+@media (max-width: 1024px) {
+    .row {padding: 0 15px;}
+    .header .right button.btn {display: block;}
+    .header .right .search {display: none;}
+}
+@media (max-width: 785px) {
+    #mNav {display: block;}
+    #header {height: 60px;}
+    .row {padding: 0 10px;}
+    .header .logo {float: none;}
+    .header .logo h1 {text-align: center;}
+    .header .logo h1 a em {padding: 8px 0;}
+    .header .logo h1 a em img {width: 90px;}
+    .header .right {padding: 10px 0;}
+    .header .nav {display: none;}
+    .header .right {position: absolute; top: 0; right: 10px;}
+    .header .right a.write {display: none;}
+    .header .right .side ul {display: none;}
+    .header .right button.btn i {font-weight: 300;}
+    .header .right .side .shopping i {font-weight: 300;}
+}
