@@ -15,13 +15,11 @@
                 font-size: 35px;
             }
 */
-/*            로또 스타일*/
-            #resultPage {
-                
-            }
-            
-            .bonusPage {
-                
+/*            가위바위보 스타일*/
+            #computer {
+                width: 140px;
+                height: 157px;
+                background: url('https://lh3.googleusercontent.com/proxy/XtgN_9EbMj-HH__xBbJiehulffSu7Z1sieFpI6nrjoGCgZ9fTXCiRjwG5duK3kwJz2rF7kVWUlSB24Tph1aj8VJZlc1WDiBhGiUEnMUDkoJL5XRu04683BFowXNuth7GSQXddwV45r-T') 0 0;
             }
         </style>
     </head>
@@ -65,10 +63,22 @@
 -->
 <!--    <script src="/tictakto.js"></script>-->
 <!--    로또 추첨기-->
+<!--
         <div>당첨 숫자</div>
         <div id="resultPage"></div>
         <div>보너스!</div>
         <div class="bonusPage"></div>
         <script src="/lotto.js"></script>
+-->
+<!--   가위바위보-->
+  <div id="computer">
+      
+  </div>
+  <div>
+      <button class="btn" id="scissor">scissor</button>
+      <button class="btn" id="rock">rock</button>
+      <button class="btn" id="paper">paper</button>
+  </div>
+   <script src="rockPaperScissors.js"></script>
     </body>
 </html>
