@@ -160,7 +160,7 @@
 
 /* 컨텐츠 */
 .section {position: relative;}
-.section .cont_in {float: left; position: absolute; top: 450px; left: 11px; float: left; width: 66.6%; display: inline-block; padding: 0 30px;}
+.section .cont_in {float: left; position: absolute; top: 450px; left: 11px; width: 66.6%; display: inline-block; padding: 0 30px;}
 .section .cont_in .cont_container {width: 100%;}
 .section .cont_in .cont_container .cont_row {width: 75.8%; padding: 0 24px;}
 .section .cont_in .who h2 {font-size: 30px; font-weight: 700; color: #fff;}
@@ -180,12 +180,16 @@
     text-align: center;
     border-radius: 6px;
 }
+.section .cont_in .go a:hover {
+    border: 1px solid #35C5F0;
+    background: #35C5F0;
+    transition: .1s ease all;
+}
 .section .cont_out {float: left; overflow: hidden; width: 72%; height: 540px; margin: 2% 1%;}
 .section .cont_out .cont_out_in {
     width: 100%; height: 100%; 
     background: url(../img/main_left.jpeg) no-repeat center; background-size: cover;
     border-radius: 6px;
-    
 }
 
 /* 이벤트 슬라이드 */
@@ -194,6 +198,10 @@
     width: 100%; height: 100%; 
     background: url(../img/event2.png) no-repeat center; background-size: cover;
     border-radius: 6px;
+}
+.section .event .slide {
+    width: 100%; height: 100%;
+    float: none; margin: 0;
 }
 
 /* 미디어 쿼리 */
@@ -204,11 +212,17 @@
     .row {padding: 0 15px;}
     .header .right button.btn {display: block;}
     .header .right .search {display: none;}
+    
+    .section .cont_in {top: 345px;}
+    .section .cont_in .go a {bottom: 20px; width: 85px;}
+    .section .cont_in .who h2 {font-size: 25px;}
+    .section .cont_out {height: 440px;}
+    .section .event {height: 440px;}
 }
 @media (max-width: 785px) {
     #mNav {display: block;}
     #header {height: 60px;}
-    .row {padding: 0 10px;}
+    .row {padding: 0;}
     .header .logo {float: none;}
     .header .logo h1 {text-align: center;}
     .header .logo h1 a em {padding: 8px 0;}
@@ -226,4 +240,14 @@
     .navi .menu {float: none;}
     .navi .menu li {float: none; display: inline-block; padding: 13.5px 7px; margin: 0; font-size: 13px; }
     .navi .download {display: none;}
+    
+    .section .cont_out {float: none; width: 100%; margin: 0;}
+    .section .cont_out .cont_out_in {border-radius: 0;}
+    .section .cont_in {top: 180px; width: 85%;}
+    .section .cont_in .who p {display: none;}
+    .section .cont_in .go {padding: 10px 0 0 24px;}
+    .section .cont_in .go a {position: static; float: left; height: 25px; padding: 5px 10px 2px 10px;}
+    .section .event {width: 100%; height: auto; margin: 0;}
+    .section .event .event_slide {display: none;}
+    
 }
