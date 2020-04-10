@@ -100,6 +100,7 @@
 }
 .slick-initialized .slick-slide
 {
+    margin: 10px;
     display: block;
 }
 .slick-loading .slick-slide
