@@ -30,8 +30,8 @@
 .header .nav {float: left;}
 .header .nav ul {position: relative;}
 .header .nav ul li {float: left; width: 100px; text-align: center; padding: 26px 0;}
-.header .nav ul li.active a {color: #35C5F0;}
-.header .nav ul li.active:before {
+.header .nav ul li.current a {color: #35C5F0;}
+.header .nav ul li.current:before {
     content: '';
     margin: 2px 0 0 -4px;
     border-width: 0 4.5px 9px;
@@ -45,7 +45,7 @@
     -ms-transform: rotate(70deg);
     transform: rotate(70deg);
 }
-.header .nav ul li.active:after {
+.header .nav ul li.current:after {
     content: '';
     margin: 2px 0 0 -4px;
     border-width: 0 4.5px 9px;
@@ -143,7 +143,8 @@
 
 /* 메뉴 */
 .navi {}
-.navi .menu {float: left;}
+.navi .menu {display: none; float: left; height: 58px;}
+.navi .menu.current {display: inherit;}
 .navi .menu li {
     float: left;
     text-align: center;
@@ -221,7 +222,26 @@
 .review {position: relative;}
 .hoho .more {position: absolute; top: 0; right: 0; padding-right: 10px; font-size: 15px; font-weight: 500; color: #35C5F0;}
 .review a {position: relative;}
-.review a img {border-radius: 6px;}
+.review a img {
+    border-radius: 6px; margin-bottom: 10px;
+    -webkit-transform:scale(1);
+    -moz-transform:scale(1);
+    -ms-transform:scale(1); 
+    -o-transform:scale(1);  
+    transform:scale(1);
+    -webkit-transition:.3s;
+    -moz-transition:.3s;
+    -ms-transition:.3s;
+    -o-transition:.3s;
+    transition:.3s;
+}
+.review a:hover img {
+    -webkit-transform:scale(1.07);
+    -moz-transform:scale(1.07);
+    -ms-transform:scale(1.07);   
+    -o-transform:scale(1.07);
+    transform:scale(1.07);
+}
 .review a p {
     font-size: 15px; font-weight: 350;
     position: relative; overflow: hidden; text-overflow: ellipsis;
@@ -282,7 +302,26 @@
     display: none;
 }
 .hoho .nextreview a {float: left; display: -webkit-flex; -webkit-align-items: center; margin: 10px 10px 0 10px;}
-.hoho .nextreview a img {width: 40%; float: left; border-radius: 6px;}
+.hoho .nextreview a img {
+    width: 40%; float: left; border-radius: 6px;
+    -webkit-transform:scale(1);
+    -moz-transform:scale(1);
+    -ms-transform:scale(1); 
+    -o-transform:scale(1);  
+    transform:scale(1);
+    -webkit-transition:.3s;
+    -moz-transition:.3s;
+    -ms-transition:.3s;
+    -o-transition:.3s;
+    transition:.3s;
+}
+.hoho .nextreview a:hover img {
+    -webkit-transform:scale(1.07);
+    -moz-transform:scale(1.07);
+    -ms-transform:scale(1.07);   
+    -o-transform:scale(1.07);
+    transform:scale(1.07);
+}
 .hoho .nextreview a p {
     width: 60%; 
     float: left;

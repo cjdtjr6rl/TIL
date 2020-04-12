@@ -44,10 +44,10 @@
                         </nav>
                    </div>
                    <nav class="nav">
-                        <ul class="clearfix">
-                            <li class="active"><a href="#">커뮤니티</a></li>
-                            <li><a href="#">스토어</a></li>
-                            <li><a href="#">인테리어시공</a></li>
+                        <ul class="tabs clearfix">
+                            <li class="current" data-tab="tab-1"><a href="#">커뮤니티</a></li>
+                            <li data-tab="tab-2"><a href="#">인테리어시공</a></li>
+                            <li data-tab="tab-3"><a href="#">우리의집</a></li>
                         </ul>
                     </nav>
                     <div class="right clearfix">
@@ -76,7 +76,7 @@
         <div class="container">
             <div class="row">
                 <div class="navi">
-                    <ul class="menu">
+                    <ul id="tab-1" class="menu current">
                         <li class="active"><a href="#">홈</a></li>
                         <li><a href="#">사진</a></li>
                         <li><a href="#">집들이</a></li>
@@ -85,6 +85,19 @@
                         <li><a href="#">셀프가이드</a></li>
                         <li><a href="#">질문과답변</a></li>
                         <li><a href="#">이벤트</a></li>
+                    </ul>
+                    <ul id="tab-2" class="menu">
+                        <li class="active"><a href="#">홈</a></li>
+                        <li><a href="#">사진</a></li>
+                        <li><a href="#">집들이</a></li>
+                        <li><a href="#">노하우</a></li>
+                        <li><a href="#">전문가집들이</a></li>
+                        <li><a href="#">셀프가이드</a></li>
+                    </ul>
+                    <ul id="tab-3" class="menu">
+                        <li class="active"><a href="#">이준형</a></li>
+                        <li><a href="#">서지원</a></li>
+                        <li><a href="#">이다희</a></li>
                     </ul>
                     <div class="download">
                         <a href="#">
@@ -235,7 +248,7 @@
                         <div>
                             <a href="#">
                                 <img src="../my_house/assets/img/review2.jpg" alt="이미지2">
-                                <p>일단 사장님과 직원분이 너무 친절하게 대답해주시고 상담해주신게 가장좋았던거같습니다. 원하는 스타일에대해 잘이해해주시고 고객이원하는대로 작업진행을 꼼꼼하게 도와주셧구요. 중간에 안되는부분이나 수정해야할부분이있으면 마음대로 진행하지않으시고 ( 어떤곳은 이미 다 진행을하고서 안되서그렇게햇다고하는곳도있다고들엇거든요ㅜ) 항상 다 물어봐주신게 가장좋았습니다.</p>
+                                <p>제가원하는 스타일이 어떤건지에대한 이해, 일반적인 인테리어와 다른부분들 이해해주시고 시도해주신점감사드려요. 일반적이지않은것들은 비용대비 리스크가 크니잘안하려는것같았어요. 견적포기한곳도 몇군데있었음 (특히 욕실).개인적으로 넘바빠서 못챙기는부분들을 커버해주신점, 취향에 맞는 소품과 자재 고르는데 열심이신것 감사드려요. 특히욕실은 넘사랑스러워요.</p>
                             </a>
                         </div>
                         <div>
@@ -318,8 +331,37 @@
             infinite: true,
             slidesToShow: 3,
             slidesToScroll: 3,
-            autoplay: true,
+            autoplay: false,
             arrows: true,
+        });
+        
+        $(document).ready(function() {
+            $('ul.tabs li').click(function() {
+                var tab_id = $(this).attr('data-tab');
+                
+                $('ul.tabs li').removeClass('current');
+                $('.navi .menu').removeClass('current');
+                
+                $(this).addClass('current');
+                $("#"+tab_id).addClass('current');
+            });
+        });
+        
+        $(document).ready(function() {
+            $('ul.menu li').click(function() {
+                var resultPage = document.getElementById('tab-1').value;
+                alert(resultPage);
+                if(ul.id === 'tab-1') {
+                    $('ul#tab-1 li').removeClass('active');
+                    $(this).addClass('active');
+                } else if(ul.id === 'tab-2') {
+                    $('ul#tab-2 li').removeClass('active');
+                    $(this).addClass('active');
+                } else {
+                    $('ul#tab-3 li').removeClass('active');
+                    $(this).addClass('active');
+                }
+            });
         });
     </script>
     <!-- 스크립트 end -->
