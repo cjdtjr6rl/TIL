@@ -29,7 +29,7 @@
 .header .logo h1 a em img {width: 120px;}
 .header .nav {float: left;}
 .header .nav ul {position: relative;}
-.header .nav ul li {float: left; width: 100px; text-align: center; padding: 26px 0;}
+.header .nav ul li {position: relative; float: left; width: 100px; text-align: center; padding: 26px 0;}
 .header .nav ul li.current a {color: #35C5F0;}
 .header .nav ul li.current:before {
     content: '';

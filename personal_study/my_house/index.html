@@ -345,16 +345,13 @@
                 $(this).addClass('current');
                 $("#"+tab_id).addClass('current');
             });
-        });
-        
-        $(document).ready(function() {
-            $('ul.menu li').click(function() {
-                var resultPage = document.getElementById('tab-1').value;
-                alert(resultPage);
-                if(ul.id === 'tab-1') {
+            
+            $('ul.menu li').click(function(e) {
+                var listId = $(this).parent().attr('id');
+                if(listId === 'tab-1') {
                     $('ul#tab-1 li').removeClass('active');
                     $(this).addClass('active');
-                } else if(ul.id === 'tab-2') {
+                } else if(listId === 'tab-2') {
                     $('ul#tab-2 li').removeClass('active');
                     $(this).addClass('active');
                 } else {
@@ -362,6 +359,10 @@
                     $(this).addClass('active');
                 }
             });
+        });
+        
+        $(document).ready(function() {
+            
         });
     </script>
     <!-- 스크립트 end -->
