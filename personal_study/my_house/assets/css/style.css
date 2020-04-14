@@ -7,6 +7,7 @@
 #section {position: relative; height: 597px;}
 #shortcut {position: relative; height: 170px;}
 #review {}
+#footer {background: #fafafa;}
 
 /* 가운데 영역 */
 .container {position: relative; width: 1280px; margin: 0 auto; background: rgba(0,0,0,0);}
@@ -333,6 +334,30 @@
 	padding: 0 8px;
 }
 
+/* 푸터 */
+.footer_sns {position: absolute; right: 17px; top: 33px; z-index: 1;}
+.footer_sns li {display: inline-block; margin: 0 2px;}
+.footer_sns li a {display: block; width: 36px; height: 36px;}
+.footer_sns li.s1 {background-position: 0 -375px;}
+.footer_sns li.s2 {background-position: -36px -375px;}
+.footer_sns li.s3 {background-position: -72px -375px;}
+.footer_sns li.s4 {background-position: -108px -375px;}
+.footer_sns li.s5 {background-position: -144px -375px;}
+.footer_sns li.s1:hover {background-position: 0 -411px;}
+.footer_sns li.s2:hover {background-position: -36px -411px;}
+.footer_sns li.s3:hover {background-position: -72px -411px;}
+.footer_sns li.s4:hover {background-position: -108px -411px;}
+.footer_sns li.s5:hover {background-position: -144px -411px;}
+
+.footer_info {padding: 20px 0; width: 80%;}
+.footer_info h2 p {font-size: 30px; font-weight: 700;}
+.footer_info ul {padding: 15px 0;}
+.footer_info li {position: relative; display: inline; padding-right: 10px; white-space: nowrap; font-size: 10px;}
+.footer_info li:after {content: ''; position: absolute; right: 3px; top: 3px; width: 1px; height: 10px; background: #8f8f8f;}
+.footer_info li:last-child:after {width: 0; height: 0;}
+.footer_info li a {color: #8f8f8f;}
+.footer_info address p {font-size: 10px; color: #8f8f8f; padding-bottom: 15px;}
+
 /* 미디어 쿼리 */
 @media (max-width: 1290px) {
     .container {width: 100%;}
@@ -352,7 +377,6 @@
 @media (max-width: 785px) {
     #mNav {display: block;}
     #header {height: 60px;}
-    #shortcut {height: 545px;}
     .row {padding: 0;}
     .header .logo {float: none;}
     .header .logo h1 {text-align: center;}
@@ -385,7 +409,7 @@
     
     .hoho {padding: 15px;}
     .hoho .review {display: none;}
-    .hoho .nextreview {display: block; height: 1303px;}
+    .hoho .nextreview {display: inline-block; height: auto;}
     .hoho .nextreview a {margin: 10px 0;}
     .hoho .more {
         position: static;
@@ -398,4 +422,8 @@
         color: #424242;
         padding: 17px 0;
     }
+    
+    .footer_sns {position: static; text-align: center; background: #ededed; padding-bottom: 15px;}
+    .footer_sns .tel {display: none;}
+    .footer_info {width: 100%; text-align: center;}
 }
