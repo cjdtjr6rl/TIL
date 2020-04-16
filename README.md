@@ -72,6 +72,7 @@ Today I Learned...
 
 - [JavaScript 실습만들기](https://github.com/cjdtjr6rl/TIL/blob/master/JavaScript/JS_study)
 - [JavaScript 실습정리 1](https://github.com/cjdtjr6rl/TIL/blob/master/JavaScript/JS_study/js_note1.md)
+- [JavaScript 실습정리 2](https://github.com/cjdtjr6rl/TIL/blob/master/JavaScript/JS_study/js_note2.md)
 
 ---
 
