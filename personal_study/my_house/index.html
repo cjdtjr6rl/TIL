@@ -46,7 +46,7 @@
                    <nav class="nav">
                         <ul class="tabs clearfix">
                             <li class="current" data-tab="tab-1"><a href="/my_house/index.html">커뮤니티</a></li>
-                            <li data-tab="tab-2"><a href="#">인테리어시공</a></li>
+                            <li data-tab="tab-2"><a href="/my_house/center.html">인테리어시공</a></li>
                             <li data-tab="tab-3"><a href="/my_house/member.html">우리의집</a></li>
                         </ul>
                     </nav>
@@ -384,7 +384,7 @@
         });
         
         $(document).ready(function() {
-            $('ul.tabs li').click(function() {
+            $('ul.tabs li a').click(function() {
                 var tab_id = $(this).attr('data-tab');
                 
                 $('ul.tabs li').removeClass('current');
