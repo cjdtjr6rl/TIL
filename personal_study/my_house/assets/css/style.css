@@ -8,12 +8,15 @@
 #shortcut {position: relative; height: 170px;}
 #review {}
 #footer {background: #fafafa;}
+#modal {position: absolute; top: 0; left: 0; background: #fff; width: 55%; height: 956px;}
 
 /* 가운데 영역 */
 .container {position: relative; width: 1280px; margin: 0 auto; background: rgba(0,0,0,0);}
+.modal_container {position: relative; margin: 0 auto;}
 
 /* 로우 영역 */
 .row {padding: 0 24px;}
+.modal_row {padding: 24px;}
 
 /* 모바일 메뉴 */
 .ham {display: block; width: 23px; height: 10px; background: rgba(0,0,0,0); padding: 7px 8.5px 10px;}
@@ -357,6 +360,9 @@
 .footer_info li:last-child:after {width: 0; height: 0;}
 .footer_info li a {color: #8f8f8f;}
 .footer_info address p {font-size: 10px; color: #8f8f8f; padding-bottom: 15px;}
+
+/* 모달 */
+.modal {}
 
 /* 미디어 쿼리 */
 @media (max-width: 1290px) {
