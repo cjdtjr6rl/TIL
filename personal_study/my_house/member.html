@@ -10,8 +10,9 @@
     <title>오늘의집 사이트 코딩하기</title>
     
     <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style2.css">
     <link rel="stylesheet" href="assets/css/font-awesome.css">
     <link rel="stylesheet" href="assets/css/slick.css">
     
@@ -28,6 +29,7 @@
 </head>
 <body>
     <!-- header -->
+<!--
     <header id="header">
         <div class="container">
             <div class="row">
@@ -69,9 +71,11 @@
             </div>
         </div>
     </header>
+-->
     <!-- header end -->
     
     <!-- nav -->
+<!--
     <nav id="nav">
         <div class="container">
             <div class="row">
@@ -108,20 +112,99 @@
             </div>
         </div>
     </nav>
+-->
     <!-- nav end -->
     
-    <section id="member1">
-        <div class="container">
-            <div class="row">
-                <div class="member1">
-                    ㄴㅐ용내용
-                </div>
+    <div class="nav__bar">
+        <a href="#" class="nav__trigger">
+            <div class="bars"></div>
+        </a>        
+    </div>
+
+    <main class="main">
+        <section class="hero">
+            <div class="hero__content">
+                <h1 class="hero__heading">Off-Canvas Navigation<br>w/Page Transitions</h1>
+                <h4 class="hero__subheading">By: <a href="http://kylebrumm.com" target="_blank">Kyle Brumm</a></h4>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section class="content">
+            <article class="article">
+                <a href class="article__title">Vinegar Polaroid Tote Bag Vegan Street</a>
+
+                <time class="article__time">NOVEMBER 15, 2015</time>
+
+                <p class="article__content">
+                    Seitan wayfarers bitters direct trade  keytar lomo fanny pack pop-up Carles yr forage drinking vinegar polaroid tote bag vegan street art next level Odd Future gentrify sustainable hella.   
+                </p>
+            </article>
+
+            <article class="article">
+                <a href class="article__title">Tofu Vinyl Salvia Readymade Mixtape Viral</a>
+
+                <time class="article__time">SEPTEMBER 29, 2015</time>
+
+                <p class="article__content">
+                    Retro keffiyeh flannel kogi asymmetrical Portland Etsy mumblecore craft beer occupy fap Neutra organic 3 wolf moon pour-over tofu vinyl salvia readymade mixtape viral 90's single-origin coffee Bushwick kale chips church-key art party Thundercats...
+                </p>
+            </article>
+
+            <article class="article">
+                <a href="#" class="article__title">Umami Quinoa Blog Kitsch Gluten-Free Plaid Pug</a>
+
+                <time class="article__time">AUGUST 17, 2015</time>
+
+                <p class="article__content">
+                    Before they sold out crucifix Kickstarter Godard Marfa chambray four loko wolf scenester Tumblr heirloom chia put a bird on it umami quinoa blog kitsch gluten-free plaid pug.
+                </p>
+            </article>
+
+            <article class="article">
+                <a href="#" class="article__title">Chillwave Stumptown Leggings Raw Denim</a>            
+                <time class="article__time">AUGUST 05, 2015</time>
+
+                <p class="article__content">
+                    Intelligentsia pickled photo booth McSweeney's +1 actually Schlitz whatever 8-bit sriracha iPhone stumptown leggings raw denim Williamsburg food truck aesthetic narwhal authentic selvage Wes Anderson disrupt.
+                </p>
+            </article>
+
+            <article class="article">
+                <a href="#" class="article__title">Shoreditch Cardigan Farm-to-Table Butcher</a>
+
+                <time class="article__time">JULY 31, 2015</time>
+
+                <p class="article__content">
+                    Tonx PBR ethical banjo trust fund meggings fingerstache ennui ugh cornhole fixie meh try-hard Shoreditch cardigan farm-to-table butcher synth DIY irony Banksy paleo mustache.
+                </p>
+            </article>
+
+            <article class="article">
+                <a href="#" class="article__title">Artisan Echo Park Gastropub Brunch</a>
+
+                <time class="article__time">JULY 13, 2015</time>
+
+                <p class="article__content">
+                    Brooklyn cliche cray Blue Bottle skateboard distillery small batch master cleanse semiotics swag lo-fi High Life hoodie hashtag artisan Echo Park gastropub brunch.
+                </p>
+            </article>    
+        </section>
+    </main>
+
+    <nav class="nav">
+        <ul class="nav__list">
+            <li class="nav__item"><a href="#">Sriracha</a></li>
+            <li class="nav__item"><a href="#">Wolf Moon</a></li>
+            <li class="nav__item"><a href="#">Raw Denim</a></li>
+            <li class="nav__item"><a href="#">Mumblecore</a></li>
+            <li class="nav__item"><a href="#">Fingerstache</a></li>
+            <li class="nav__item"><a href="#">Chillwave</a></li>
+        </ul>
+    </nav>
     
     
     <!-- footer -->
+<!--
     <footer id="footer">
         <div id="footer_sns">
             <div class="container">
@@ -168,8 +251,10 @@
             </div>
         </div>
     </footer>
+-->
     
     <!-- 스크립트 -->
+<!--
     <script src="assets/js/jquery.min_1.12.4.js"></script>
     
     <script>
@@ -203,5 +288,9 @@
             
         });
     </script>
+-->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/classlist/2014.01.31/classList.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/iamdustan-smoothscroll/0.4.0/smoothscroll.js'></script>
+    <script  src="assets/js/index.js"></script>
 </body>
 </html>
