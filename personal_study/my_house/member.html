@@ -11,8 +11,10 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css'>
+    
     <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/style2.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/font-awesome.css">
     <link rel="stylesheet" href="assets/css/slick.css">
     
@@ -29,7 +31,6 @@
 </head>
 <body>
     <!-- header -->
-<!--
     <header id="header">
         <div class="container">
             <div class="row">
@@ -42,7 +43,9 @@
                        </h1>
                         <nav id="mNav">
                             <h2 class="ir_so">오늘의집 전체메뉴</h2>
-                            <a href="#" class="ham"><span></span></a>
+                            <button class="close">
+                                <span class="bar"></span>
+                            </button>
                         </nav>
                    </div>
                    <nav class="nav">
@@ -71,16 +74,14 @@
             </div>
         </div>
     </header>
--->
     <!-- header end -->
     
     <!-- nav -->
-<!--
     <nav id="nav">
         <div class="container">
             <div class="row">
                 <div class="navi">
-                    <ul id="tab-1" class="menu">
+                    <ul id="tab-1" class="top_menu">
                         <li class="active"><a href="#">홈</a></li>
                         <li><a href="#">사진</a></li>
                         <li><a href="#">집들이</a></li>
@@ -90,7 +91,7 @@
                         <li><a href="#">질문과답변</a></li>
                         <li><a href="#">이벤트</a></li>
                     </ul>
-                    <ul id="tab-2" class="menu">
+                    <ul id="tab-2" class="top_menu">
                         <li class="active"><a href="#">홈</a></li>
                         <li><a href="#">사진</a></li>
                         <li><a href="#">집들이</a></li>
@@ -98,7 +99,7 @@
                         <li><a href="#">전문가집들이</a></li>
                         <li><a href="#">셀프가이드</a></li>
                     </ul>
-                    <ul id="tab-3" class="menu current">
+                    <ul id="tab-3" class="top_menu current">
                         <li class="active"><a href="#">이준형</a></li>
                         <li><a href="#">서지원</a></li>
                         <li><a href="#">이다희</a></li>
@@ -112,99 +113,54 @@
             </div>
         </div>
     </nav>
--->
     <!-- nav end -->
     
-    <div class="nav__bar">
-        <a href="#" class="nav__trigger">
-            <div class="bars"></div>
-        </a>        
-    </div>
-
-    <main class="main">
-        <section class="hero">
-            <div class="hero__content">
-                <h1 class="hero__heading">Off-Canvas Navigation<br>w/Page Transitions</h1>
-                <h4 class="hero__subheading">By: <a href="http://kylebrumm.com" target="_blank">Kyle Brumm</a></h4>
+    <div id="main">
+        <div class="container">
+            <div class="row">
+                <div class="main">
+                    하이하이하이
+                </div>
             </div>
-        </section>
-
-        <section class="content">
-            <article class="article">
-                <a href class="article__title">Vinegar Polaroid Tote Bag Vegan Street</a>
-
-                <time class="article__time">NOVEMBER 15, 2015</time>
-
-                <p class="article__content">
-                    Seitan wayfarers bitters direct trade  keytar lomo fanny pack pop-up Carles yr forage drinking vinegar polaroid tote bag vegan street art next level Odd Future gentrify sustainable hella.   
-                </p>
-            </article>
-
-            <article class="article">
-                <a href class="article__title">Tofu Vinyl Salvia Readymade Mixtape Viral</a>
-
-                <time class="article__time">SEPTEMBER 29, 2015</time>
-
-                <p class="article__content">
-                    Retro keffiyeh flannel kogi asymmetrical Portland Etsy mumblecore craft beer occupy fap Neutra organic 3 wolf moon pour-over tofu vinyl salvia readymade mixtape viral 90's single-origin coffee Bushwick kale chips church-key art party Thundercats...
-                </p>
-            </article>
-
-            <article class="article">
-                <a href="#" class="article__title">Umami Quinoa Blog Kitsch Gluten-Free Plaid Pug</a>
-
-                <time class="article__time">AUGUST 17, 2015</time>
-
-                <p class="article__content">
-                    Before they sold out crucifix Kickstarter Godard Marfa chambray four loko wolf scenester Tumblr heirloom chia put a bird on it umami quinoa blog kitsch gluten-free plaid pug.
-                </p>
-            </article>
-
-            <article class="article">
-                <a href="#" class="article__title">Chillwave Stumptown Leggings Raw Denim</a>            
-                <time class="article__time">AUGUST 05, 2015</time>
-
-                <p class="article__content">
-                    Intelligentsia pickled photo booth McSweeney's +1 actually Schlitz whatever 8-bit sriracha iPhone stumptown leggings raw denim Williamsburg food truck aesthetic narwhal authentic selvage Wes Anderson disrupt.
-                </p>
-            </article>
-
-            <article class="article">
-                <a href="#" class="article__title">Shoreditch Cardigan Farm-to-Table Butcher</a>
-
-                <time class="article__time">JULY 31, 2015</time>
-
-                <p class="article__content">
-                    Tonx PBR ethical banjo trust fund meggings fingerstache ennui ugh cornhole fixie meh try-hard Shoreditch cardigan farm-to-table butcher synth DIY irony Banksy paleo mustache.
-                </p>
-            </article>
-
-            <article class="article">
-                <a href="#" class="article__title">Artisan Echo Park Gastropub Brunch</a>
-
-                <time class="article__time">JULY 13, 2015</time>
-
-                <p class="article__content">
-                    Brooklyn cliche cray Blue Bottle skateboard distillery small batch master cleanse semiotics swag lo-fi High Life hoodie hashtag artisan Echo Park gastropub brunch.
-                </p>
-            </article>    
-        </section>
-    </main>
-
-    <nav class="nav">
-        <ul class="nav__list">
-            <li class="nav__item"><a href="#">Sriracha</a></li>
-            <li class="nav__item"><a href="#">Wolf Moon</a></li>
-            <li class="nav__item"><a href="#">Raw Denim</a></li>
-            <li class="nav__item"><a href="#">Mumblecore</a></li>
-            <li class="nav__item"><a href="#">Fingerstache</a></li>
-            <li class="nav__item"><a href="#">Chillwave</a></li>
-        </ul>
-    </nav>
+        </div>
+    </div>
     
+    <!-- side_menu -->
+    <div class="outside">	
+        <div class="inside">
+          <div class="side_row">
+               <div class="in_out">
+                   <em><img src="assets/img/logo.png" alt="오늘의 집"></em>
+               </div>
+               <div class="download">
+                    <a href="#">
+                        <img src="assets/img/download.png" alt="다운로드">앱다운로드
+                    </a>
+                </div>
+                <div class="log_down">
+                   <div class="side_container">
+                        <a class="login" href="#">로그인</a>
+                        <a class="join" href="#">회원가입</a>
+                    </div>
+                </div>
+                <div class="menu">
+                   <div class="side_container">
+                        <ul>
+                            <li><span class="fa fa-dashboard"></span> Home</li>
+                            <li><span class="fa fa-shopping-basket"></span> Shop</li>
+                            <li><span class="fa fa-shopping-cart"></span> Cart</li>
+                            <li><span class="fa fa-info-circle"></span> Info</li>
+                            <li><span class="fa fa-credit-card"></span> Payments</li>
+                            <li><span class="fa fa-leaf"></span> Support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- side_menu end -->  
     
     <!-- footer -->
-<!--
     <footer id="footer">
         <div id="footer_sns">
             <div class="container">
@@ -251,46 +207,9 @@
             </div>
         </div>
     </footer>
--->
     
     <!-- 스크립트 -->
-<!--
-    <script src="assets/js/jquery.min_1.12.4.js"></script>
-    
-    <script>
-        $(document).ready(function() {
-            $('ul.tabs li a').click(function() {
-                var tab_id = $(this).attr('data-tab');
-                
-                $('ul.tabs li').removeClass('current');
-                $('.navi .menu').removeClass('current');
-                
-                $(this).addClass('current');
-                $("#"+tab_id).addClass('current');
-            });
-            
-            $('ul.menu li').click(function(e) {
-                var listId = $(this).parent().attr('id');
-                if(listId === 'tab-1') {
-                    $('ul#tab-1 li').removeClass('active');
-                    $(this).addClass('active');
-                } else if(listId === 'tab-2') {
-                    $('ul#tab-2 li').removeClass('active');
-                    $(this).addClass('active');
-                } else {
-                    $('ul#tab-3 li').removeClass('active');
-                    $(this).addClass('active');
-                }
-            });
-        });
-        
-        $(document).ready(function() {
-            
-        });
-    </script>
--->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/classlist/2014.01.31/classList.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/iamdustan-smoothscroll/0.4.0/smoothscroll.js'></script>
-    <script  src="assets/js/index.js"></script>
+   <script src="assets/js/jquery.min_1.12.4.js"></script>
+    <script src="assets/js/index.js"></script>
 </body>
 </html>

@@ -41,7 +41,9 @@
                            </h1>
                             <nav id="mNav">
                                 <h2 class="ir_so">오늘의집 전체메뉴</h2>
-                                <a href="#" class="ham"><span></span></a>
+                                <button class="close">
+                                    <span class="bar"></span>
+                                </button>
                             </nav>
                        </div>
                        <nav class="nav">
@@ -77,7 +79,7 @@
             <div class="container">
                 <div class="row">
                     <div class="navi">
-                        <ul id="tab-1" class="menu current">
+                        <ul id="tab-1" class="top_menu current">
                             <li class="active"><a href="#">홈</a></li>
                             <li><a href="#">사진</a></li>
                             <li><a href="#">집들이</a></li>
@@ -87,7 +89,7 @@
                             <li><a href="#">질문과답변</a></li>
                             <li><a href="#">이벤트</a></li>
                         </ul>
-                        <ul id="tab-2" class="menu">
+                        <ul id="tab-2" class="top_menu">
                             <li class="active"><a href="#">홈</a></li>
                             <li><a href="#">사진</a></li>
                             <li><a href="#">집들이</a></li>
@@ -95,7 +97,7 @@
                             <li><a href="#">전문가집들이</a></li>
                             <li><a href="#">셀프가이드</a></li>
                         </ul>
-                        <ul id="tab-3" class="menu">
+                        <ul id="tab-3" class="top_menu">
                             <li class="active"><a href="#">이준형</a></li>
                             <li><a href="#">서지원</a></li>
                             <li><a href="#">이다희</a></li>
@@ -371,22 +373,44 @@
         </footer>
     </div>
     
-    <!-- modal -->
-    <div id="modal">
-        <div class="modal_container">
-            <div class="modal_row">
-                <div class="modal">
-                    하이하이
+    <!-- side_menu -->
+    <div class="outside">	
+        <div class="inside">
+          <div class="side_row">
+               <div class="in_out">
+                   <em><img src="assets/img/logo.png" alt="오늘의 집"></em>
+               </div>
+               <div class="download">
+                    <a href="#">
+                        <img src="assets/img/download.png" alt="다운로드">앱다운로드
+                    </a>
+                </div>
+                <div class="log_down">
+                   <div class="side_container">
+                        <a class="login" href="#">로그인</a>
+                        <a class="join" href="#">회원가입</a>
+                    </div>
+                </div>
+                <div class="menu">
+                   <div class="side_container">
+                        <ul>
+                            <li><span class="fa fa-dashboard"></span> Home</li>
+                            <li><span class="fa fa-shopping-basket"></span> Shop</li>
+                            <li><span class="fa fa-shopping-cart"></span> Cart</li>
+                            <li><span class="fa fa-info-circle"></span> Info</li>
+                            <li><span class="fa fa-credit-card"></span> Payments</li>
+                            <li><span class="fa fa-leaf"></span> Support</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- modal end -->
+    <!-- side_menu end -->
     
     <!-- 스크립트 -->
     <script src="assets/js/jquery.min_1.12.4.js"></script>
     <script src="assets/js/slick.min.js"></script>
-    
     <script>
         // 이미지 슬라이더
         $(".review").slick({
@@ -396,37 +420,8 @@
             autoplay: false,
             arrows: true,
         });
-        
-        $(document).ready(function() {
-            $('ul.tabs li a').click(function() {
-                var tab_id = $(this).attr('data-tab');
-                
-                $('ul.tabs li').removeClass('current');
-                $('.navi .menu').removeClass('current');
-                
-                $(this).addClass('current');
-                $("#"+tab_id).addClass('current');
-            });
-            
-            $('ul.menu li').click(function(e) {
-                var listId = $(this).parent().attr('id');
-                if(listId === 'tab-1') {
-                    $('ul#tab-1 li').removeClass('active');
-                    $(this).addClass('active');
-                } else if(listId === 'tab-2') {
-                    $('ul#tab-2 li').removeClass('active');
-                    $(this).addClass('active');
-                } else {
-                    $('ul#tab-3 li').removeClass('active');
-                    $(this).addClass('active');
-                }
-            });
-        });
-        
-        $(document).ready(function() {
-            
-        });
     </script>
+    <script src="assets/js/index.js"></script>
     <!-- 스크립트 end -->
 </body>
 </html>
