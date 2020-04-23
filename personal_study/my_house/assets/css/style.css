@@ -11,7 +11,7 @@
 
 /* 가운데 영역 */
 .container {position: relative; width: 1280px; margin: 0 auto; background: rgba(0,0,0,0);}
-.side_container {padding: 0 0 15px 0; border-bottom: 1px solid #ededed;}
+.side_container {padding: 13px 0; border-bottom: 1px solid #ededed;}
 
 /* 로우 영역 */
 .row {padding: 0 24px;}
@@ -474,8 +474,7 @@ line-height: 2;
 }
 
 .menu li {
-opacity: 0;
-padding: 12px 0;
+padding: 7px;
 border-bottom: 1px solid rgba(255,255,255,.5);
 -webkit-transition: all .25s linear;
 transition: all .25s linear;
@@ -529,13 +528,13 @@ opacity: 1;
 .in .inside .download {position: absolute; top: 20px; right: 15px; padding: 9px 0;}
 .in .inside .download a {text-align: center; font-size: 12px; font-weight: 500; color: #757575;}
 .in .inside .download img {position: absolute; top: 11px; left: -25px; width: 20px;}
-.in .inside .log_down {text-align: center;}
+.in .inside .log_down {text-align: center; padding-bottom: 22px; border-bottom: 1px solid #dbdbdb;}
 .in .inside .log_down a {
     display: inline-block;
     width: 44%;
     box-sizing: border-box;
     margin: 5px 5px;
-    padding: 4px 0 6px;
+    padding: 8px 0 8px;
     border: 1px solid #35c5f0;
     border-radius: 6px;
     font-size: 15px;
@@ -547,6 +546,17 @@ opacity: 1;
     color: #fff;
     background: #35c5f0;
 }
+.in .inside .menus {}
+.in .inside .menus .side_cont {position: relative;}
+.in .inside .menus .side_cont ul {padding-top: 13px;}
+.in .inside .menus .side_cont li {padding: 7px; color: #424242; font-size: 14px; font-weight: 700;}
+.in .inside .menus .side_cont li.action {color: #35c5f0;}
+.in .inside .menus i {padding: 0 10px; font-size: 18px; font-weight: 500; color: #424242;}
+.in .inside .menus em {font-size: 18px; font-weight: 500; color: #424242;}
+.in .inside .menus .action em {color: #35c5f0;}
+.in .inside .menus p {position: absolute; top: 22px; right: 15px; width: 10px; height: 10px;}
+.in .inside .menus p.i1 {background-position: -40px -120px;}
+.in .inside .menuu {padding: 13px 0;}
 
 /* 미디어 쿼리 */
 @media (max-width: 1290px) {
