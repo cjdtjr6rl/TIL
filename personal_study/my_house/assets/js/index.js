@@ -28,4 +28,26 @@ $(document).ready(function() {
             $(this).addClass('active');
         }
     });
+    
+    $('.side_cont').click(function(e) {
+        var menu_id = $(this).attr('menu-tab');
+        
+        $('.side_cont').removeClass('action');
+        
+        $(this).addClass('action');
+    });
+    
+    $('.ul.side_menu li').click(function(e) {
+        var menuId = $(this).parent().attr('id');
+        if(menuId === 'menu-1') {
+            $('ul#menu-1 li').removeClass('action');
+            $(this).addClass('action');
+        } else if(menuId === 'menu-2') {
+            $('ul#menu-2 li').removeClass('action');
+            $(this).addClass('action');
+        } else {
+            $('ul#menu-3 li').removeClass('action');
+            $(this).addClass('action');
+        }
+    });
 });

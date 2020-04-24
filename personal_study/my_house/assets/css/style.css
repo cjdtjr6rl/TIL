@@ -548,7 +548,8 @@ opacity: 1;
 }
 .in .inside .menus {}
 .in .inside .menus .side_cont {position: relative;}
-.in .inside .menus .side_cont ul {padding-top: 13px;}
+.in .inside .menus .side_cont ul {display: none; padding-top: 13px;}
+.in .inside .menus .side_cont.action ul {display: block;} /*효과주기 아직 안됨;*/
 .in .inside .menus .side_cont li {padding: 7px; color: #424242; font-size: 14px; font-weight: 700;}
 .in .inside .menus .side_cont li.action {color: #35c5f0;}
 .in .inside .menus i {padding: 0 10px; font-size: 18px; font-weight: 500; color: #424242;}
