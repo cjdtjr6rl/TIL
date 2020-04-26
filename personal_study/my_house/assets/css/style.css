@@ -1,13 +1,18 @@
 @charset "utf-8";
 
-/* 레이아웃 */
+/* 공통 레이아웃 */
 #mNav {display: none; position: absolute; top: 6px; left: 14px; padding: 10px 0; z-index: 99999;}
 #header {width: 100%; height: 80px; border-bottom: 1px solid #dbdbdb; background: rgba(0,0,0,0);}
 #nav {width: 100%; height: 57px; border-bottom: 1px solid #dbdbdb; background: rgba(0,0,0,0);}
+#footer {background: #fafafa;}
+
+/* index 레이아웃 */
 #section {position: relative; height: 597px;}
 #shortcut {position: relative; height: 170px;}
 #review {}
-#footer {background: #fafafa;}
+
+/* member 레이아웃 */
+#section1 {width: 100%; height: 500px;}
 
 /* 가운데 영역 */
 .container {position: relative; width: 1280px; margin: 0 auto; background: rgba(0,0,0,0);}
@@ -558,6 +563,120 @@ opacity: 1;
 .in .inside .menus p {position: absolute; top: 22px; right: 15px; width: 10px; height: 10px;}
 .in .inside .menus p.i1 {background-position: -40px -120px;}
 .in .inside .menuu {padding: 13px 0;}
+
+/* member.html */
+/* section1 */
+.section1 {}
+.section1 .member1 {position: relative; float: left; width: 33%;}
+.section1 .member2 {position: relative; float: left; width: 33%;}
+.section1 .member3 {position: relative; float: left; width: 33%;}
+/*
+.section1 .member1 a {
+    position: absolute; width: 200px; 
+    padding: 18px 0;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    border-radius: 0;
+    background: #e2525c;
+}
+*/
+.page-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.blur-it {
+  filter: blur(4px);
+}
+
+/*
+a.btn {
+  width: 200px;
+  padding: 18px 0;
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  border-radius: 0;
+  background: #e2525c;
+}
+*/
+
+.modal-wrapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0; 
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.25s ease-in-out;
+}
+
+.modal-wrapper.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  width: 600px;
+  height: 400px;
+  display: block;
+  margin: 50% 0 0 -300px;
+  position: relative;
+  top: 50%; 
+  left: 50%;
+  background: #fff;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.modal-wrapper.open .modal {
+  margin-top: -200px;
+  opacity: 1;
+}
+
+.head { 
+  width: 90%;
+  height: 32px;
+  padding: 12px 30px;
+  overflow: hidden;
+  background: #e2525c;
+}
+
+.btn-close {
+  font-size: 28px;
+  display: block;
+  float: right;
+  color: #fff;
+}
+
+.content {
+  padding: 10%;
+}
+
+.good-job {
+  text-align: center;
+  font-family: 'Montserrat', Arial,       Helvetica, sans-serif;
+  color: #e2525c;
+}
+.good-job .fa-thumbs-o-up {
+  font-size: 60px;
+}
+.good-job h1 {
+  font-size: 45px;
+}
 
 /* 미디어 쿼리 */
 @media (max-width: 1290px) {
