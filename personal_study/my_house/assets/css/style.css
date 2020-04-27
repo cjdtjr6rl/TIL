@@ -12,7 +12,7 @@
 #review {}
 
 /* member 레이아웃 */
-#section1 {width: 100%; height: 500px;}
+#section1 {width: 100%; height: auto;}
 
 /* 가운데 영역 */
 .container {position: relative; width: 1280px; margin: 0 auto; background: rgba(0,0,0,0);}
@@ -566,62 +566,35 @@ opacity: 1;
 
 /* member.html */
 /* section1 */
-.section1 {}
-.section1 .member1 {position: relative; float: left; width: 33%;}
-.section1 .member2 {position: relative; float: left; width: 33%;}
-.section1 .member3 {position: relative; float: left; width: 33%;}
-/*
-.section1 .member1 a {
-    position: absolute; width: 200px; 
-    padding: 18px 0;
-    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-    font-weight: 700;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: #fff;
-    border-radius: 0;
-    background: #e2525c;
-}
-*/
+.section1 {display: inline-block;}
+.section1 img {width: 50%;}
+.section1 .page-wrapper p {font-size: 25px; font-weight: 600; padding-top: 20px;}
+.section1 .member1 {position: relative; float: left; width: 33.3333%;}
+.section1 .member2 {position: relative; float: left; width: 33.3333%;}
+.section1 .member3 {position: relative; float: left; width: 33.3333%;}
+
 .page-wrapper {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 40% 0;
 }
 
 .blur-it {
   filter: blur(4px);
 }
 
-/*
-a.btn {
-  width: 200px;
-  padding: 18px 0;
-  position: absolute;
-  top: 50%; 
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-  font-weight: 700;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #fff;
-  border-radius: 0;
-  background: #e2525c;
-}
-*/
-
 .modal-wrapper {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0; 
-  left: 0;
-  background: rgba(0, 0, 0, 0.3);
-  visibility: hidden;
-  opacity: 0;
-  transition: all 0.25s ease-in-out;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0; 
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    visibility: hidden;
+    opacity: 0;
+    z-index: 2;
+    transition: all 0.25s ease-in-out;
 }
 
 .modal-wrapper.open {
@@ -630,13 +603,13 @@ a.btn {
 }
 
 .modal {
-  width: 600px;
-  height: 400px;
+  width: 65%;
+  height: 60%;
   display: block;
-  margin: 50% 0 0 -300px;
+  margin: 50% 0 0 -22%;
   position: relative;
-  top: 50%; 
-  left: 50%;
+  top: 35%; 
+  left: 40%;
   background: #fff;
   opacity: 0;
   transition: all 0.5s ease-in-out;
@@ -648,15 +621,15 @@ a.btn {
 }
 
 .head { 
-  width: 90%;
-  height: 32px;
-  padding: 12px 30px;
+  width: 100%;
+  height: 7%;
   overflow: hidden;
   background: #e2525c;
 }
 
 .btn-close {
-  font-size: 28px;
+    padding-right: 10px;
+  font-size: 25px;
   display: block;
   float: right;
   color: #fff;
@@ -668,7 +641,7 @@ a.btn {
 
 .good-job {
   text-align: center;
-  font-family: 'Montserrat', Arial,       Helvetica, sans-serif;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   color: #e2525c;
 }
 .good-job .fa-thumbs-o-up {
@@ -676,6 +649,19 @@ a.btn {
 }
 .good-job h1 {
   font-size: 45px;
+}
+
+#bodymovin {
+  width: 300px;
+  height: 300px;
+  display: block;
+  display: flex;
+  align-items: flex-end;
+}
+
+svg {
+  width: 100%;
+  height: auto !important;
 }
 
 /* 미디어 쿼리 */
@@ -746,6 +732,11 @@ a.btn {
     .footer_sns {position: static; text-align: center; background: #ededed; padding-bottom: 15px;}
     .footer_sns .tel {display: none;}
     .footer_info {width: 100%; text-align: center;}
+    
+    .section1 .member1 {width: 100%;}
+    .section1 .member2 {width: 100%;}
+    .section1 .member3 {width: 100%;}
+    .page-wrapper {padding: 20px 0;}
 }
 @media (max-width: 430px) {
     .in .inside .download {top: 12px;}
