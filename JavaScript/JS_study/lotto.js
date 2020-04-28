@@ -60,24 +60,33 @@ function ballStyle(num, resultPage) {
 //        resultPage.appendChild(ball); 
 //    }, 1000);
 //}
-setTimeout(function nonscallback() {
-    ballStyle(pick[0], resultPage);
-}, 1000);
-setTimeout(function nonscallback() {
-    ballStyle(pick[1], resultPage);
-}, 2000);
-setTimeout(function nonscallback() {
-    ballStyle(pick[2], resultPage);
-}, 3000);
-setTimeout(function nonscallback() {
-    ballStyle(pick[3], resultPage);
-}, 4000);
-setTimeout(function nonscallback() {
-    ballStyle(pick[4], resultPage);
-}, 5000);
-setTimeout(function nonscallback() {
-    ballStyle(pick[5], resultPage);
-}, 6000);
+// 클로저 해결방법..!!
+for(var i = 0; i < pick.length; i++) {
+    (function closer(j) { // 즉시실행함수
+        setTimeout(function nonscallback() {
+            ballStyle(pick[j], resultPage);
+        }, (j+1)*1000);
+    })(i);
+}
+// 클로저 없이 노가다..!
+//setTimeout(function nonscallback() {
+//    ballStyle(pick[0], resultPage);
+//}, 1000);
+//setTimeout(function nonscallback() {
+//    ballStyle(pick[1], resultPage);
+//}, 2000);
+//setTimeout(function nonscallback() {
+//    ballStyle(pick[2], resultPage);
+//}, 3000);
+//setTimeout(function nonscallback() {
+//    ballStyle(pick[3], resultPage);
+//}, 4000);
+//setTimeout(function nonscallback() {
+//    ballStyle(pick[4], resultPage);
+//}, 5000);
+//setTimeout(function nonscallback() {
+//    ballStyle(pick[5], resultPage);
+//}, 6000);
 
 // 보너스 공도 출력하기
 setTimeout(function nonscallback() {
