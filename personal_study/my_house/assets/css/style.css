@@ -638,7 +638,7 @@ opacity: 1;
 }
 
 .content {
-  padding: 10%;
+  padding: 3% 10%;
 }
 
 .good-job {
@@ -655,8 +655,10 @@ opacity: 1;
 .member_spec {font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 20px; font-weight: 500;}
 .member_spec table {width: 100%; font-size: 15px; border: 1px solid #444; border-collapse: collapse; margin-bottom: 15px;}
 .member_spec table th, td {border: 1px solid #444; text-align: center;}
-.member_spec strong {}
-.member_spec strong img {width: 100%;}
+.member_spec strong {line-height: 1.5;}
+.member_spec strong img {width: 100%; padding-top: 10px;}
+.member_spec strong p {text-align: center; padding: 10px; border-bottom: 1px solid #777;}
+.member_spec strong p:last-child {border: 0;}
 
 #bodymovin {
   width: 300px;
@@ -686,6 +688,8 @@ svg {
     .section .cont_in .who h2 {font-size: 25px;}
     .section .cont_out {height: 440px;}
     .section .event {height: 440px;}
+    
+    .member_spec strong {font-size: 15px;}
 }
 @media (max-width: 785px) {
     #mNav {display: block;}
@@ -740,12 +744,19 @@ svg {
     .footer_sns .tel {display: none;}
     .footer_info {width: 100%; text-align: center;}
     
+    .section1 img {width: 30%;}
     .section1 .member1 {width: 100%;}
     .section1 .member2 {width: 100%;}
     .section1 .member3 {width: 100%;}
     .page-wrapper {padding: 20px 0;}
+    .modal {width: 85%; left: 30%;}
+    .member_spec table {font-size: 13px;}
+    .member_spec strong {font-size: 13px; line-height: 0;}
 }
 @media (max-width: 430px) {
     .in .inside .download {top: 12px;}
     .in .inside .download a {font-size: 10px;}
+    
+    .member_spec table {font-size: 10px;}
+    .member_spec strong {font-size: 11px;}
 }
