@@ -24,6 +24,7 @@
             }
 */
 /*            지뢰찾기 스타일*/
+/*
             table {
                 border-collapse: collapse;
             }
@@ -44,6 +45,12 @@
             td.question {
                 background: orange;
             }
+*/
+/*            반응속도 스타일*/
+            #screen {width: 300px; height: 200px; text-align: center; user-select: none;}
+            #screen.waiting {background-color: aqua;}
+            #screen.ready {background-color: red; color: #fff;}
+            #screen.now {background-color: greenyellow;}
         </style>
     </head>
     <body>
@@ -106,6 +113,7 @@
        <script src="rockPaperScissors.js"></script>
 -->
 <!--   지뢰찾기-->
+<!--
         <input id="hor" type="number" placeholder="가로" value="10">
         <input id="ver" type="number" placeholder="세로" value="10">
         <input id="mine" type="number" placeholder="지뢰" value="20">
@@ -120,5 +128,9 @@
         </table>
         <div id="result"></div>
         <script src="minesweeper.js"></script>
+-->
+<!--        반응속도-->
+      <div id="screen" class="waiting">클릭해서 시작하세요.</div>
+       <script src="reaction.js"></script>
     </body>
 </html>
