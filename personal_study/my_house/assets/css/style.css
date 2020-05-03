@@ -692,6 +692,7 @@ svg {
     .member_spec strong {font-size: 15px;}
 }
 @media (max-width: 785px) {
+    html {line-height: 1.2;}
     #mNav {display: block;}
     #header {height: 60px;}
     .row {padding: 0;}
@@ -754,6 +755,7 @@ svg {
     .member_spec strong {font-size: 13px; line-height: 0;}
 }
 @media (max-width: 430px) {
+    html {line-height: 1;}
     .in .inside .download {top: 12px;}
     .in .inside .download a {font-size: 10px;}
     
