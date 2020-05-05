@@ -6,6 +6,7 @@
         <title>index</title>
         <style>
 /*            틱택토 스타일*/
+/*
             td {
                 border: 1px solid #000;
                 width: 50px; height: 50px;
@@ -13,6 +14,7 @@
                 font-weight: bold;
                 font-size: 35px;
             }
+*/
 /*            가위바위보 스타일*/
 /*
             #computer {
@@ -51,6 +53,45 @@
             #screen.ready {background-color: red; color: #fff;}
             #screen.now {background-color: greenyellow;}
 */
+/*            카드뒤집기*/
+            .card {
+                display: inline-block;
+                margin-right: 20px;
+                margin-bottom: 20px;
+                width: 70px;
+                height: 100px;
+                perspective: 140px;
+            }
+            
+            .card-inner {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                transition: transform .8s;
+                transform-style: preserve-3d;
+            }
+            
+            .card.flipped .card-inner {
+                transform: rotateY(180deg)
+            }
+            
+            .card-front {
+                background: navy;
+            }
+            
+            .card-front, .card-back {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border: 1px solid #000;
+                backface-visibility: hidden;
+            }
+            
+            .card-back {
+                transform: rotateY(180deg);
+                background: gainsboro;
+            }
         </style>
     </head>
     <body>
@@ -91,7 +132,7 @@
             </tr>
         </table>
 -->
-    <script src="/tictakto.js"></script>
+<!--    <script src="/tictakto.js"></script>-->
 <!--    로또 추첨기-->
 <!--
         <div>당첨 숫자</div>
@@ -134,5 +175,7 @@
       <div id="screen" class="waiting">클릭해서 시작하세요.</div>
        <script src="reaction.js"></script>
 -->
+<!--       짝맞추기-->
+   <script src="matchCard.js"></script>
     </body>
 </html>
