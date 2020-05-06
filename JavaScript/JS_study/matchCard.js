@@ -3,6 +3,8 @@ var hor = 3;
 var color_num = ['red', 'red', 'orange', 'orange', 'green', 'green', 'yellow', 'yellow', 'white', 'white', 'pink', 'pink'];
 var color = [];
 var click_flag = true;
+var click_card = [];
+var success_card = [];
 for(var i = 0; color_num.length > 0; i++) { // 색깔후보들(color_num)을 색깔(color)에 random으로 넣어주는 것
     color = color.concat(color_num.splice(Math.floor(Math.random() * color_num.length), 1));
 }
@@ -25,8 +27,24 @@ function cardSetting(ver, hor) {
         card.appendChild(cardInner);
         (function(c) { // 즉시실행함수로 이벤트리스너를 한번 감싸면 c라는 새로운 스코프가 생겨 클로저 문제를 해결
             card.addEventListener('click', function() {
-                if(click_flag) {
+                if(click_flag && !success_card.includes(c)) {
                     c.classList.toggle('flipped');
+                    click_card.push(c);
+                    if(click_card.length === 2) {
+                        if(click_card[0].querySelector('.card-back').style.backgroundColor === click_card[1].querySelector('.card-back').style.backgroundColor){ // 두 카드의 색이 같으면
+                            success_card.push(click_card[0]);
+                            success_card.push(click_card[1]);
+                            click_card = [];
+                        } else { // 두 카드의 색깔이 다르면
+                            click_flag = false;
+                            setTimeout(function() {
+                                click_card[0].classList.remove('flipped');
+                                click_card[1].classList.remove('flipped');
+                                click_flag = true;
+                                click_card = [];
+                            }, 1000);
+                        }
+                    }
                 }
             });
         })(card);
