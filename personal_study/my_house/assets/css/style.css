@@ -8,6 +8,7 @@
 
 /* index 레이아웃 */
 #section {position: relative; height: 597px;}
+#section2 {display: inline-block; width: 100%; height: 600px; margin: 20% 0;}
 #shortcut {position: relative; height: 170px;}
 #review {}
 
@@ -416,6 +417,7 @@ z-index: 1;
         transform: translateX(0);
 -webkit-transition: 0;
 transition: 0;
+    height: 751.01px;
 }
 
 .inside {
@@ -641,21 +643,13 @@ opacity: 1;
   padding: 3% 10%;
 }
 
-.good-job {
-  text-align: center;
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-}
-.good-job .fa-thumbs-o-up {
-  font-size: 60px;
-}
-.good-job h1 {
-  font-size: 45px;
-}
-
 .member_spec {font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 20px; font-weight: 500;}
 .member_spec table {width: 100%; font-size: 15px; border: 1px solid #444; border-collapse: collapse; margin-bottom: 15px;}
 .member_spec table th, td {border: 1px solid #444; text-align: center;}
-.member_spec strong {line-height: 1.5;}
+.member_spec .intr {margin-bottom: 10px; font-size: 18px;}
+.member_spec .intro1 {width: 25%; float: left;}
+.member_spec .intro2 {width: 75%; float: left;}
+.member_spec strong {line-height: 1.5; font-size: 20px;}
 .member_spec strong img {width: 100%; padding-top: 10px;}
 .member_spec strong p {text-align: center; padding: 10px; border-bottom: 1px solid #777;}
 .member_spec strong p:last-child {border: 0;}
@@ -672,6 +666,63 @@ svg {
   width: 100%;
   height: auto !important;
 }
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,,800,900);
+*{
+	outline: none;
+}
+body {
+  background: -webkit-linear-gradient(white);
+  background: linear-gradient(white);
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Raleway', sans-serif;
+}
+
+.section2 .title {
+  color:#333;
+  letter-spacing: -5px;
+  margin-left: -45px;
+  font-weight: 800;
+  color: transparent;
+  font-size: 200px;
+  background: url("https://download.unsplash.com/uploads/14116941824817ba1f28e/78c8dff1") repeat;
+  background-position: 30% 10%;
+	background-size: 200%;
+  -webkit-background-clip: text;
+  position: relative;
+  text-align: center;
+    line-height: 200px;
+	text-transform: uppercase;
+}
+.section2 .lg{
+	font-weight: 400;
+	
+}
+
+.section2 a,.subtitle {
+  display: block;
+  text-align: center;
+   font-style: italic;
+text-decoration: initial;
+  text-transform: uppercase;
+  padding-top: 10px;
+  color:#E93074;
+}
+.section2 h1 {
+  text-align: center;
+  font-family: 'Monsieur La Doulaise', cursive;
+  font-size: 40px;
+}
+
+
+
+
+
+
 
 /* 미디어 쿼리 */
 @media (max-width: 1290px) {
@@ -761,4 +812,8 @@ svg {
     
     .member_spec table {font-size: 10px;}
     .member_spec strong {font-size: 11px;}
+    
+    .member_spec .intr {font-size: 10px;}
+    .member_spec .intro1 {width: 100%;}
+    .member_spec .intro2 {width: 100%;}
 }
