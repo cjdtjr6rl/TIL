@@ -2,6 +2,32 @@ var ver = 4;
 var hor = 3;
 var colors = ['red', 'red', 'orange', 'orange', 'green', 'green', 'yellow', 'yellow', 'white', 'white', 'pink', 'pink'];
 var color_num = colors.slice(); // 백업변수, colors와 color_num이 참조관계에 있으므로 slice를 사용하여 참조관계를 끊는다.
+// 이 방법 외에 참조를 끊는 방법은 var color_num = JSON.parse(JSON.stringify(colors));로 깊은 복사가 된다.
+// 배열 역시 깊은 복사를 사용하려면 arr.slice();를 사용하면 할 수 있다. -->
+// arr = [1, 2, 3];
+// arr2 = arr.slice();
+// arr2[0] = 10;
+// arr[0]; --> 1
+
+// 얕은복사, 깊은복사 정리
+// var a = 10;
+// b = a; --> 복사
+
+// var c = { d: 1 };
+// var e = c; --> 참조
+
+// var obj1 = { a: 1 } --> 객체 안에 객체가 없는 1단계만 사용 가능
+// var obj2 = {};
+// Object.keys(obj).forEach(function(key) {
+//  obj2[key] = obj[key];
+// }); --> 1단계만 복사 나머지는 참조
+
+// var arr1 = [1, 2, 3];
+// var arr2 = arr1.slice() -->  1단계만 복사, 나머지는 참조
+
+// var obj3 = JSON.stringify(JSON.parse(obj1)); --> 복사 --> 2,3 단계 사용 가능
+// var arr3 = JSON.stringify(JSON.parse(arr1)); --> 복사
+
 var color = [];
 var click_flag = true;
 var click_card = [];
