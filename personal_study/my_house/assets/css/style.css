@@ -8,7 +8,7 @@
 
 /* index 레이아웃 */
 #section {position: relative; height: 597px;}
-#section2 {display: inline-block; width: 100%; height: 600px; margin: 20% 0;}
+#section2 {display: inline-block; width: 100%; margin: 20% 0;}
 #shortcut {position: relative; height: 170px;}
 #review {}
 
@@ -685,7 +685,6 @@ body {
 .section2 .title {
   color:#333;
   letter-spacing: -5px;
-  margin-left: -45px;
   font-weight: 800;
   color: transparent;
   font-size: 200px;
@@ -741,6 +740,8 @@ text-decoration: initial;
     .section .event {height: 440px;}
     
     .member_spec strong {font-size: 15px;}
+    
+    .section2 .title {font-size: 150px; line-height: 120px;}
 }
 @media (max-width: 785px) {
     html {line-height: 1.2;}
@@ -804,6 +805,9 @@ text-decoration: initial;
     .modal {width: 85%; left: 30%;}
     .member_spec table {font-size: 13px;}
     .member_spec strong {font-size: 13px; line-height: 0;}
+    
+    #section2 {margin: 50% 0;}
+    .section2 .title {font-size: 100px; line-height: 120px;}
 }
 @media (max-width: 430px) {
     html {line-height: 1;}
@@ -816,4 +820,7 @@ text-decoration: initial;
     .member_spec .intr {font-size: 10px;}
     .member_spec .intro1 {width: 100%;}
     .member_spec .intro2 {width: 100%;}
+    
+    #section2 {margin: 100% 0;}
+    .section2 .title {font-size: 65px; line-height: 90px;}
 }
