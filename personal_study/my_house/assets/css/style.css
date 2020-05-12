@@ -647,9 +647,9 @@ opacity: 1;
 .member_spec table {width: 100%; font-size: 15px; border: 1px solid #444; border-collapse: collapse; margin-bottom: 15px;}
 .member_spec table th, td {border: 1px solid #444; text-align: center;}
 .member_spec .intr {margin-bottom: 10px; font-size: 18px;}
-.member_spec .intro1 {width: 25%; float: left;}
-.member_spec .intro2 {width: 75%; float: left;}
-.member_spec strong {line-height: 1.5; font-size: 20px;}
+.member_spec .intro1 {width: 24%; float: left;}
+.member_spec .intro2 {width: 72%; float: left; border-left: 1px solid #dbdbdb; padding-left: 3%;}
+.member_spec strong {line-height: 1.5; font-size: 16px;}
 .member_spec strong img {width: 100%; padding-top: 10px;}
 .member_spec strong p {text-align: center; padding: 10px; border-bottom: 1px solid #777;}
 .member_spec strong p:last-child {border: 0;}
@@ -805,6 +805,7 @@ text-decoration: initial;
     .modal {width: 85%; left: 30%;}
     .member_spec table {font-size: 13px;}
     .member_spec strong {font-size: 13px; line-height: 0;}
+    .member_spec .intr {font-size: 15px;}
     
     #section2 {margin: 50% 0;}
     .section2 .title {font-size: 100px; line-height: 120px;}
@@ -819,7 +820,7 @@ text-decoration: initial;
     
     .member_spec .intr {font-size: 10px;}
     .member_spec .intro1 {width: 100%;}
-    .member_spec .intro2 {width: 100%;}
+    .member_spec .intro2 {width: 100%; padding: 0; border: 0;}
     
     #section2 {margin: 100% 0;}
     .section2 .title {font-size: 65px; line-height: 90px;}
