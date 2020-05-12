@@ -54,6 +54,7 @@
             #screen.now {background-color: greenyellow;}
 */
 /*            카드뒤집기*/
+/*
             .card {
                 display: inline-block;
                 margin-right: 20px;
@@ -90,6 +91,61 @@
             
             .card-back {
                 transform: rotateY(180deg);
+            }
+*/
+/*            짭스스톤 스타일*/
+            #my, #rival {
+                display: inline-block;
+                vertical-align: bottom;
+                margin-right: 50px;
+            }
+            
+            #my-deck, #rival-deck {
+                display: inline-block;
+                vertical-align: top;
+                width: 200px;
+            }
+            
+            #rival-deck, #rival-hero, #rival-cards, #my-deck, #my-hero, #my-cards {
+                text-align: center;
+            }
+            
+            .card {
+                width: 50px; height: 75px;
+                display: inline-block;
+                position: relative;
+                border: 1px solid #000;
+                margin-bottom: 10px;
+            }
+            
+            .card-name {
+                text-align: center;
+                font-size: 12px;
+            }
+            
+            .card-att, .card-hp, .card-cost {
+                position: absolute;
+                bottom: 0;
+                width: 15px; height: 15px;
+                font-size: 12px;
+                text-align: center;
+                line-height: 15px;
+                border-radius: 50%;
+                display: inline-block;
+                border: 1px solid #000;
+            }
+            
+            .card-cost {
+                bottom: auto;
+                top: 0; right: 0;
+            }
+            
+            .card-att {
+                left: 0;
+            }
+            
+            .card-hp {
+                right: 0;
             }
         </style>
     </head>
@@ -175,7 +231,122 @@
        <script src="reaction.js"></script>
 -->
 <!--       짝맞추기-->
+<!--
   <div id="wrapper"></div>
    <script src="matchCard.js"></script>
+-->
+<!--       짭스스톤-->
+         <div id="rival">
+           <div class="rival-cost">코스트: <span>10</span></div>
+            <div id="rival-hero"> <!-- 상대방 영웅 -->
+                <div class="card">
+                    <div class="card-name">적 영웅</div>
+                    <div class="card-att">3</div>
+                    <div class="card-hp">8</div>
+                </div>
+            </div>
+            <div id="rival-cards">
+                <div class="card">
+                    <div class="card-cost">2</div>
+                    <div class="card-att">3</div>
+                    <div class="card-hp">8</div>
+                </div>
+                <div class="card">
+                   <div class="card-cost">2</div>
+                    <div class="card-att">3</div>
+                    <div class="card-hp">8</div>
+                </div>
+                <div class="card">
+                   <div class="card-cost">2</div>
+                    <div class="card-att">3</div>
+                    <div class="card-hp">8</div>
+                </div>
+            </div>
+        </div>
+        <div id="rival-deck">
+           <div>덱</div>
+            <div class="card">
+               <div class="card-cost">2</div>
+                <div class="card-att">3</div>
+                <div class="card-hp">8</div>
+            </div>
+            <div class="card">
+               <div class="card-cost">2</div>
+                <div class="card-att">3</div>
+                <div class="card-hp">8</div>
+            </div>
+            <div class="card">
+               <div class="card-cost">2</div>
+                <div class="card-att">3</div>
+                <div class="card-hp">8</div>
+            </div>
+            <div class="card">
+               <div class="card-cost">2</div>
+                <div class="card-att">3</div>
+                <div class="card-hp">8</div>
+            </div>
+            <div class="card">
+               <div class="card-cost">2</div>
+                <div class="card-att">3</div>
+                <div class="card-hp">8</div>
+            </div>
+        </div>
+        <hr>
+        <div id="my">
+            <div id="my-cards">
+                <div class="card">
+                   <div class="card-cost">2</div>
+                    <div class="card-att">5</div>
+                    <div class="card-hp">10</div>
+                </div>
+                <div class="card">
+                   <div class="card-cost">2</div>
+                    <div class="card-att">5</div>
+                    <div class="card-hp">10</div>
+                </div>
+                <div class="card">
+                   <div class="card-cost">2</div>
+                    <div class="card-att">5</div>
+                    <div class="card-hp">10</div>
+                </div>
+            </div>
+            <div id="my-hero"> <!-- 나의 영웅 -->
+                <div class="card">
+                    <div class="card-name">내 영웅</div>
+                    <div class="card-att">5</div>
+                    <div class="card-hp">10</div>
+                </div>
+            </div>
+            <div class="my-cost">코스트: <span>10</span></div>
+        </div>
+        <div id="my-deck">
+           <div>덱</div>
+            <div class="card">
+               <div class="card-cost">2</div>
+                <div class="card-att">5</div>
+                <div class="card-hp">10</div>
+            </div>
+            <div class="card">
+               <div class="card-cost">2</div>
+                <div class="card-att">5</div>
+                <div class="card-hp">10</div>
+            </div>
+            <div class="card">
+               <div class="card-cost">2</div>
+                <div class="card-att">5</div>
+                <div class="card-hp">10</div>
+            </div>
+            <div class="card">
+               <div class="card-cost">2</div>
+                <div class="card-att">5</div>
+                <div class="card-hp">10</div>
+            </div>
+            <div class="card">
+               <div class="card-cost">2</div>
+                <div class="card-att">5</div>
+                <div class="card-hp">10</div>
+            </div>
+        </div>
+        <script src="jjapsStone.js"></script>
     </body>
 </html>
