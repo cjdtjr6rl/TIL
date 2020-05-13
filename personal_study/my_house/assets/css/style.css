@@ -9,6 +9,7 @@
 /* index 레이아웃 */
 #section {position: relative; height: 597px;}
 #section2 {display: inline-block; width: 100%; margin: 20% 0;}
+#section3 {background-color: rgba(243,243,243,1); margin: 20% 0;}
 #shortcut {position: relative; height: 170px;}
 #review {}
 
@@ -572,8 +573,11 @@ opacity: 1;
 .section1 img {width: 50%;}
 .section1 .page-wrapper p {font-size: 25px; font-weight: 600; padding-top: 20px;}
 .section1 .member1 {position: relative; float: left; width: 33.3333%;}
+.section1 .member1 span {font-size: 15px;}
 .section1 .member2 {position: relative; float: left; width: 33.3333%;}
+.section1 .member2 span {font-size: 15px;}
 .section1 .member3 {position: relative; float: left; width: 33.3333%;}
+.section1 .member3 span {font-size: 15px;}
 
 .page-wrapper {
     width: 100%;
@@ -653,6 +657,7 @@ opacity: 1;
 .member_spec strong img {width: 100%; padding-top: 10px;}
 .member_spec strong p {text-align: center; padding: 10px; border-bottom: 1px solid #777;}
 .member_spec strong p:last-child {border: 0;}
+.member_spec strong p.gogogo {font-size: 30px; color: #35C5F0}
 
 #bodymovin {
   width: 300px;
@@ -688,13 +693,14 @@ body {
   font-weight: 800;
   color: transparent;
   font-size: 200px;
+    font-family: 'Indie Flower', cursive;
   background: url("https://download.unsplash.com/uploads/14116941824817ba1f28e/78c8dff1") repeat;
   background-position: 30% 10%;
 	background-size: 200%;
   -webkit-background-clip: text;
   position: relative;
   text-align: center;
-    line-height: 200px;
+    line-height: 230px;
 	text-transform: uppercase;
 }
 .section2 .lg{
@@ -713,12 +719,12 @@ text-decoration: initial;
 }
 .section2 h1 {
   text-align: center;
-  font-family: 'Monsieur La Doulaise', cursive;
+  font-family: "Nanum Gothic", sans-serif;
   font-size: 40px;
 }
 
-
-
+.section3 {text-align: center;}
+.section3 img {width: 50%;}
 
 
 
