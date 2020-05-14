@@ -578,6 +578,7 @@ opacity: 1;
 .section1 .member2 span {font-size: 15px;}
 .section1 .member3 {position: relative; float: left; width: 33.3333%;}
 .section1 .member3 span {font-size: 15px;}
+.section1 .content a.btn-close {padding: 0; float: none; color: #fff;}
 
 .page-wrapper {
     width: 100%;
@@ -827,7 +828,12 @@ text-decoration: initial;
     .member_spec .intr {font-size: 10px;}
     .member_spec .intro1 {width: 100%;}
     .member_spec .intro2 {width: 100%; padding: 0; border: 0;}
+    .member_spec strong p.gogogo {font-size: 15px;}
+    
+    .section1 .page-wrapper p {font-size: 18px;}
     
     #section2 {margin: 100% 0;}
     .section2 .title {font-size: 65px; line-height: 90px;}
+    
+    #section3 {margin: 0 0 100% 0;}
 }
