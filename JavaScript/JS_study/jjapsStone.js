@@ -2,10 +2,15 @@ var rival_hero = document.getElementById('rival-hero');
 var my_hero = document.getElementById('my-hero');
 var rival_deck = document.getElementById('rival-deck');
 var my_deck = document.getElementById('my-deck');
+var rival_field = document.getElementById('rival-cards');
+var my_field = document.getElementById('my-cards');
 var rival_deck_data = [];
 var my_deck_data = [];
 var rival_hero_data;
 var my_hero_data;
+var rival_field_data = [];
+var my_field_data = [];
+var turn = true;
 
 function card_dom(data, dom, hero) {
     var card = document.querySelector('.card-hidden .card').cloneNode(true);
@@ -18,6 +23,33 @@ function card_dom(data, dom, hero) {
         name.textContent = '영웅';
         card.appendChild(name);
     }
+    card.addEventListener('click', function(card) { // 카드를 클릭했을 때
+        if(turn) { // 나의 덱이라면
+            var idx = my_deck_data.indexOf(data); // 데이터에서 카드를 찾아서
+            my_deck_data.splice(idx, 1); // 나의 덱 데이터가 몇번째인지 찾기
+            my_field_data.push(data); // data를 나의 필드에 넣기
+            my_deck.innerHtml = ''; // 화면을 싹 다 지움
+            my_field.innerHtml = '';
+            my_field_data.forEach(function(data) { // 다시 추가 --> 비효율적
+                card_dom(data, my_field);
+            });
+            my_deck_data.forEach(function(data) {
+                card_dom(data, my_deck);
+            });
+        } else {
+            var idx = rival_deck_data.indexOf(data);
+            rival_deck_data.splice(idx, 1);
+            rival_field_data.push(data);
+            rival_deck.innerHtml = '';
+            rival_field.innerHtml = '';
+            rival_field_data.forEach(function(data) {
+                card_dom(data, rival_field);
+            });
+            rival_deck_data.forEach(function(data) {
+                card_dom(data, rival_deck);
+            });
+        }
+    });
     dom.appendChild(card);
 }
 
