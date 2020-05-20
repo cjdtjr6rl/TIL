@@ -94,6 +94,7 @@
             }
 */
 /*            짭스스톤 스타일*/
+/*
             #my, #rival {
                 display: inline-block;
                 vertical-align: bottom;
@@ -157,6 +158,15 @@
             
             .card-hidden {
                 display: none;
+            }
+*/
+/*            2048 스타일*/
+            #table {border-collapse: collapse;}
+            #table td {
+                border: 5px solid black;
+                width: 150px; height: 150px;
+                font-size: 50px; font-weight: bold;
+                text-align: center;
             }
         </style>
     </head>
@@ -247,9 +257,10 @@
    <script src="matchCard.js"></script>
 -->
 <!--       짭스스톤-->
+<!--
          <div id="rival">
            <div>코스트: <span id="rival-cost">10</span>/<span>10</span></div>
-            <div id="rival-hero"></div> <!-- 상대방 영웅 -->
+            <div id="rival-hero"></div>
             <div id="rival-cards" style="height: 150px;"></div>
         </div>
         <div id="rival-deck">
@@ -258,7 +269,7 @@
         <hr>
         <div id="my">
             <div id="my-cards" style="height: 150px;"></div>
-            <div id="my-hero"></div> <!-- 나의 영웅 -->
+            <div id="my-hero"></div>
             <div>코스트: <span id="my-cost">10</span>/<span>10</span></div>
         </div>
         <div id="my-deck">
@@ -272,5 +283,12 @@
             </div>
         </div>
         <script src="jjapsStone.js"></script>
+-->
+<!--   2048-->
+       <table id="table">
+           
+       </table>
+        <div id="score"></div>
+        <script src="2048.js"></script>
     </body>
 </html>
