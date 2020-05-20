@@ -88,4 +88,93 @@ window.addEventListener('mouseup', function(e) { // 마우스 클릭 시
     }
     drag_start = false;
     draging = false;
+    
+    switch(location) {
+        case '왼쪽':
+            var new_data = [ // 새로운 4개의 배열 안에 data를 넣어 반복문을 돌립니다.
+                [],
+                [],
+                [],
+                []
+            ];
+            data.forEach(function(row_data, i) {
+                row_data.forEach(function(line_data, j) {
+                    if(line_data) {
+                        new_data[i].push(line_data)
+                    }
+                });
+            });
+            console.log(new_data);
+            [1, 2, 3, 4].forEach(function(row_data, i) {
+                [1, 2, 3, 4].forEach(function(line_data, j) {
+                    data[i][j] = new_data[i][j] || 0;
+                });
+            });
+            break;
+        case '오른쪽':
+            var new_data = [ // 새로운 4개의 배열 안에 data를 넣어 반복문을 돌립니다.
+                [],
+                [],
+                [],
+                []
+            ];
+            data.forEach(function(row_data, i) {
+                row_data.forEach(function(line_data, j) {
+                    if(line_data) {
+                        new_data[i].unshift(line_data)
+                    }
+                });
+            });
+            console.log(new_data);
+            [1, 2, 3, 4].forEach(function(row_data, i) {
+                [1, 2, 3, 4].forEach(function(line_data, j) {
+                    data[i][3-j] = new_data[i][j] || 0;
+                });
+            });
+            break;
+        case '위': // 마우스를 위로 드래그 했을 때
+            var new_data = [ // 새로운 4개의 배열 안에 data를 넣어 반복문을 돌립니다.
+                [],
+                [],
+                [],
+                []
+            ];
+            data.forEach(function(row_data, i) {
+                row_data.forEach(function(line_data, j) {
+                    if(line_data) {
+                        new_data[j].push(line_data)
+                    }
+                });
+            });
+            console.log(new_data);
+            [1, 2, 3, 4].forEach(function(line_data, i) {
+                [1, 2, 3, 4].forEach(function(row_data, j) {
+                    data[j][i] = new_data[i][j] || 0;
+                });
+            });
+            break;
+        case '아래':
+            var new_data = [ // 새로운 4개의 배열 안에 data를 넣어 반복문을 돌립니다.
+                [],
+                [],
+                [],
+                []
+            ];
+            data.forEach(function(row_data, i) {
+                row_data.forEach(function(line_data, j) {
+                    if(line_data) {
+                        new_data[j].unshift(line_data)
+                    }
+                });
+            });
+            console.log(new_data);
+            [1, 2, 3, 4].forEach(function(line_data, i) {
+                [1, 2, 3, 4].forEach(function(row_data, j) {
+                    data[3-j][i] = new_data[i][j] || 0;
+                });
+            });
+            break;
+    }
+    draw();
+    random_create();
 });
