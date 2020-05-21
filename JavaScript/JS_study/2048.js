@@ -1,7 +1,8 @@
-var table = document.getElementById('table');
-var data = [];
+var table = document.getElementById('table'); // 화면과 데이터 나누기
+var data = []; // 데이터
+var score_list = document.getElementById('score');
 
-function reset() {
+function reset() { // 화면, 데이터 모두 0으로 집어넣어서 만들어 줌
     var fragment = document.createDocumentFragment();
     [1, 2, 3, 4].forEach(function(){
         var row_data = [];
@@ -17,7 +18,7 @@ function reset() {
     table.appendChild(fragment);
 }
 
-function random_create() {
+function random_create() { // 빈칸 좌료를 찾아 랜덤으로 칸에 2를 넣음
     var block_array = [];
     data.forEach(function(row_data, i) {
         row_data.forEach(function(line_data, j) {
@@ -26,17 +27,22 @@ function random_create() {
             }
         });
     });
-    console.log(block_array);
-    var random_block = block_array[Math.floor(Math.random() * block_array.length)];
-    data[random_block[0]][random_block[1]] = 2;
-    draw();
+    if(block_array.length === 0) { // 더이상 블록을 놓을 것이 없을 때
+        alert('게임오버/ 점수: ' + score.textContent);
+        table.innerHTML = ''; // 테이블 삭제
+        reset();
+    } else {
+        var random_block = block_array[Math.floor(Math.random() * block_array.length)];
+        data[random_block[0]][random_block[1]] = 2; // 2 넣기
+        draw();
+    }
 }
 
-function draw() { // 데이터를 받아서 화면에 표시를 해주는 것
+function draw() { // 데이터를 받아서 화면에 표시를 해주는 것 -> 데이터와 화면을 일치시키기
     data.forEach(function(row_data, i) {
         row_data.forEach(function(line_data, j) {
             if(line_data > 0) {
-                table.children[i].children[j].textContent = row_data;
+                table.children[i].children[j].textContent = line_data;
             } else {
                 table.children[i].children[j].textContent = '';
             }
@@ -53,6 +59,7 @@ var draging = false; // 클릭했을 때 막기 위해 생성
 var start_location;
 var end_location;
 
+// 마우스 이벤트!!
 // ScreenX: 모니터 기준 좌표
 // pageX: 페이지(스크롤 포함)
 // clientX: 브라우저 화면 기준
@@ -68,9 +75,9 @@ window.addEventListener('mousemove', function(e) {
     }
 });
 
-window.addEventListener('mouseup', function(e) { // 마우스 클릭 시
+window.addEventListener('mouseup', function(e) { // 마우스 클릭 시 -> 마우스 이벤트 정보들이 e의 객체에 담겨있음
     drag_start = false; // mouse를 놨을 때 정지
-    end_location = [e.clientX, e.clientY]; // 끝 좌표 (x축, y축)
+    end_location = [e.clientX, e.clientY]; // 화면의 좌표 (x축, y축)
     if(draging) { // mouse가 움직이는 중 일때
         var location;
         var x_interval = end_location[0] - start_location[0]; // x축 좌표
@@ -100,7 +107,13 @@ window.addEventListener('mouseup', function(e) { // 마우스 클릭 시
             data.forEach(function(row_data, i) {
                 row_data.forEach(function(line_data, j) {
                     if(line_data) {
-                        new_data[i].push(line_data)
+                        if(new_data[i][new_data[i].length - 1] && new_data[i][new_data[i].length - 1] === line_data) { // 합쳐져야 되는 경우
+                            new_data[i][new_data[i].length - 1] *= 2;
+                            var now_score = parseInt(score_list.textContent, 10);
+                            score_list.textContent = now_score + new_data[i][new_data[i].length - 1];
+                        } else {
+                            new_data[i].push(line_data);
+                        }
                     }
                 });
             });
@@ -121,7 +134,13 @@ window.addEventListener('mouseup', function(e) { // 마우스 클릭 시
             data.forEach(function(row_data, i) {
                 row_data.forEach(function(line_data, j) {
                     if(line_data) {
-                        new_data[i].unshift(line_data)
+                        if(new_data[i][0] && new_data[i][0] === line_data) { // 합쳐져야 되는 경우
+                            new_data[i][0] *= 2;
+                            var now_score = parseInt(score_list.textContent, 10);
+                            score_list.textContent = now_score + new_data[i][0];
+                        } else {
+                            new_data[i].unshift(line_data);
+                        }
                     }
                 });
             });
@@ -142,7 +161,13 @@ window.addEventListener('mouseup', function(e) { // 마우스 클릭 시
             data.forEach(function(row_data, i) {
                 row_data.forEach(function(line_data, j) {
                     if(line_data) {
-                        new_data[j].push(line_data)
+                        if(new_data[j][new_data[j].length - 1] && new_data[j][new_data[j].length - 1] === line_data) { // 합쳐져야 되는 경우
+                            new_data[j][new_data[j].length - 1] *= 2;
+                            var now_score = parseInt(score_list.textContent, 10);
+                            score_list.textContent = now_score + new_data[j][new_data[j].length - 1];
+                        } else {
+                            new_data[j].push(line_data);
+                        }
                     }
                 });
             });
@@ -163,7 +188,13 @@ window.addEventListener('mouseup', function(e) { // 마우스 클릭 시
             data.forEach(function(row_data, i) {
                 row_data.forEach(function(line_data, j) {
                     if(line_data) {
-                        new_data[j].unshift(line_data)
+                        if(new_data[j][0] && new_data[j][0] === line_data) { // 합쳐져야 되는 경우
+                            new_data[j][0] *= 2;
+                            var now_score = parseInt(score_list.textContent, 10);
+                            score_list.textContent = now_score + new_data[j][0];
+                        } else {
+                            new_data[j].unshift(line_data);
+                        }
                     }
                 });
             });
