@@ -29,6 +29,7 @@ var blockArr = [ // 데이터를 불러오는데 배열이 맞을까?
     ]],
 ];
 var blockDict = { // 데이터를 불러오는데 딕셔너리가 맞을까?
+    0: ['white', false, []],
     1: ['red', true, [
         [1, 1], // 블럭 모양
         [1, 1],
@@ -84,6 +85,26 @@ function create_block() {
     tetris.appendChild(fragment); // fragment라는 메모리에 집어넣은 것을 tetris라는 화면에 한번에 출력
 }
 
+function draw() { // 비효율 적이지만 전체 200칸을 다 지웠다가 다시 그리는 방식으로...(타협용...)
+    tetrisData.forEach(function(tr, i) {
+        tr.forEach(function(td, j){
+            // tetris라는 화면에 배열값으로 접근
+            tetris.children[i].children[j].className = blockDict[td][0]
+        });
+    });
+}
+
+function make_block() { // 블럭 생성하기
+    var block = blockArr[Math.floor(Math.random() * 7)][2]; // [2]는 배열 중 블럭 모양인 칸을 가져옴
+    console.log(block);
+    block.forEach(function(tr, i) { // 몇번째 줄
+        tr.forEach(function(td, j) { // 몇번째 칸
+            tetrisData[i][j + 3] = td; // 3번째 열부터 출발하도록
+        });
+    });
+    draw();
+}
+
 // keydown은 꾹 누르고 있으면 계속 출력
 window.addEventListener('keydown', function(e) { // 버튼 누르는 이벤트
     console.log(e);
@@ -120,3 +141,4 @@ window.addEventListener('keyup', function(e) {
 });
 
 create_block();
+make_block();
