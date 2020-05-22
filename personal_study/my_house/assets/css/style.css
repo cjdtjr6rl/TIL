@@ -8,7 +8,7 @@
 
 /* index 레이아웃 */
 #section {position: relative; height: 597px;}
-#section2 {display: inline-block; width: 100%; margin: 20% 0;}
+#section2 {display: inline-block; width: 100%; margin-bottom: 20%;}
 #section3 {background-color: rgba(243,243,243,1); margin: 20% 0;}
 #shortcut {position: relative; height: 170px;}
 #review {}
@@ -569,7 +569,8 @@ opacity: 1;
 
 /* member.html */
 /* section1 */
-.section1 {display: inline-block;}
+.section1 {display: inline-block; border-bottom: 1px solid #000;}
+.tit {font-size: 30px; font-weight: 500; padding-left: 10%; padding-top: 5%;}
 .section1 img {width: 50%;}
 .section1 .page-wrapper p {font-size: 25px; font-weight: 600; padding-top: 20px;}
 .section1 .member1 {position: relative; float: left; width: 33.3333%;}
@@ -584,7 +585,7 @@ opacity: 1;
     width: 100%;
     height: 100%;
     text-align: center;
-    padding: 40% 0;
+    padding: 15% 0 40%;
 }
 
 .blur-it {
@@ -648,13 +649,17 @@ opacity: 1;
   padding: 3% 10%;
 }
 
+.member_spec .hi img {width: 100%;}
+.member_spec .hi .ggg img {width: 50%; float: left;}
+
 .member_spec {font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 20px; font-weight: 500;}
 .member_spec table {width: 100%; font-size: 15px; border: 1px solid #444; border-collapse: collapse; margin-bottom: 15px;}
 .member_spec table th, td {border: 1px solid #444; text-align: center;}
 .member_spec .intr {margin-bottom: 10px; font-size: 18px;}
 .member_spec .intr img {width: 100%;}
 .member_spec .intro1 {width: 24%; float: left;}
-.member_spec .intro2 {width: 72%; float: left; border-left: 1px solid #dbdbdb; padding-left: 3%;}
+.member_spec .intro1 a {display: block; padding-top: 5px;}
+.member_spec .intro2 {width: 72%; float: left; border-left: 1px solid #dbdbdb; padding-left: 3%; margin-bottom: 30px;}
 .member_spec p {text-align: center;}
 .member_spec p.gogogo {font-size: 30px; color: #35C5F0}
 
@@ -685,6 +690,14 @@ body {
   height: 100%;
   font-family: 'Raleway', sans-serif;
 }
+
+.section2 .next {padding-top: 7%}
+.section2 .next_left {float: left; padding: 0 2%; width: 32%;}
+.section2 .next_right {float: left; padding: 5% 2%; width: 60%; text-align: center;}
+.section2 .next_right img {width: 30%;}
+.section2 .name_tag p {float: left; padding: 0 2%; text-align: center; font-size: 25px; margin-top: 20px;}
+.section2 .name_tag .one {width: 32%;}
+.section2 .name_tag .two {width: 60%;}
 
 .section2 .title {
   color:#333;
@@ -802,6 +815,7 @@ text-decoration: initial;
     .footer_sns .tel {display: none;}
     .footer_info {width: 100%; text-align: center;}
     
+    .tit {font-size: 20px; text-align: center; padding-left: 0;}
     .section1 img {width: 30%;}
     .section1 .member1 {width: 100%;}
     .section1 .member2 {width: 100%;}
@@ -814,8 +828,11 @@ text-decoration: initial;
     .member_spec .intro2 img {width: 100%;}
     .member_spec p.gogogo {font-size: 20px;}
     
-    #section2 {margin: 50% 0;}
+    #section2 {margin-bottom: 50%;}
     .section2 .title {font-size: 100px; line-height: 120px;}
+    .section2 .name_tag p {font-size: 20px;}
+    
+    #section3 {margin-bottom: 50%;}
 }
 @media (max-width: 430px) {
     html {line-height: 1;}
@@ -830,10 +847,11 @@ text-decoration: initial;
     .member_spec .intro2 {width: 100%; padding: 0; border: 0;}
     .member_spec p.gogogo {font-size: 15px;}
     
+    .tit {font-size: 15px;}
     .section1 .page-wrapper p {font-size: 18px;}
     
-    #section2 {margin: 100% 0;}
     .section2 .title {font-size: 65px; line-height: 90px;}
+    .section2 .name_tag p {font-size: 15px;}
     
-    #section3 {margin: 0 0 100% 0;}
+    #section3 {margin: 0 0 50% 0;}
 }
