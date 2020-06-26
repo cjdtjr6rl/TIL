@@ -2,16 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-class Square extends React.Component {
-    render() {
-      return (
-          // setState를 호출할 때 button을 클릭 시 Square가 다시 렌더링이 되어야 함을 알림
-        <button className="square" onClick={() => this.props.onClick()}>
-          {this.props.value}
+// class Square extends React.Component {
+//     render() {
+//       return (
+//           // setState를 호출할 때 button을 클릭 시 Square가 다시 렌더링이 되어야 함을 알림
+//         <button className="square" onClick={() => this.props.onClick()}>
+//           {this.props.value}
+//         </button>
+//       );
+//     }
+//   }
+// Square class를 function으로 변경
+function Square(props) {
+    return (
+        <button className="square" onClick={props.onClick}>
+            {props.value}
         </button>
-      );
-    }
-  }
+    );
+}
   
   class Board extends React.Component {
       // 무언가를 기억하기 위해 만든 state
