@@ -27,14 +27,20 @@ function Square(props) {
         super(props);
         this.state = {
             squares: Array(9).fill(null),
+            // Represents xIsNext as boolean
+            xIsNext: true,
         };
     }
 
     handleClick(i) {
         // slice를 사용함으로써 배열을 수정하지 않고 배열의 복사본을 생성하여 수정
         const squares = this.state.squares.slice();
-        squares[i] = 'X';
-        this.setState({squares: squares});
+        // show 'X' or 'O'
+        squares[i] = this.state.xIsNext ? 'X' : 'O';
+        this.setState({
+            squares: squares,
+            xIsNext: !this.state.xIsNext,
+        });
     }
 
     renderSquare(i) {
@@ -47,7 +53,8 @@ function Square(props) {
     }
   
     render() {
-      const status = 'Next player: X';
+        // Show next player 
+      const status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
   
       return (
         <div>
