@@ -3,27 +3,39 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 class Square extends React.Component {
-    // 무언가를 기억하기 위해 만든 state
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: null,
-        };
-    }
-
     render() {
       return (
           // setState를 호출할 때 button을 클릭 시 Square가 다시 렌더링이 되어야 함을 알림
-        <button className="square" onClick={() => this.setState({value: 'X'})}>
-          {this.state.value}
+        <button className="square" onClick={() => this.props.onClick()}>
+          {this.props.value}
         </button>
       );
     }
   }
   
   class Board extends React.Component {
+      // 무언가를 기억하기 위해 만든 state
+    constructor(props) {
+        super(props);
+        this.state = {
+            squares: Array(9).fill(null),
+        };
+    }
+
+    handleClick(i) {
+        // slice를 사용함으로써 배열을 수정하지 않고 배열의 복사본을 생성하여 수정
+        const squares = this.state.squares.slice();
+        squares[i] = 'X';
+        this.setState({squares: squares});
+    }
+
     renderSquare(i) {
-      return <Square value={i}/>;
+      return (
+        <Square
+            value={this.state.squares[i]} 
+            onClick={() => this.handleClick(i)}
+        />
+      );
     }
   
     render() {
