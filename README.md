@@ -211,6 +211,9 @@ Today I Learned...
 
 ## Fast Campus
 
+### JavaScript
+
 - [2020-07-01]([https://github.com/cjdtjr6rl/TIL/blob/master/Fast%20Campus(Online)/JavaScript/20200701.md](https://github.com/cjdtjr6rl/TIL/blob/master/Fast Campus(Online)/JavaScript/20200701.md)
 - [2020-07-02]([https://github.com/cjdtjr6rl/TIL/blob/master/Fast%20Campus(Online)/JavaScript/20200701.md](https://github.com/cjdtjr6rl/TIL/blob/master/Fast Campus(Online)/JavaScript/20200702.md)
+- [2020-07-03]([https://github.com/cjdtjr6rl/TIL/blob/master/Fast%20Campus(Online)/JavaScript/20200701.md](https://github.com/cjdtjr6rl/TIL/blob/master/Fast Campus(Online)/JavaScript/20200703.md)
 
