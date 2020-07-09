@@ -213,15 +213,16 @@ Today I Learned...
 
 ### JavaScript
 
-- [2020-07-01](https://github.com/cjdtjr6rl/TIL/blob/master/Fast Campus(Online)/JavaScript/20200701.md)
-- [2020-07-02](https://github.com/cjdtjr6rl/TIL/blob/master/Fast Campus(Online)/JavaScript/20200702.md)
-- [2020-07-03](https://github.com/cjdtjr6rl/TIL/blob/master/Fast Campus(Online)/JavaScript/20200703.md)
-- [2020-07-04](https://github.com/cjdtjr6rl/TIL/blob/master/Fast Campus(Online)/JavaScript/20200704.md)
-- [2020-07-05](https://github.com/cjdtjr6rl/TIL/blob/master/Fast Campus(Online)/JavaScript/20200705.md)
-- [2020-07-06](https://github.com/cjdtjr6rl/TIL/blob/master/Fast Campus(Online)/JavaScript/20200706.md)
-- [2020-07-07](https://github.com/cjdtjr6rl/TIL/blob/master/Fast Campus(Online)/JavaScript/20200707.md)
+- [2020-07-01](https://github.com/cjdtjr6rl/TIL/blob/master/Fast_Campus/JavaScript/20200701.md)
+- [2020-07-02](https://github.com/cjdtjr6rl/TIL/blob/master/Fast_Campus/JavaScript/20200702.md)
+- [2020-07-03](https://github.com/cjdtjr6rl/TIL/blob/master/Fast_Campus/JavaScript/20200703.md)
+- [2020-07-04](https://github.com/cjdtjr6rl/TIL/blob/master/Fast_Campus/JavaScript/20200704.md)
+- [2020-07-05](https://github.com/cjdtjr6rl/TIL/blob/master/Fast_Campus/JavaScript/20200705.md)
+- [2020-07-06](https://github.com/cjdtjr6rl/TIL/blob/master/Fast_Campus/JavaScript/20200706.md)
+- [2020-07-07](https://github.com/cjdtjr6rl/TIL/blob/master/Fast_Campus/JavaScript/20200707.md)
 
 ### React
 
-- [2020-07-08](https://github.com/cjdtjr6rl/TIL/blob/master/Fast Campus(Online)/JavaScript/20200708.md)
+- [2020-07-08](https://github.com/cjdtjr6rl/TIL/blob/master/Fast_Campus/React/20200708.md)
+- [2020-07-09](https://github.com/cjdtjr6rl/TIL/blob/master/Fast_Campus/React/20200709.md)
 
