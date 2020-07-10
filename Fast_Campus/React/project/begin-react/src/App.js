@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 // 1.
 import Hello from './Hello'
 import Wrapper from './Wrapper';
@@ -10,6 +10,32 @@ import InputSample from './InputSample';
 import UserList from './UserList';
 
 function App() {
+  {/** 4. */}
+  const users = [
+    {
+        id: 1,
+        username: 'Junnna',
+        email: 'tnstnejddjfl@naver.com'
+    },
+    {
+        id: 2,
+        username: 'tester',
+        email: 'tester@gamil.com'
+    },
+    {
+        id: 3,
+        username: 'amaze',
+        email: 'amaze@hanmail.com'
+    }
+  ];
+
+  const nextId = useRef(4);
+
+  const onCreate = () => {
+    console.log(nextId.current);
+    nextId.current += 1;
+  }
+
   return (
     <>
     {/** 1. */}
@@ -22,7 +48,7 @@ function App() {
     {/** 3. */}<br /><hr />
     <InputSample />
     {/** 4. */}<br /><hr />
-    <UserList />
+    <UserList users={users} />
     </>
   );
 }
