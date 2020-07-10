@@ -4,9 +4,10 @@ import Hello from './Hello'
 import Wrapper from './Wrapper';
 // 2.
 import Counter from './Counter';
-import InputSample from './InputSample';
 // 3.
-
+import InputSample from './InputSample';
+// 4.
+import UserList from './UserList';
 
 function App() {
   return (
@@ -16,10 +17,12 @@ function App() {
       <Hello name="react" color="red" isSpecial={true} />
       <Hello color="purple" />
     </Wrapper>
-    {/** 2. */}
+    {/** 2. */}<br /><hr />
     <Counter />
-    {/** 3. */}
+    {/** 3. */}<br /><hr />
     <InputSample />
+    {/** 4. */}<br /><hr />
+    <UserList />
     </>
   );
 }
