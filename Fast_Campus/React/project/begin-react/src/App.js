@@ -12,7 +12,7 @@ import UserList from './UserList';
 import CreateUser from './CreateUser';
 
 function App() {
-  {/** 4. */}
+  // 4.
   const [users, setUsers] = useState([
     {
         id: 1,
@@ -47,7 +47,7 @@ function App() {
     console.log(nextId.current);
     nextId.current += 1;
   }
-  {/** 5. */}
+  // 5.
   const [inputs, setInputs] = useState({
     username: '',
     email: '',
@@ -60,6 +60,11 @@ function App() {
       [name]: value
     });
   };
+
+  // 6.
+  const onRemove = id => {
+    setUsers(users.filter(user => user.id !== id));
+  }; 
 
   return (
     <>
@@ -75,7 +80,7 @@ function App() {
     {/** 5. */}<br /><hr />
     <CreateUser username={username} email={email} onChange={onChange} onCreate={onCreate} />
     {/** 4. */}
-    <UserList users={users} />
+    <UserList users={users} onRemove={onRemove} />
     </>
   );
 }
