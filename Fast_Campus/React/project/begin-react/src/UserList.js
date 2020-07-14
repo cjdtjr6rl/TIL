@@ -8,11 +8,7 @@ function User({ user, onRemove, onToggle }) {
     //     }
     // }, []); // deps가 비어 있을 경우 컴포넌트가 처음 화면에 나타날 때에만 실행이 됨
     useEffect(() => {
-        console.log('user값이 설정됨');
-        console.log(user);
         return() => {
-            console.log('user값이 바뀌기 전');
-            console.log(user);
         }
     }, [user]);
     return (
