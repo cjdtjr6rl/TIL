@@ -24,7 +24,7 @@ function App() {
     email: '',
   });
   const { username, email } = inputs;
-  
+
   // 4.
   const [users, setUsers] = useState([
     {
@@ -55,13 +55,13 @@ function App() {
       username,
       email
     };
-    setUsers([...users, user]);
+    setUsers(users => [...users, user]);
     setInputs({
       username: '',
       email: ''
     });
     nextId.current += 1;
-  }, [username, email, users]);
+  }, [username, email]);
   
   // 그러므로 onChange함수는 inputs가 바뀔 때만 새로 만들어지고 그렇지 않다면 기존에 만들어진 함수를 재사용함
   const onChange = useCallback(e => {
@@ -74,17 +74,17 @@ function App() {
 
   // 6.
   const onRemove = useCallback(id => {
-    setUsers(users.filter(user => user.id !== id));
-  }, [users]);
+    setUsers(users => users.filter(user => user.id !== id));
+  }, []);
 
   // 7.
   const onToggle = useCallback(id => {
-    setUsers(users.map(
+    setUsers(users => users.map(
       user => user.id === id
       ? { ...user, active: !user.active }
       : user
     ));
-  }, [users]);
+  }, []);
 
   // 8.
   // 연산된 결과값을 재사용 (useMemo)
