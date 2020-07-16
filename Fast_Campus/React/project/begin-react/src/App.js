@@ -1,4 +1,4 @@
-import React, { useState, useRef, useMemo } from 'react';
+import React, { useState, useRef, useMemo, useCallback } from 'react';
 // 1.
 import Hello from './Hello'
 import Wrapper from './Wrapper';
@@ -18,6 +18,13 @@ function countActiveUsers(users) {
 }
 
 function App() {
+  // 5.
+  const [inputs, setInputs] = useState({
+    username: '',
+    email: '',
+  });
+  const { username, email } = inputs;
+  
   // 4.
   const [users, setUsers] = useState([
     {
@@ -42,7 +49,7 @@ function App() {
 
   const nextId = useRef(4);
 
-  const onCreate = () => {
+  const onCreate = useCallback(() => {
     const user = {
       id: nextId.current,
       username,
@@ -53,38 +60,34 @@ function App() {
       username: '',
       email: ''
     });
-    console.log(nextId.current);
     nextId.current += 1;
-  }
-  // 5.
-  const [inputs, setInputs] = useState({
-    username: '',
-    email: '',
-  });
-  const { username, email } = inputs;
-  const onChange = e => {
+  }, [username, email, users]);
+  
+  // 그러므로 onChange함수는 inputs가 바뀔 때만 새로 만들어지고 그렇지 않다면 기존에 만들어진 함수를 재사용함
+  const onChange = useCallback(e => {
     const { name, value } = e.target;
     setInputs({
       ...inputs,
       [name]: value
     });
-  };
+  }, [inputs]); // useState를 쓰고 내부에서 의존하고 있는 값인 inputs를 사용하고 있기에 deps로 지정
 
   // 6.
-  const onRemove = id => {
+  const onRemove = useCallback(id => {
     setUsers(users.filter(user => user.id !== id));
-  };
+  }, [users]);
 
   // 7.
-  const onToggle = id => {
+  const onToggle = useCallback(id => {
     setUsers(users.map(
       user => user.id === id
       ? { ...user, active: !user.active }
       : user
     ));
-  };
+  }, [users]);
 
   // 8.
+  // 연산된 결과값을 재사용 (useMemo)
   const count = useMemo(() => countActiveUsers(users), [users]);
 
   return (
