@@ -1,5 +1,17 @@
 $blue: #228be6;
+$gray: #495057;
+$pink: #f06595;
 
+@mixin button-color($color) {
+  background: $color; // 주석 사용
+  &:hover {
+    background: lighten($color, 10%); // 색상 10% 밝게
+  }
+
+  &:active {
+    background: darken($color, 10%); // 색상 10% 어둡게
+  }
+}
 .Button {
   display: inline-flex;
   align-items: center;
@@ -29,13 +41,16 @@ $blue: #228be6;
     font-size: 0.875rem;
   }
 
-  background: $blue; // 주석 사용
-  &:hover {
-    background: lighten($blue, 10%); // 색상 10% 밝게
+  &.blue {
+    @include button-color($blue);
   }
 
-  &:active {
-    background: darken($blue, 10%); // 색상 10% 어둡게
+  &.gray {
+    @include button-color($gray);
+  }
+
+  &.pink {
+    @include button-color($pink);
   }
 }
 
