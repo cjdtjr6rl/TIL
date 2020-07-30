@@ -33,6 +33,28 @@ function App() {
             BUTTON
           </Button>
         </ButtonGroup>
+        <ButtonGroup>
+          <Button size="large" outeline>
+            BUTTON
+          </Button>
+          <Button color="gray" outline>
+            BUTTON
+          </Button>
+          <Button color="pink" size="small" outline>
+            BUTTON
+          </Button>
+        </ButtonGroup>
+        <ButtonGroup>
+          <Button size="large" fullWidth>
+            BUTTON
+          </Button>
+          <Button color="gray" size="large" fullWidth>
+            BUTTON
+          </Button>
+          <Button color="pink" size="large" fullWidth>
+            BUTTON
+          </Button>
+        </ButtonGroup>
       </AppBlock>
     </ThemeProvider>
   );

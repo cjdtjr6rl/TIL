@@ -14,6 +14,17 @@ const colorStyles = css`
       &:active {
         background: ${darken(0.1, selected)};
       }
+      ${(props) =>
+        props.outline &&
+        css`
+          color: ${selected};
+          background: none;
+          border: 1px solid ${selected};
+          &:hover {
+            background: ${selected};
+            color: white;
+          }
+        `}
     `;
   }}
 `;
@@ -41,6 +52,19 @@ const sizeStyles = css`
   `}
 `;
 
+const fullWidthStyle = css`
+  ${(props) =>
+    props.fullWidth &&
+    css`
+      width: 100%;
+      justify-content: center;
+      & + & {
+        margin-left: 0;
+        margin-top: 1rem;
+      }
+    `}
+`;
+
 const StyledButton = styled.button`
   /* 공통 스타일 */
   display: inline-flex;
@@ -53,21 +77,30 @@ const StyledButton = styled.button`
   padding-left: 1rem;
   padding-right: 1rem;
 
+  /* 기타 */
+  & + & {
+    margin-left: 1rem;
+  }
+
   /* 크기 */
   ${sizeStyles}
 
   /* 색깔 */
   ${colorStyles}
 
-  /* 기타 */
-  & + & {
-    margin-left: 1rem;
-  }
+  /* 전체 크기 */
+  ${fullWidthStyle}
 `;
 
-function Button({ children, color, size, ...rest }) {
+function Button({ children, color, size, outline, fullWidth, ...rest }) {
   return (
-    <StyledButton color={color} size={size} {...rest}>
+    <StyledButton
+      color={color}
+      size={size}
+      outline={outline}
+      fullWidth={fullWidth}
+      {...rest}
+    >
       {children}
     </StyledButton>
   );
