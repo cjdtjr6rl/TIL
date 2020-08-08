@@ -1,26 +1,48 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useReducer } from "react";
 import axios from "axios";
 
-function Users() {
-  const [users, setUsers] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+// LOADING, SUCCESS, ERROR
+function reducer(state, action) {
+  switch (action.type) {
+    case "LOADING":
+      return {
+        loading: true,
+        data: null,
+        error: null,
+      };
+    case "SUCCESS":
+      return {
+        loading: false,
+        data: action.data,
+        error: null,
+      };
+    case "ERROR":
+      return {
+        loading: false,
+        data: null,
+        error: action.error,
+      };
+    default:
+      throw new Error(`Unhandled action type: ${action.type}`);
+  }
+}
 
+function Users() {
+  const [state, dispatch] = useReducer(reducer, {
+    loading: false,
+    data: null,
+    error: null,
+  });
   const fetchUsers = async () => {
+    dispatch({ type: "LOADING" });
     try {
-      // 두 가지 값 초기화
-      setUsers(null);
-      setError(null);
-      // 초기 설정 (로딩 true)
-      setLoading(true);
       const response = await axios.get(
         "https://jsonplaceholder.typicode.com/users/"
       );
-      setUsers(response.data);
+      dispatch({ type: "SUCCESS", data: response.data });
     } catch (e) {
-      setError(e);
+      dispatch({ type: "ERROR", error: e });
     }
-    setLoading(false);
   };
 
   // 처음 랜더링 될 때 axios를 사용해서 랜더링을 할 것
@@ -28,6 +50,7 @@ function Users() {
     fetchUsers();
   }, []);
 
+  const { loading, data: users, error } = state;
   if (loading) return <div>로딩중..</div>;
   if (error) return <div>에러가 발생했습니다!</div>;
   if (!users) return null;
