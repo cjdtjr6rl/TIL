@@ -1,6 +1,5 @@
-import { useReducer, useEffect, useCallback } from "react";
+import { useReducer, useEffect } from "react";
 
-// LOADING, SUCCESS, ERROR
 function reducer(state, action) {
   switch (action.type) {
     case "LOADING":
@@ -30,10 +29,10 @@ function useAsync(callback, deps = [], skip = false) {
   const [state, dispatch] = useReducer(reducer, {
     loading: false,
     data: null,
-    error: null,
+    error: false,
   });
 
-  const fetchDate = useCallback(async () => {
+  const fetchData = async () => {
     dispatch({ type: "LOADING" });
     try {
       const data = await callback();
@@ -41,17 +40,16 @@ function useAsync(callback, deps = [], skip = false) {
     } catch (e) {
       dispatch({ type: "ERROR", error: e });
     }
-  }, [callback]);
+  };
 
   useEffect(() => {
-    if (skip) {
-      return;
-    }
-    fetchDate();
+    if (skip) return;
+    fetchData();
+    // eslint 설정을 다음 줄에서만 비활성화
     // eslint-disable-next-line
   }, deps);
 
-  return [state, fetchDate];
+  return [state, fetchData];
 }
 
 export default useAsync;
