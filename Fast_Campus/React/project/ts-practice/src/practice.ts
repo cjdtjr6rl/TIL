@@ -1,6 +1,30 @@
-function sumArray(numbers: number[]): number {
-  return numbers.reduce((acc, current) => acc + current, 0);
+interface Shape {
+  getArea(): number;
 }
 
-const total = sumArray([1, 2, 3, 4, 5]);
-console.log(total);
+class Circle implements Shape {
+  constructor(public radius: number) {}
+
+  getArea() {
+    return this.radius * this.radius * Math.PI;
+  }
+}
+
+class Rectangle implements Shape {
+  constructor(private width: number, private height: number) {
+    this.width = width;
+    this.height = height;
+  }
+
+  getArea() {
+    return this.width * this.height;
+  }
+}
+
+const circle = new Circle(5);
+const rectangle = new Rectangle(2, 5);
+const shapes: Shape[] = [circle, rectangle];
+
+shapes.forEach((shape) => {
+  console.log(shape.getArea());
+});
