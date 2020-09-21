@@ -1,24 +1,8 @@
-type Person = {
-  name: string;
-  age?: number;
-};
+function merge<T1, T2>(a: T1, b: T2) {
+  return {
+    ...a,
+    ...b,
+  };
+}
 
-type Developer = Person & {
-  skills: string[];
-};
-
-const person: Person = {
-  name: "Junnna",
-  age: 27,
-};
-
-const expert: Developer = {
-  name: "Hyoung",
-  skills: ["JavaScript", "React", "TypeScript"],
-};
-
-type People = Person[];
-const people: People = [person, expert];
-
-type Color = "red" | "orange" | "yellow";
-const color: Color = "orange";
+const merged = merge({ foo: 1 }, { bar: 2 });
