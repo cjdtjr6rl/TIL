@@ -1,8 +1,9 @@
-function merge<T1, T2>(a: T1, b: T2) {
+function wrap<T>(param: T) {
   return {
-    ...a,
-    ...b,
+    param,
   };
 }
 
-const merged = merge({ foo: 1 }, { bar: 2 });
+const wrapped = wrap(10);
+
+wrapped.
