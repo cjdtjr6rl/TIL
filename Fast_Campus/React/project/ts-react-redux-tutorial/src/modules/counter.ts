@@ -2,12 +2,23 @@ const INCREASE = "counter/INCREASE" as const;
 const DECREASE = "counter/DECREASE" as const;
 const INCREASE_BY = "counter/INCREASE_BY" as const;
 
-export const increase = () => ({ type: INCREASE });
-export const decrease = () => ({ type: DECREASE });
+export const increase = () => ({
+  type: INCREASE,
+});
+
+export const decrease = () => ({
+  type: DECREASE,
+});
+
 export const increaseBy = (diff: number) => ({
   type: INCREASE_BY,
   payload: diff,
 });
+
+type CounterAction =
+  | ReturnType<typeof increase>
+  | ReturnType<typeof decrease>
+  | ReturnType<typeof increaseBy>;
 
 type CounterState = {
   count: number;
@@ -16,11 +27,6 @@ type CounterState = {
 const initialState: CounterState = {
   count: 0,
 };
-
-type CounterAction =
-  | ReturnType<typeof increase>
-  | ReturnType<typeof decrease>
-  | ReturnType<typeof increaseBy>;
 
 function counter(
   state: CounterState = initialState,
@@ -34,7 +40,7 @@ function counter(
     case INCREASE_BY:
       return { count: state.count + action.payload };
     default:
-      throw state;
+      return state;
   }
 }
 
