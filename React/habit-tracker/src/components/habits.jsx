@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import Habit from "./habit";
+import HabitNav from "./habitNav";
 
 class Habits extends Component {
   state = {
     habits: [
       { id: 1, name: "Reading", count: 0 },
-      { id: 2, name: "Studing", count: 3 },
-      { id: 3, name: "Coding", count: 2 },
+      { id: 2, name: "Studing", count: 0 },
+      { id: 3, name: "Coding", count: 0 },
     ],
   };
 
@@ -30,17 +31,20 @@ class Habits extends Component {
 
   render() {
     return (
-      <ul>
-        {this.state.habits.map((habit) => (
-          <Habit
-            key={habit.id}
-            habit={habit}
-            onIncrement={this.handleIncreament}
-            onDecrement={this.handleDecrement}
-            onDelete={this.handleDelete}
-          />
-        ))}
-      </ul>
+      <>
+        <HabitNav habits={this.state.habits.length} />
+        <ul>
+          {this.state.habits.map((habit) => (
+            <Habit
+              key={habit.id}
+              habit={habit}
+              onIncrement={this.handleIncreament}
+              onDecrement={this.handleDecrement}
+              onDelete={this.handleDelete}
+            />
+          ))}
+        </ul>
+      </>
     );
   }
 }
