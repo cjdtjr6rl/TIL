@@ -4,6 +4,7 @@ import HabitInsert from "./habitInsert";
 
 class Habits extends Component {
   render() {
+    console.log("habits");
     return (
       <>
         <HabitInsert onAdd={this.props.onAdd} />

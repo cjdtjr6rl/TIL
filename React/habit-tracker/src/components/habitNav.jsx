@@ -1,7 +1,8 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 
-class HabitNav extends Component {
+class HabitNav extends PureComponent {
   render() {
+    console.log("navBar");
     return (
       <div className="navbar">
         <i className="navbar-logo fas fa-leaf"></i>
