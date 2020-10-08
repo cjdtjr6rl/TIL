@@ -20,11 +20,8 @@ function App() {
       .then((result) => setVideos(result.items))
       .catch((error) => console.log("error", error));
   }, []);
-  return (
-    <h1>
-      <VideoList videos={videos} />
-    </h1>
-  );
+
+  return <VideoList videos={videos} />;
 }
 
 export default App;
