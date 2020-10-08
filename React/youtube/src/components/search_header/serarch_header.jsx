@@ -1,15 +1,41 @@
 import React from "react";
+import { useRef } from "react";
 import styles from "./search_header.module.css";
 
-const SearchHeader = (props) => {
+const SearchHeader = ({ onSearch }) => {
+  // input란의 값에 접근
+  const inputRef = useRef();
+  // input에서 작성한 값을 props로 가지고 온 onSearch에서 값 전달
+  const handleSearch = () => {
+    const value = inputRef.current.value;
+    onSearch(value);
+  };
+
+  const onClick = () => {
+    handleSearch();
+  };
+
+  // input에 enter를 눌렀을 때 form을 사용하지 않아도 가능
+  const onKeyPress = (event) => {
+    if (event.key === "Enter") {
+      handleSearch();
+    }
+  };
+
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
         <img className={styles.img} src="/images/logo.png" alt="logo" />
         <h1 className={styles.title}>Youtube</h1>
       </div>
-      <input className={styles.input} type="search" placeholder="Search.." />
-      <button className={styles.button} type="submit">
+      <input
+        ref={inputRef}
+        className={styles.input}
+        type="search"
+        placeholder="Search.."
+        onKeyPress={onKeyPress}
+      />
+      <button className={styles.button} type="submit" onClick={onClick}>
         <img
           className={styles.buttonImg}
           src="/images/search.png"
