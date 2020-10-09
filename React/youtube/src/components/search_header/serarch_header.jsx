@@ -2,13 +2,17 @@ import React from "react";
 import { useRef } from "react";
 import styles from "./search_header.module.css";
 
-const SearchHeader = ({ onSearch }) => {
+const SearchHeader = ({ onSearch, clickVideo, goToHome }) => {
   // input란의 값에 접근
   const inputRef = useRef();
   // input에서 작성한 값을 props로 가지고 온 onSearch에서 값 전달
   const handleSearch = () => {
     const value = inputRef.current.value;
     onSearch(value);
+    inputRef.current.focus();
+    clickVideo
+      ? (inputRef.current.value = "")
+      : (inputRef.current.value = value);
   };
 
   const onClick = () => {
@@ -22,9 +26,13 @@ const SearchHeader = ({ onSearch }) => {
     }
   };
 
+  const onGoHome = () => {
+    goToHome();
+  };
+
   return (
     <header className={styles.header}>
-      <div className={styles.logo}>
+      <div className={styles.logo} onClick={onGoHome}>
         <img className={styles.img} src="/images/logo.png" alt="logo" />
         <h1 className={styles.title}>Youtube</h1>
       </div>

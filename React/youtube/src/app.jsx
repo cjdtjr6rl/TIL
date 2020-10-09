@@ -18,18 +18,31 @@ function App({ youtube }) {
   const search = (query) => {
     youtube //
       .search(query)
-      .then((videos) => setVideos(videos));
+      .then((videos) => {
+        setVideos(videos);
+        // 새롭게 search 했을 때 search하는 값을 null로 초기화
+        setSelectedVideo(null);
+      });
   };
 
-  useEffect(() => {
+  const goToHome = () => {
     youtube //
       .mostPopular()
       .then((videos) => setVideos(videos));
-  }, [youtube]);
+    setSelectedVideo(null);
+  };
+
+  useEffect(() => {
+    goToHome();
+  }, []);
 
   return (
     <div className={styles.app}>
-      <SearchHeader onSearch={search} />
+      <SearchHeader
+        onSearch={search}
+        clickVideo={selectedVideo}
+        goToHome={goToHome}
+      />
       <section className={styles.content}>
         {/* selectedVideo가 있다면 div가 보여져야 하고 없다면 보여지면 안됨 */}
         {selectedVideo && (

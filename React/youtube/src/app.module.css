@@ -10,6 +10,12 @@
   flex: 1 1 70%;
 }
 
+@media (max-width: 920px) {
+  .content {
+    flex-direction: column;
+  }
+}
+
 .list {
   flex: 1 1 30%;
 }
