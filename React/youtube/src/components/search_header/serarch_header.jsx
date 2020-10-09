@@ -1,8 +1,8 @@
-import React from "react";
+import React, { memo } from "react";
 import { useRef } from "react";
 import styles from "./search_header.module.css";
 
-const SearchHeader = ({ onSearch, clickVideo, goToHome }) => {
+const SearchHeader = memo(({ onSearch, clickVideo, goToHome }) => {
   // input란의 값에 접근
   const inputRef = useRef();
   // input에서 작성한 값을 props로 가지고 온 onSearch에서 값 전달
@@ -29,6 +29,7 @@ const SearchHeader = ({ onSearch, clickVideo, goToHome }) => {
   const onGoHome = () => {
     goToHome();
   };
+  console.log("Header!!!");
 
   return (
     <header className={styles.header}>
@@ -52,6 +53,6 @@ const SearchHeader = ({ onSearch, clickVideo, goToHome }) => {
       </button>
     </header>
   );
-};
+});
 
 export default SearchHeader;
