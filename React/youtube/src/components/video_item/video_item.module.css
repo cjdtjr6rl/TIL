@@ -10,6 +10,12 @@
   width: 100%;
 }
 
+@media (max-width: 920px) {
+  .container.grid {
+    width: 100%;
+  }
+}
+
 .video {
   display: flex;
   align-items: center;
