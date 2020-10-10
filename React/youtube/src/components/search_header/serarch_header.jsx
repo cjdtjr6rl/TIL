@@ -29,7 +29,6 @@ const SearchHeader = memo(({ onSearch, clickVideo, goToHome }) => {
   const onGoHome = () => {
     goToHome();
   };
-  console.log("Header!!!");
 
   return (
     <header className={styles.header}>
