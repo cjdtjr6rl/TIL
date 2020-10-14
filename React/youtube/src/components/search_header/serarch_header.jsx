@@ -10,9 +10,6 @@ const SearchHeader = memo(({ onSearch, clickVideo, goToHome }) => {
     const value = inputRef.current.value;
     onSearch(value);
     inputRef.current.focus();
-    clickVideo
-      ? (inputRef.current.value = "")
-      : (inputRef.current.value = value);
   };
 
   const onClick = () => {
@@ -28,6 +25,7 @@ const SearchHeader = memo(({ onSearch, clickVideo, goToHome }) => {
 
   const onGoHome = () => {
     goToHome();
+    inputRef.current.value = "";
   };
 
   return (
