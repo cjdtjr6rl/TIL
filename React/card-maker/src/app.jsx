@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import styles from "./app.module.css";
-import Maker from "./common/maker/maker";
+import Maker from "./components/maker/maker";
 import Login from "./components/login/login";
 
 function App({ authService }) {
