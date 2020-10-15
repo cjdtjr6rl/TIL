@@ -11,7 +11,7 @@ const CardAddForm = ({ onAdd }) => {
     const themeRef = useRef();
     const titleRef = useRef();
     const emailRef = useRef();
-    const messgaeRef = useRef();
+    const messageRef = useRef();
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -22,7 +22,7 @@ const CardAddForm = ({ onAdd }) => {
             theme: themeRef.current.value,
             title: titleRef.current.value || '',
             email: emailRef.current.value || '',
-            messgae: messgaeRef.current.value || '',
+            message: messageRef.current.value || '',
             fileName: '',
             fileURL: '',
         };
@@ -41,7 +41,7 @@ const CardAddForm = ({ onAdd }) => {
             </select>
             <input ref={titleRef} className={styles.input} type="text" name="title" placeholder='Title' />
             <input ref={emailRef} className={styles.input} type="text" name="email" placeholder='Email' />
-            <textarea ref={messgaeRef} className={styles.textarea} name="messgae" placeholder='Message' />
+            <textarea ref={messageRef} className={styles.textarea} name="messgae" placeholder='Message' />
             <div className={styles.fileInput}>
                 <ImageFileInput />
             </div>
