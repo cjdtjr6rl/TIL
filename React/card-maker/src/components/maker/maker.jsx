@@ -6,42 +6,10 @@ import Header from "../header/header";
 import Preview from "../preview/preview";
 import styles from "./maker.module.css";
 
-const Maker = ({ FileInput, authService }) => {
-  const [cards, setCards] = useState({
-    '1': {
-      id: '1',
-      name: 'Junnna',
-      company: 'KNU',
-      theme: 'light',
-      title: 'Software Engineer',
-      email: 'tnstnejddjfl@naver.com',
-      message: 'Can do',
-      fileName: 'jun',
-      fileURL: null,
-    },
-    '2': {
-      id: '2',
-      name: 'Test1',
-      company: 'Korea',
-      theme: 'dark',
-      title: 'Manager',
-      email: 'test123@gmail.com',
-      message: 'I am hungry',
-      fileName: 'test1',
-      fileURL: null,
-    },
-    '3': {
-      id: '3',
-      name: 'Test2',
-      company: 'USA',
-      theme: 'colorful',
-      title: 'Singer',
-      email: 'test3@hanmail.com',
-      message: 'I am tired',
-      fileName: 'test2',
-      fileURL: null,
-    },
-  });
+const Maker = ({ FileInput, authService, cardRepository }) => {
+  const historyState = useHistory().state;
+  const [cards, setCards] = useState({});
+  const [userId, setUserId] = useState(historyState && historyState.id);
 
   const history = useHistory();
   const onLogout = () => {
@@ -49,8 +17,22 @@ const Maker = ({ FileInput, authService }) => {
   };
 
   useEffect(() => {
+    if(!userId) {
+      return;
+    }
+    const stopSync = cardRepository.syncCards(userId, cards => {
+      setCards(cards);
+    })
+    // 컴포넌트가 언마운트 되었을 때 불필요한 네트워크 사용을 끔
+    return () => stopSync();
+  }, [userId]);
+  
+  // 로그인 관련 useEffect
+  useEffect(() => {
     authService.onAuthChange((user) => {
-      if (!user) {
+      if (user) {
+        setUserId(user.uid);
+      } else {
         history.push("/");
       }
     });
@@ -62,6 +44,7 @@ const Maker = ({ FileInput, authService }) => {
       updated[card.id] = card;
       return updated;
     });
+    cardRepository.saveCard(userId, card);
   }
 
   const deleteCard = (card) => {
@@ -70,13 +53,18 @@ const Maker = ({ FileInput, authService }) => {
       delete updated[card.id];
       return updated;
     });
+    cardRepository.removeCard(userId, card);
   }
 
   return (
     <section className={styles.maker}>
       <Header onLogout={onLogout} />
       <div className={styles.container}>
-        <Editor FileInput={FileInput} cards={cards} addCard={createOrUpdateCard} updateCard={createOrUpdateCard} deleteCard={deleteCard} />
+        <Editor FileInput={FileInput}
+          cards={cards}
+          addCard={createOrUpdateCard}
+          updateCard={createOrUpdateCard}
+          deleteCard={deleteCard} />
         <Preview cards={cards} />
       </div>
       <Footer />
