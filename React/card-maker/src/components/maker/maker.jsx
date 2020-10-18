@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useHistory } from "react-router-dom";
 import Editor from "../editor/editor";
-import Footer from "../footer/footer";
 import Header from "../header/header";
+import Select from "../select/select";
+import Footer from "../footer/footer";
 import Preview from "../preview/preview";
 import styles from "./maker.module.css";
 
@@ -13,9 +13,6 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
   const [userId, setUserId] = useState(historyState && historyState.id);
 
   const history = useHistory();
-  const onLogout = useCallback(() => {
-    authService.logout();
-  }, [authService]);
 
   useEffect(() => {
     if(!userId) {
@@ -57,9 +54,14 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
     cardRepository.removeCard(userId, card);
   }
 
+  const onLogout = useCallback(() => {
+    authService.logout();
+}, [authService]);
+
   return (
     <section className={styles.maker}>
       <Header onLogout={onLogout} />
+      <Select />
       <div className={styles.container}>
         <Editor FileInput={FileInput}
           cards={cards}

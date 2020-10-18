@@ -1,0 +1,25 @@
+@value makerLightGreen, makerYellow, makerBlack from '../../common/colors.css';
+
+.select {
+  background-color: makerLightGreen;
+}
+
+.ul {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+
+.button {
+  margin-right: 2em;
+  font-size: 0.9rem;
+  border-radius: 30%;
+  background-color: makerYellow;
+  color: makerBlack;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+}
