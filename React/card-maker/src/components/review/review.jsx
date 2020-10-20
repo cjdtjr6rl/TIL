@@ -1,0 +1,46 @@
+import React, { useState, useCallback } from 'react';
+import Header from "../header/header";
+import Select from '../select/select';
+import Footer from '../footer/footer';
+import styles from './review.module.css';
+import Comments from '../comments/comments';
+
+const Review = ({ authService }) => {
+    const [comments, setUsers] = useState([
+        {
+            id: '1',
+            name: 'Lee Jun Hyoung',
+            comment: 'WOW Amazing :)',
+        },
+        {
+            id: '2',
+            name: 'Yong Bum Jung',
+            comment: 'It is very gorgeous!',
+        },
+    ]);
+
+    const createComment = (comment) => {
+        setUsers(comments => {
+            const updated = {...comments};
+            updated[comment.id] = comment;
+            return updated;
+        });
+    }
+
+    const onLogout = useCallback(() => {
+        authService.logout();
+    }, [authService]);
+    
+    return (
+        <section className={styles.maker}>
+            <Header onLogout={onLogout} />
+            <Select />
+            <section className={styles.container}>
+                <Comments comments={comments} createComment={createComment} />
+            </section>
+            <Footer />
+        </section>
+    );
+};
+
+export default Review;

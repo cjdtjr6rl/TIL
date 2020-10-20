@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import styles from "./app.module.css";
 import Maker from "./components/maker/maker";
 import Login from "./components/login/login";
-import Score from "./components/score/score";
+import Review from "./components/review/review";
 
 function App({ FileInput, authService, cardRepository }) {
   return (
@@ -16,8 +16,8 @@ function App({ FileInput, authService, cardRepository }) {
           <Route path="/maker">
             <Maker FileInput={FileInput} authService={authService} cardRepository={cardRepository} />
           </Route>
-          <Route path="/score">
-            <Score authService={authService} />
+          <Route path="/review">
+            <Review authService={authService} />
           </Route>
         </Switch>
       </BrowserRouter>

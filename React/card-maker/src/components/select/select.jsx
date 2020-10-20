@@ -11,8 +11,8 @@ const Select = () => (
                 </Link>
             </li>
             <li>
-                <Link to="/score">
-                    <button className={styles.button}>Score</button>
+                <Link to="/review">
+                    <button className={styles.button}>Review</button>
                 </Link>
             </li>
         </ul>
