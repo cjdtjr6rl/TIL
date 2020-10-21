@@ -1,0 +1,43 @@
+@value makerWheat from '../../common/colors.css';
+
+.comments {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.comments.a {
+  flex-direction: row-reverse;
+}
+
+.avatar {
+  width: 8em;
+  height: 8em;
+  padding: 1em;
+  margin-left: 0.5em;
+  margin-right: 0.8em;
+  border-radius: 50%;
+}
+
+.talk {
+  width: 50%;
+  border-radius: 2em;
+  margin-bottom: 0.5em;
+  padding: 0.2em 0;
+  box-shadow: 6px 6px 8px 0px makerShadow;
+  max-width: 30rem;
+  background-color: makerWheat;
+}
+
+.name {
+  font-size: 0.5rem;
+  margin: 0.5em 0;
+  margin-left: 2em;
+}
+
+.comment {
+  width: 100%;
+  font-size: 0.9rem;
+  margin: 0.5em 0;
+  margin-left: 1em;
+}

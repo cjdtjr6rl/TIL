@@ -4,6 +4,7 @@
 .comments {
   flex-basis: 100%;
   overflow-y: auto;
+  padding: 0 3em;
 }
 
 .title {

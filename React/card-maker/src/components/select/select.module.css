@@ -16,14 +16,13 @@
 .button {
   margin-right: 2em;
   font-size: 0.9rem;
-  border-radius: 30%;
-  background-color: makerYellow;
+  background: none;
   color: makerBlack;
   outline: 0;
-  border: 0;
+  border-left: 1px solid makerBlack;
   cursor: pointer;
 }
 
 .button:hover {
-  background-color: makerLightYellow;
+  opacity: 0.5;
 }

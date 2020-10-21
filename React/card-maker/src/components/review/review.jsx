@@ -1,21 +1,34 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, memo } from 'react';
 import Header from "../header/header";
 import Select from '../select/select';
 import Footer from '../footer/footer';
 import styles from './review.module.css';
 import Comments from '../comments/comments';
+import { useHistory } from 'react-router-dom';
 
-const Review = ({ authService }) => {
+const Review = memo(({ authService }) => {
+    const historyState = useHistory();
+    const [userId, setUserId] = useState(historyState && historyState.id);
+    useEffect(() => {
+        authService.onAuthChange((user) => {
+            if (user) {
+                setUserId(user.uid);
+            }
+        });
+    }, [authService, userId]);
+
     const [comments, setUsers] = useState([
         {
             id: '1',
             name: 'Lee Jun Hyoung',
             comment: 'WOW Amazing :)',
+            userId: null,
         },
         {
             id: '2',
             name: 'Yong Bum Jung',
             comment: 'It is very gorgeous!',
+            userId: null,
         },
     ]);
 
@@ -36,11 +49,11 @@ const Review = ({ authService }) => {
             <Header onLogout={onLogout} />
             <Select />
             <section className={styles.container}>
-                <Comments comments={comments} createComment={createComment} />
+                <Comments authService={authService} comments={comments} createComment={createComment} />
             </section>
             <Footer />
         </section>
     );
-};
+});
 
 export default Review;

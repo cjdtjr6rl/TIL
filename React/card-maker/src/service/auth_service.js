@@ -19,6 +19,11 @@ class AuthService {
     });
   }
 
+  // userInfo(userId) {
+  //   const ref = firebaseDatabase.ref(`${userId}`);
+  //   return ref;
+  // }
+
   getProvider(providerName) {
     switch(providerName) {
       case 'Google':

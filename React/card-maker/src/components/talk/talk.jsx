@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { memo } from 'react';
+import styles from './talk.module.css';
 
-const Talk = ({ comments }) => {
-    const {name, comment} = comments;
+const Talk = memo(({ authService, comments }) => {
+    const DEFAULT_IMAGE = '/images/default_logo.png';
+    const {name, comment, userId, fileURL} = comments;
+    const url = fileURL || DEFAULT_IMAGE;
     return (
-        <li>
-            <h1>{name}</h1>
-            <h2>{comment}</h2>
+        <li className={`${styles.comments} ${ userId ? styles.a : styles.b}`}>
+            <img className={styles.avatar} src={url} alt="profile"/>
+            <div className={styles.talk}>
+                <div className={styles.name}>{name}</div>
+                <div className={styles.comment}>{comment}</div>
+            </div>
         </li>
     );
-};
+});
 
 export default Talk;
