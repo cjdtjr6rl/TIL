@@ -6,8 +6,22 @@
   width: 100%;
 }
 
-.comments.a {
+.comments.me {
   flex-direction: row-reverse;
+}
+
+.comments.me .talk::before {
+  display: none;
+}
+
+.comments.me .talk::after {
+  content: "";
+  position: absolute;
+  left: 98%;
+  top: 5px;
+  border-top: 13px solid transparent;
+  border-left: 26px solid makerWheat;
+  border-bottom: 13px solid transparent;
 }
 
 .avatar {
@@ -27,6 +41,20 @@
   box-shadow: 6px 6px 8px 0px makerShadow;
   max-width: 30rem;
   background-color: makerWheat;
+  position: relative;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.talk::before {
+  content: "";
+  position: absolute;
+  right: 98%;
+  top: 5px;
+  border-top: 13px solid transparent;
+  border-right: 26px solid makerWheat;
+  border-bottom: 13px solid transparent;
 }
 
 .name {

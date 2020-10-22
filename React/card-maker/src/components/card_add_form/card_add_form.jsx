@@ -10,6 +10,7 @@ const CardAddForm = memo(({ FileInput, onAdd }) => {
     const nameRef = useRef();
     const companyRef = useRef();
     const themeRef = useRef();
+    const shapeRef = useRef();
     const titleRef = useRef();
     const emailRef = useRef();
     const messageRef = useRef();
@@ -29,6 +30,7 @@ const CardAddForm = memo(({ FileInput, onAdd }) => {
             name: nameRef.current.value || '',
             company: companyRef.current.value || '',
             theme: themeRef.current.value,
+            shape: shapeRef.current.value,
             title: titleRef.current.value || '',
             email: emailRef.current.value || '',
             message: messageRef.current.value || '',
@@ -48,6 +50,11 @@ const CardAddForm = memo(({ FileInput, onAdd }) => {
                 <option placeholder="light">light</option>
                 <option placeholder="dark">dark</option>
                 <option placeholder="colorful">colorful</option>
+            </select>
+            <select ref={shapeRef} className={styles.select} name="shape" placeholder="Shape">
+                <option placeholder="modern">modern</option>
+                <option placeholder="round">round</option>
+                <option placeholder="stick">stick</option>
             </select>
             <input ref={titleRef} className={styles.input} type="text" name="title" placeholder='Title' />
             <input ref={emailRef} className={styles.input} type="text" name="email" placeholder='Email' />

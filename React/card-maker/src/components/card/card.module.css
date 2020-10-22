@@ -1,15 +1,39 @@
-@value makerWheat, makerColorful, makerBlack, makerWhite, makerShadow from '../../common/colors.css';
+@value makerWheat, makerColorful, makerBlack, makerWhite, makerShadow, makerLightCyan, makerLightSalmon from '../../common/colors.css';
 
 .card {
   display: flex;
   align-items: center;
   width: 100%;
-  border-radius: 1em;
   margin-bottom: 0.5em;
   padding: 0.2em 0;
   box-shadow: 6px 6px 8px 0px makerShadow;
   max-width: 30rem;
-  background-color: yellow;
+}
+
+.card.round {
+  border-radius: 1em;
+}
+
+.card.stick {
+  position: relative;
+}
+
+.card.stick::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top: 100px solid makerWhite;
+  border-right: 100px solid transparent;
+}
+
+.card.stick::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-bottom: 100px solid makerWhite;
+  border-left: 100px solid transparent;
 }
 
 .card.dark {
@@ -18,7 +42,7 @@
 }
 
 .card.light {
-  background-color: makerWhite;
+  background-color: makerLightSalmon;
   color: makerBlack;
 }
 
@@ -33,10 +57,12 @@
   margin-left: 0.5em;
   margin-right: 1em;
   border-radius: 50%;
+  z-index: 1;
 }
 
 .info {
   width: 100%;
+  z-index: 1;
 }
 
 .name,

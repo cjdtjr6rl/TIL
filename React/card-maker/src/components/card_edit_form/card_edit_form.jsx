@@ -7,10 +7,11 @@ const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
     const nameRef = useRef();
     const companyRef = useRef();
     const themeRef = useRef();
+    const shapeRef = useRef();
     const titleRef = useRef();
     const emailRef = useRef();
     const messageRef = useRef();
-    const {name, company, title, email, message, theme, fileName} = card;
+    const {name, company, title, email, message, theme, shape, fileName} = card;
 
     const onFileChange = (file) => {
         updateCard({
@@ -43,6 +44,11 @@ const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
                 <option value="light">light</option>
                 <option value="dark">dark</option>
                 <option value="colorful">colorful</option>
+            </select>
+            <select ref={shapeRef} className={styles.select} name="shape" value={shape} onChange={onChange}>
+                <option placeholder="modern">modern</option>
+                <option placeholder="round">round</option>
+                <option placeholder="stick">stick</option>
             </select>
             <input ref={titleRef} className={styles.input} type="text" name="title" value={title} onChange={onChange} />
             <input ref={emailRef} className={styles.input} type="text" name="email" value={email} onChange={onChange} />
