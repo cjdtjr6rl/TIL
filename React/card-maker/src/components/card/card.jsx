@@ -1,12 +1,18 @@
-import React, { memo } from 'react';
+import React, { memo, useRef } from 'react';
 import styles from './card.module.css';
 
 const Card = memo(({ card }) => {
     const DEFAULT_IMAGE = '/images/default_logo.png';
     const {name, company, title, email, message, theme, shape, fileURL} = card;
     const url = fileURL || DEFAULT_IMAGE;
+    const prinfRef= useRef();
+
+    function print() {
+        console.log(prinfRef.current.outerText + ' 프린트 할거얏!');
+    }
+
     return (
-        <li className={`${styles.card} ${getStyles(theme)} ${shapeStyles(shape)}`}>
+        <li ref={prinfRef} className={`${styles.card} ${getStyles(theme)} ${shapeStyles(shape)}`} onClick={print}>
             <img className={styles.avatar} src={url} alt="profile"/>
             <div className={styles.info}>
                 <h1 className={styles.name}>{name}</h1>
@@ -27,6 +33,10 @@ function getStyles(theme) {
             return styles.light;
         case 'colorful':
             return styles.colorful;
+        case 'salmon':
+            return styles.salmon;
+        case 'blue':
+            return styles.blue;
         default:
             throw new Error(`Unknow theme: ${theme}`);
     }
@@ -40,6 +50,8 @@ function shapeStyles(theme) {
             return styles.round;
         case 'stick':
             return styles.stick;
+        case 'weird':
+            return styles.weird;
         default:
             throw new Error(`Unknow theme: ${theme}`);
     }

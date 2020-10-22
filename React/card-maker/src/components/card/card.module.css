@@ -1,4 +1,4 @@
-@value makerWheat, makerColorful, makerBlack, makerWhite, makerShadow, makerLightCyan, makerLightSalmon from '../../common/colors.css';
+@value makerWheat, makerColorful, makerBlack, makerWhite, makerShadow, makerLightCyan, makerLightSalmon, makerLightBlue from '../../common/colors.css';
 
 .card {
   display: flex;
@@ -8,6 +8,17 @@
   padding: 0.2em 0;
   box-shadow: 6px 6px 8px 0px makerShadow;
   max-width: 30rem;
+  cursor: pointer;
+}
+
+.card.weird {
+  border: 8px double;
+  background-clip: padding-box;
+  border-color: white;
+  border-image-outset: 31px;
+  border-image-width: auto;
+  border-image: url(http://content.mycutegraphics.com/borders/wavy-border.png)
+    100 round;
 }
 
 .card.round {
@@ -42,12 +53,21 @@
 }
 
 .card.light {
-  background-color: makerLightSalmon;
+  background-color: makerWhite;
   color: makerBlack;
 }
 
 .card.colorful {
   background: makerColorful;
+}
+
+.card.salmon {
+  background-color: makerLightSalmon;
+  color: makerBlack;
+}
+
+.card.blue {
+  background-color: makerLightBlue;
 }
 
 .avatar {

@@ -44,11 +44,14 @@ const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
                 <option value="light">light</option>
                 <option value="dark">dark</option>
                 <option value="colorful">colorful</option>
+                <option placeholder="slamon">salmon</option>
+                <option placeholder="blue">blue</option>
             </select>
             <select ref={shapeRef} className={styles.select} name="shape" value={shape} onChange={onChange}>
                 <option placeholder="modern">modern</option>
                 <option placeholder="round">round</option>
                 <option placeholder="stick">stick</option>
+                <option placeholder="weird">weird</option>
             </select>
             <input ref={titleRef} className={styles.input} type="text" name="title" value={title} onChange={onChange} />
             <input ref={emailRef} className={styles.input} type="text" name="email" value={email} onChange={onChange} />
