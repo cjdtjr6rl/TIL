@@ -49,7 +49,7 @@ const Review = memo(({ authService }) => {
             <Header onLogout={onLogout} />
             <Select />
             <section className={styles.container}>
-                <Comments authService={authService} comments={comments} createComment={createComment} />
+                <Comments authService={authService} comments={comments} createComment={createComment} myId={userId} />
             </section>
             <Footer />
         </section>
