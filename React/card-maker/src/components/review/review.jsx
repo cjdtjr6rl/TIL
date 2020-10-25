@@ -8,15 +8,6 @@ import { useHistory } from 'react-router-dom';
 
 const Review = memo(({ authService }) => {
     const historyState = useHistory();
-    const [userId, setUserId] = useState(historyState && historyState.id);
-    useEffect(() => {
-        authService.onAuthChange((user) => {
-            if (user) {
-                setUserId(user.uid);
-            }
-        });
-    }, [authService, userId]);
-
     const [comments, setUsers] = useState([
         {
             id: '1',
@@ -31,6 +22,14 @@ const Review = memo(({ authService }) => {
             userId: null,
         },
     ]);
+    const [userId, setUserId] = useState(historyState && historyState.id);
+    useEffect(() => {
+        authService.onAuthChange((user) => {
+            if (user) {
+                setUserId(user.uid);
+            }
+        });
+    }, [authService, userId]);
 
     const createComment = (comment) => {
         setUsers(comments => {
