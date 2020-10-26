@@ -6,23 +6,22 @@ import styles from './review.module.css';
 import Comments from '../comments/comments';
 import { useHistory } from 'react-router-dom';
 
-const Review = memo(({ authService }) => {
+const Review = memo(({ authService, commentRepository }) => {
     const historyState = useHistory();
-    const [comments, setUsers] = useState([
-        {
-            id: '1',
-            name: 'Lee Jun Hyoung',
-            comment: 'WOW Amazing :)',
-            userId: null,
-        },
-        {
-            id: '2',
-            name: 'Yong Bum Jung',
-            comment: 'It is very gorgeous!',
-            userId: null,
-        },
-    ]);
+    const [comments, setUsers] = useState({});
     const [userId, setUserId] = useState(historyState && historyState.id);
+
+    useEffect(() => {
+        if(!userId) {
+            return;
+        }
+        const stopSync = commentRepository.syncComment(userId, comments => {
+            setUsers(comments);
+        })
+        return () => stopSync();
+    }, [commentRepository, userId]);
+
+    // review 쓴 사용자 확인
     useEffect(() => {
         authService.onAuthChange((user) => {
             if (user) {
@@ -37,6 +36,7 @@ const Review = memo(({ authService }) => {
             updated[comment.id] = comment;
             return updated;
         });
+        commentRepository.saveComment(userId, comment);
     }
 
     const onLogout = useCallback(() => {
