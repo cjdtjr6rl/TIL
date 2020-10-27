@@ -1,5 +1,5 @@
 @value makerLightGrey, makerGreen from '../../common/colors.css';
-@value mediaQuery from '../../common/size.css';
+@value mobileQuery from '../../common/size.css';
 
 .comments {
   flex-basis: 100%;
@@ -21,4 +21,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media screen and (max-width: mobileQuery) {
+  .comment {
+    padding: 0.5em 0;
+  }
 }

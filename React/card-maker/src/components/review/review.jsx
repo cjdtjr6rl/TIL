@@ -28,7 +28,7 @@ const Review = memo(({ authService, commentRepository }) => {
                 setUserId(user.uid);
             }
         });
-    }, [authService, userId]);
+    }, [authService]);
 
     const createComment = (comment) => {
         setUsers(comments => {

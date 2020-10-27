@@ -2,7 +2,7 @@ import { firebaseDatabase } from './firebase';
 
 class CommentRepository {
     syncComment(userId, onUpdate) {
-        const ref = firebaseDatabase.ref(`${userId}/comments`);
+        const ref = firebaseDatabase.ref(`comments`);
         ref.on('value', snapshot => {
             const value = snapshot.val();
             value && onUpdate(value);
@@ -11,7 +11,7 @@ class CommentRepository {
     }
 
     saveComment(userId, comment) {
-        firebaseDatabase.ref(`${userId}/comments/${comment.id}`).set(comment);
+        firebaseDatabase.ref(`comments/${comment.id}`).set(comment);
     }
 }
 

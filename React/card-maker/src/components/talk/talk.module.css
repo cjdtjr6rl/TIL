@@ -1,4 +1,5 @@
 @value makerWheat from '../../common/colors.css';
+@value mobileQuery from '../../common/size.css';
 
 .comments {
   display: flex;
@@ -64,8 +65,18 @@
 }
 
 .comment {
-  width: 100%;
   font-size: 0.9rem;
   margin: 0.5em 0;
   margin-left: 1em;
+}
+
+@media screen and (max-width: mobileQuery) {
+  .avatar {
+    width: 7em;
+    height: 7em;
+  }
+
+  .comment {
+    font-size: 0.7rem;
+  }
 }
