@@ -10,10 +10,18 @@ const Card = memo(({ card }) => {
     function print() {
         const html = document.querySelector('html');
         const printContents = printRef.current.innerHTML;
+        const printUl = document.createElement('ul');
         const printDiv = document.createElement('li');
         printDiv.className = printRef.current.className;
 
-        html.appendChild(printDiv);
+        printUl.style.display = 'flex';
+        printUl.style.flexDirection = 'column';
+        printUl.style.alignItems = 'center';
+
+        printDiv.style.boxShadow = 'none';
+
+        html.appendChild(printUl);
+        printUl.appendChild(printDiv);
         printDiv.innerHTML = printContents;
         document.body.style.display = 'none';
         window.print();
