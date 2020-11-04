@@ -5,12 +5,12 @@ import styles from './select.module.css';
 const Select = () => (
     <div className={styles.select}>
         <ul className={styles.ul}>
-            <li>
+            <li className={styles.li}>
                 <Link to="/maker">
                     <button className={styles.button}>Maker</button>
                 </Link>
             </li>
-            <li>
+            <li className={styles.li}>
                 <Link to="/review">
                     <button className={styles.button}>Review</button>
                 </Link>

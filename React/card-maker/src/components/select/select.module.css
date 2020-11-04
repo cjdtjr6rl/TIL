@@ -13,8 +13,15 @@
   padding: 0;
 }
 
-.button {
+.li {
   margin-right: 2em;
+}
+
+.li:last-child {
+  margin: 0;
+}
+
+.button {
   font-size: 0.9rem;
   background: none;
   color: makerBlack;

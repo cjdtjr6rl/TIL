@@ -5,20 +5,13 @@ const Card = memo(({ card }) => {
     const DEFAULT_IMAGE = '/images/default_logo.png';
     const {name, company, title, email, message, theme, shape, fileURL} = card;
     const url = fileURL || DEFAULT_IMAGE;
-    const prinfRef= useRef();
+    const printRef= useRef();
 
     function print() {
         const html = document.querySelector('html');
-        const printContents = prinfRef.current.innerHTML;
+        const printContents = printRef.current.innerHTML;
         const printDiv = document.createElement('li');
-        printDiv.className = "print-div";
-        printDiv.style.display = 'flex';
-        printDiv.style.alignItems = 'center';
-        printDiv.style.width = '100%';
-        printDiv.style.marginBottom = '0.5em';
-        printDiv.style.padding =  '0.2em 0';
-        printDiv.style.boxShadow = '6px 6px 8px 0px makerShadow';
-        printDiv.style.maxWidth = '25rem';
+        printDiv.className = printRef.current.className;
 
         html.appendChild(printDiv);
         printDiv.innerHTML = printContents;
@@ -29,7 +22,7 @@ const Card = memo(({ card }) => {
     }
 
     return (
-        <li id="modal-body" ref={prinfRef} className={`${styles.card} ${getStyles(theme)} ${shapeStyles(shape)}`} onClick={print}>
+        <li id="modal-body" ref={printRef} className={`${styles.card} ${getStyles(theme)} ${shapeStyles(shape)}`} onClick={print}>
             <img className={styles.avatar} src={url} alt="profile"/>
             <div className={styles.info}>
                 <h1 className={styles.name}>{name}</h1>
