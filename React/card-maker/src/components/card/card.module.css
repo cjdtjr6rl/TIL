@@ -4,7 +4,8 @@
 .card {
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 20em;
+  height: 11em;
   margin-bottom: 0.5em;
   padding: 0.2em 0;
   box-shadow: 6px 6px 8px 0px makerShadow;
@@ -72,8 +73,8 @@
 }
 
 .avatar {
-  width: 10em;
-  height: 10em;
+  width: 8em;
+  height: 8em;
   padding: 1em;
   margin-left: 0.5em;
   margin-right: 1em;
@@ -92,12 +93,12 @@
 .email,
 .message {
   margin: 0;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   margin-bottom: 0.2em;
 }
 
 .name {
-  font-size: 1.2rem;
+  font-size: 0.9rem;
 }
 
 .company {
