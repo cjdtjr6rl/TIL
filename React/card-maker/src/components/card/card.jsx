@@ -17,8 +17,10 @@ const Card = memo(({ card }) => {
         printUl.style.display = 'flex';
         printUl.style.flexDirection = 'column';
         printUl.style.alignItems = 'center';
+        printUl.style.padding = 0;
 
         printDiv.style.boxShadow = 'none';
+        printDiv.style.border = 0;
 
         html.appendChild(printUl);
         printUl.appendChild(printDiv);
@@ -26,19 +28,26 @@ const Card = memo(({ card }) => {
         document.body.style.display = 'none';
         window.print();
         document.body.style.display = 'block';
-        printDiv.style.display = 'none';
+        printUl.style.display = 'none';
     }
 
     return (
-        <li id="modal-body" ref={printRef} className={`${styles.card} ${getStyles(theme)} ${shapeStyles(shape)}`} onClick={print}>
-            <img className={styles.avatar} src={url} alt="profile"/>
-            <div className={styles.info}>
-                <h1 className={styles.name}>{name}</h1>
-                <p className={styles.company}>{company}</p>
-                <p className={styles.title}>{title}</p>
-                <p className={styles.email}>{email}</p>
-                <p className={styles.message}>{message}</p>
-            </div>
+        <li ref={printRef} className={styles.groupcard} onClick={print}>
+            <dt id="modal-body" className={`${styles.card} ${getStyles(theme)} ${shapeStyles(shape)}`}>
+                <img className={styles.avatar} src={url} alt="profile"/>
+                <div className={styles.info}>
+                    <h1 className={styles.name}>{name}</h1>
+                    <p className={styles.company}>{company}</p>
+                    <p className={styles.title}>{title}</p>
+                    <p className={styles.email}><b>{ email && `Email: `}</b>{email}</p>
+                    <p className={styles.message}>{message}</p>
+                </div>
+            </dt>
+            <dt className={`${styles.card} ${getStyles(theme)} ${shapeStyles(shape)}`}>
+                <div className={styles.info}>
+                    <p className={styles.name}>{name}</p>
+                </div>
+            </dt>
         </li>
     );
 });

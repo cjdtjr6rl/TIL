@@ -1,16 +1,30 @@
 @value makerWheat, makerColorful, makerBlack, makerWhite, makerShadow, makerLightCyan, makerLightSalmon, makerLightBlue from '../../common/colors.css';
 @value mobileQuery from '../../common/size.css';
 
+.groupcard {
+  display: inherit;
+  border-bottom: 1px solid #e4e4e4;
+  padding: 0.8em 0;
+}
+
+.groupcard:first-child {
+  padding-top: 0;
+  padding-bottom: 0.8em;
+}
+
 .card {
   display: flex;
   align-items: center;
   width: 20em;
   height: 11em;
-  margin-bottom: 0.5em;
   padding: 0.2em 0;
   box-shadow: 6px 6px 8px 0px makerShadow;
   max-width: 25rem;
   cursor: pointer;
+  margin-right: 1em;
+}
+.card:last-child {
+  margin-right: 0;
 }
 
 .card.weird {
