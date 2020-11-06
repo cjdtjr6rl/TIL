@@ -1,4 +1,4 @@
-@value makerWheat, makerColorful, makerBlack, makerWhite, makerShadow, makerLightCyan, makerLightSalmon, makerLightBlue from '../../common/colors.css';
+@value makerWheat, makerColorful, makerBlack, makerWhite, makerShadow, makerLightCyan, makerLightSalmon, makerLightBlue, makerGold from '../../common/colors.css';
 @value mobileQuery from '../../common/size.css';
 
 .groupcard {
@@ -76,6 +76,11 @@
   background-color: makerLightBlue;
 }
 
+.card.gold {
+  background-color: makerGold;
+  color: makerWhite;
+}
+
 .avatar {
   width: 6em;
   height: auto;
@@ -101,11 +106,16 @@
   font-weight: 800;
   font-size: 1em;
   max-width: 80%;
+  text-align: center;
+  margin-bottom: 0;
+  padding-bottom: 2px;
+  border-bottom: 2px solid makerGold;
 }
 
 .name,
 .company,
 .comnumber,
+.address,
 .number,
 .fax,
 .title,

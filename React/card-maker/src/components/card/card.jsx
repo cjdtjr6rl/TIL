@@ -11,20 +11,46 @@ const Card = memo(({ card }) => {
         const html = document.querySelector('html');
         const printContents = printRef.current.innerHTML;
         const printUl = document.createElement('ul');
-        const printDiv = document.createElement('li');
-        printDiv.className = printRef.current.className;
+        const printDiv1 = document.createElement('li');
+        printDiv1.className = printRef.current.className;
+        const printDiv2 = document.createElement('li');
+        printDiv2.className = printRef.current.className;
+        const printDiv3 = document.createElement('li');
+        printDiv3.className = printRef.current.className;
+        const printDiv4 = document.createElement('li');
+        printDiv4.className = printRef.current.className;
+        const printDiv5 = document.createElement('li');
+        printDiv5.className = printRef.current.className;
+        
 
         printUl.style.display = 'flex';
         printUl.style.flexDirection = 'column';
         printUl.style.alignItems = 'center';
         printUl.style.padding = 0;
 
-        printDiv.style.boxShadow = 'none';
-        printDiv.style.border = 0;
+        printDiv1.style.boxShadow = 'none';
+        printDiv1.style.border = 0;
+        printDiv2.style.boxShadow = 'none';
+        printDiv2.style.border = 0;
+        printDiv3.style.boxShadow = 'none';
+        printDiv3.style.border = 0;
+        printDiv4.style.boxShadow = 'none';
+        printDiv4.style.border = 0;
+        printDiv5.style.boxShadow = 'none';
+        printDiv5.style.border = 0;
 
         html.appendChild(printUl);
-        printUl.appendChild(printDiv);
-        printDiv.innerHTML = printContents;
+        printUl.appendChild(printDiv1);
+        printDiv1.innerHTML = printContents;
+        printUl.appendChild(printDiv2);
+        printDiv2.innerHTML = printContents;
+        printUl.appendChild(printDiv3);
+        printDiv3.innerHTML = printContents;
+        printUl.appendChild(printDiv4);
+        printDiv4.innerHTML = printContents;
+        printUl.appendChild(printDiv5);
+        printDiv5.innerHTML = printContents;
+
         document.body.style.display = 'none';
         window.print();
         document.body.style.display = 'block';
@@ -44,6 +70,7 @@ const Card = memo(({ card }) => {
                                 {name}
                             </h1>
                             <p className={styles.company}>{company}</p>
+                            <p className={styles.address}>{address}</p>
                             <p className={styles.number}><b>{ number && `Mobile: `}</b>{number}</p>
                             <p className={styles.comnumber}><b>{ comnumber && `Tel: `}</b>{comnumber}</p>
                             <p className={styles.fax}><b>{ fax && `Fax: `}</b>{fax}</p>
@@ -89,6 +116,8 @@ function getStyles(theme) {
             return styles.salmon;
         case 'blue':
             return styles.blue;
+        case 'gold':
+            return styles.gold;
         default:
             throw new Error(`Unknow theme: ${theme}`);
     }

@@ -61,6 +61,7 @@ const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
                 <option placeholder="colorful">colorful</option>
                 <option placeholder="slamon">salmon</option>
                 <option placeholder="blue">blue</option>
+                <option placeholder="gold">gold</option>
             </select>
             <select ref={themeRef2} className={styles.select} name="theme2" value={theme2} onChange={onChange}>
                 <option placeholder="light">light</option>
@@ -68,6 +69,7 @@ const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
                 <option placeholder="colorful">colorful</option>
                 <option placeholder="slamon">salmon</option>
                 <option placeholder="blue">blue</option>
+                <option placeholder="gold">gold</option>
             </select>
             <input ref={nameRef} className={styles.input} type="text" name="name" value={name} onChange={onChange} />
             <input ref={companyRef} className={styles.input} type="text" name="company" value={company} onChange={onChange} />

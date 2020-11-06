@@ -72,6 +72,7 @@ const CardAddForm = memo(({ FileInput, onAdd }) => {
                 <option placeholder="colorful">colorful</option>
                 <option placeholder="slamon">salmon</option>
                 <option placeholder="blue">blue</option>
+                <option placeholder="gold">gold</option>
             </select>
             <select ref={themeRef2} className={styles.select} name="theme2" placeholder="Theme2">
                 <option placeholder="light">light</option>
@@ -79,6 +80,7 @@ const CardAddForm = memo(({ FileInput, onAdd }) => {
                 <option placeholder="colorful">colorful</option>
                 <option placeholder="slamon">salmon</option>
                 <option placeholder="blue">blue</option>
+                <option placeholder="gold">gold</option>
             </select>
             <input ref={nameRef} className={styles.input} type="text" name="name" placeholder='Name' />
             <input ref={companyRef} className={styles.input} type="text" name="company" placeholder='Company' />
