@@ -3,7 +3,7 @@ import styles from './card.module.css';
 
 const Card = memo(({ card }) => {
     const DEFAULT_IMAGE = '/images/default_logo.png';
-    const {name, company, email, message, theme1, theme2, shape, fileURL} = card;
+    const {name, company, email, message, design, theme1, theme2, shape, fileURL, address, comnumber, fax, number, position} = card;
     const url = fileURL || DEFAULT_IMAGE;
     const printRef= useRef();
 
@@ -32,22 +32,48 @@ const Card = memo(({ card }) => {
     }
 
     return (
-        <li ref={printRef} className={styles.groupcard} onClick={print}>
-            <dt id="modal-body" className={`${styles.card} ${getStyles(theme1)} ${shapeStyles(shape)}`}>
-                <img className={styles.avatar} src={url} alt="profile"/>
-                <div className={styles.info}>
-                    <h1 className={styles.name}>{name}</h1>
-                    <p className={styles.company}>{company}</p>
-                    <p className={styles.email}><b>{ email && `Email: `}</b>{email}</p>
-                    <p className={styles.message}>{message}</p>
-                </div>
-            </dt>
-            <dt className={`${styles.card} ${getStyles(theme2)} ${shapeStyles(shape)}`}>
-                <div className={styles.info}>
-                    <p className={styles.name}>{name}</p>
-                </div>
-            </dt>
-        </li>
+        <>
+            {
+                design === 'static' ?
+                (<li ref={printRef} className={styles.groupcard} onClick={print}>
+                    <dt id="modal-body" className={`${styles.card} ${getStyles(theme1)} ${shapeStyles(shape)}`}>
+                        <img className={styles.avatar} src={url} alt="profile"/>
+                        <div className={styles.front}>
+                            <h1 className={styles.name}>
+                                <span className={styles.position}>{position && `${position} | `}</span>
+                                {name}
+                            </h1>
+                            <p className={styles.company}>{company}</p>
+                            <p className={styles.number}><b>{ number && `Mobile: `}</b>{number}</p>
+                            <p className={styles.comnumber}><b>{ comnumber && `Tel: `}</b>{comnumber}</p>
+                            <p className={styles.fax}><b>{ fax && `Fax: `}</b>{fax}</p>
+                            <p className={styles.email}><b>{ email && `Email: `}</b>{email}</p>
+                        </div>
+                    </dt>
+                    <dt className={`${styles.card} ${getStyles(theme2)} ${shapeStyles(shape)}`}>
+                        <div className={styles.back}>
+                            <p className={styles.message}>{message}</p>
+                        </div>
+                    </dt>
+                </li>) : design === 'simple' ?
+                (<li ref={printRef} className={styles.groupcard} onClick={print}>
+                    <dt id="modal-body" className={`${styles.card} ${getStyles(theme1)} ${shapeStyles(shape)}`}>
+                        {address}, {comnumber}
+                    </dt>
+                    <dt className={`${styles.card} ${getStyles(theme2)} ${shapeStyles(shape)}`}>
+                        {fax}, {number}, {position}
+                    </dt>
+                </li>) : design === 'manyInfo' ?
+                (<li ref={printRef} className={styles.groupcard} onClick={print}>
+                    <dt id="modal-body" className={`${styles.card} ${getStyles(theme1)} ${shapeStyles(shape)}`}>
+                        {address}, {comnumber}
+                    </dt>
+                    <dt className={`${styles.card} ${getStyles(theme2)} ${shapeStyles(shape)}`}>
+                        {fax}, {number}, {position}
+                    </dt>
+                </li>) : <li>이상하게 적지 마세요!!</li>
+            }
+        </>
     );
 });
 
@@ -76,8 +102,6 @@ function shapeStyles(shape) {
             return styles.round;
         case 'stick':
             return styles.stick;
-        case 'weird':
-            return styles.weird;
         default:
             throw new Error(`Unknow theme: ${shape}`);
     }

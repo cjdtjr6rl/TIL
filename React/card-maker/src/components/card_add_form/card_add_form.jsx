@@ -65,7 +65,6 @@ const CardAddForm = memo(({ FileInput, onAdd }) => {
                 <option placeholder="modern">modern</option>
                 <option placeholder="round">round</option>
                 <option placeholder="stick">stick</option>
-                <option placeholder="weird">weird</option>
             </select>
             <select ref={themeRef1} className={styles.select} name="theme1" placeholder="Theme1">
                 <option placeholder="light">light</option>
@@ -90,24 +89,6 @@ const CardAddForm = memo(({ FileInput, onAdd }) => {
             <input ref={faxRef} className={styles.input} type="text" name="fax" placeholder='Fax' />
             <input ref={emailRef} className={styles.input} type="text" name="email" placeholder='Email' />
             <textarea ref={messageRef} className={styles.textarea} name="messgae" placeholder='Message' />
-            {/* <input ref={nameRef} className={styles.input} type="text" name="name" placeholder='Name' />
-            <input ref={companyRef} className={styles.input} type="text" name="company" placeholder='Company' />
-            <select ref={themeRef} className={styles.select} name="theme" placeholder="Theme">
-                <option placeholder="light">light</option>
-                <option placeholder="dark">dark</option>
-                <option placeholder="colorful">colorful</option>
-                <option placeholder="slamon">salmon</option>
-                <option placeholder="blue">blue</option>
-            </select>
-            <select ref={shapeRef} className={styles.select} name="shape" placeholder="Shape">
-                <option placeholder="modern">modern</option>
-                <option placeholder="round">round</option>
-                <option placeholder="stick">stick</option>
-                <option placeholder="weird">weird</option>
-            </select>
-            <input ref={titleRef} className={styles.input} type="text" name="title" placeholder='Title' />
-            <input ref={emailRef} className={styles.input} type="text" name="email" placeholder='Email' />
-            <textarea ref={messageRef} className={styles.textarea} name="messgae" placeholder='Message' /> */}
             <div className={styles.fileInput}>
                 <FileInput name={file.fileName} onFileChange={onFileChange} />
             </div>

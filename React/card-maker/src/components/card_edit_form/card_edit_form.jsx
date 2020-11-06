@@ -54,7 +54,6 @@ const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
                 <option placeholder="modern">modern</option>
                 <option placeholder="round">round</option>
                 <option placeholder="stick">stick</option>
-                <option placeholder="weird">weird</option>
             </select>
             <select ref={themeRef1} className={styles.select} name="theme1" value={theme1} onChange={onChange}>
                 <option placeholder="light">light</option>

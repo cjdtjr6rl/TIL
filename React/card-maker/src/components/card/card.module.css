@@ -27,16 +27,6 @@
   margin-right: 0;
 }
 
-.card.weird {
-  border: 8px double;
-  background-clip: padding-box;
-  border-color: white;
-  border-image-outset: 31px;
-  border-image-width: auto;
-  border-image: url(http://content.mycutegraphics.com/borders/wavy-border.png)
-    100 round;
-}
-
 .card.round {
   border-radius: 1em;
 }
@@ -87,22 +77,37 @@
 }
 
 .avatar {
-  width: 8em;
-  height: 8em;
+  width: 6em;
+  height: auto;
   padding: 1em;
   margin-left: 0.5em;
-  margin-right: 1em;
-  border-radius: 50%;
+  margin-right: 0.5em;
   z-index: 1;
 }
 
-.info {
+.front {
   width: 100%;
   z-index: 1;
 }
 
+.back {
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.back .message {
+  font-weight: 800;
+  font-size: 1em;
+  max-width: 80%;
+}
+
 .name,
 .company,
+.comnumber,
+.number,
+.fax,
 .title,
 .email,
 .message {
@@ -113,6 +118,10 @@
 
 .name {
   font-size: 0.9rem;
+}
+
+.name .position {
+  font-size: 0.2em;
 }
 
 .company {
