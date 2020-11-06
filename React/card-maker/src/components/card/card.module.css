@@ -5,6 +5,7 @@
   display: inherit;
   border-bottom: 1px solid #e4e4e4;
   padding: 0.8em 0;
+  cursor: pointer;
 }
 
 .groupcard:first-child {
@@ -20,7 +21,6 @@
   padding: 0.2em 0;
   box-shadow: 6px 6px 8px 0px makerShadow;
   max-width: 25rem;
-  cursor: pointer;
   margin-right: 1em;
 }
 .card:last-child {

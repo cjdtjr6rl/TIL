@@ -4,14 +4,20 @@ import Button from '../button/button';
 import styles from './card_edit_form.module.css';
 
 const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
+    const designRef = useRef();
     const nameRef = useRef();
     const companyRef = useRef();
-    const themeRef = useRef();
+    const addressRef = useRef();
+    const positionRef = useRef();
+    const themeRef1 = useRef();
+    const themeRef2 = useRef();
     const shapeRef = useRef();
-    const titleRef = useRef();
+    const comnumberRef = useRef();
+    const numberRef = useRef();
     const emailRef = useRef();
+    const faxRef = useRef();
     const messageRef = useRef();
-    const {name, company, title, email, message, theme, shape, fileName} = card;
+    const {design, name, company, position, address, comnumber, number, fax, email, message, theme1, theme2, shape, fileName} = card;
 
     const onFileChange = (file) => {
         updateCard({
@@ -39,14 +45,10 @@ const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
 
     return (
         <form className={styles.form}>
-            <input ref={nameRef} className={styles.input} type="text" name="name" value={name} onChange={onChange} />
-            <input ref={companyRef} className={styles.input} type="text" name="company" value={company} onChange={onChange} />
-            <select ref={themeRef} className={styles.select} name="theme" value={theme} onChange={onChange}>
-                <option value="light">light</option>
-                <option value="dark">dark</option>
-                <option value="colorful">colorful</option>
-                <option placeholder="slamon">salmon</option>
-                <option placeholder="blue">blue</option>
+            <select ref={designRef} className={styles.select} name="design" value={design} onChange={onChange}>
+                <option placeholder="static">static</option>
+                <option placeholder="simple">simple</option>
+                <option placeholder="manyInfo">manyInfo</option>
             </select>
             <select ref={shapeRef} className={styles.select} name="shape" value={shape} onChange={onChange}>
                 <option placeholder="modern">modern</option>
@@ -54,7 +56,27 @@ const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
                 <option placeholder="stick">stick</option>
                 <option placeholder="weird">weird</option>
             </select>
-            <input ref={titleRef} className={styles.input} type="text" name="title" value={title} onChange={onChange} />
+            <select ref={themeRef1} className={styles.select} name="theme1" value={theme1} onChange={onChange}>
+                <option placeholder="light">light</option>
+                <option placeholder="dark">dark</option>
+                <option placeholder="colorful">colorful</option>
+                <option placeholder="slamon">salmon</option>
+                <option placeholder="blue">blue</option>
+            </select>
+            <select ref={themeRef2} className={styles.select} name="theme2" value={theme2} onChange={onChange}>
+                <option placeholder="light">light</option>
+                <option placeholder="dark">dark</option>
+                <option placeholder="colorful">colorful</option>
+                <option placeholder="slamon">salmon</option>
+                <option placeholder="blue">blue</option>
+            </select>
+            <input ref={nameRef} className={styles.input} type="text" name="name" value={name} onChange={onChange} />
+            <input ref={companyRef} className={styles.input} type="text" name="company" value={company} onChange={onChange} />
+            <input ref={positionRef} className={styles.input} type="text" name="position" value={position} onChange={onChange} />
+            <input ref={addressRef} className={styles.input} type="text" name="address" value={address} onChange={onChange} />
+            <input ref={comnumberRef} className={styles.input} type="text" name="comnumber" value={comnumber} onChange={onChange} />
+            <input ref={numberRef} className={styles.input} type="text" name="number" value={number} onChange={onChange} />
+            <input ref={faxRef} className={styles.input} type="text" name="fax" value={fax} onChange={onChange} />
             <input ref={emailRef} className={styles.input} type="text" name="email" value={email} onChange={onChange} />
             <textarea ref={messageRef} className={styles.textarea} name="message" value={message} onChange={onChange} />
             <div className={styles.fileInput}>

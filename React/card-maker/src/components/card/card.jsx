@@ -3,7 +3,7 @@ import styles from './card.module.css';
 
 const Card = memo(({ card }) => {
     const DEFAULT_IMAGE = '/images/default_logo.png';
-    const {name, company, title, email, message, theme, shape, fileURL} = card;
+    const {name, company, email, message, theme1, theme2, shape, fileURL} = card;
     const url = fileURL || DEFAULT_IMAGE;
     const printRef= useRef();
 
@@ -33,17 +33,16 @@ const Card = memo(({ card }) => {
 
     return (
         <li ref={printRef} className={styles.groupcard} onClick={print}>
-            <dt id="modal-body" className={`${styles.card} ${getStyles(theme)} ${shapeStyles(shape)}`}>
+            <dt id="modal-body" className={`${styles.card} ${getStyles(theme1)} ${shapeStyles(shape)}`}>
                 <img className={styles.avatar} src={url} alt="profile"/>
                 <div className={styles.info}>
                     <h1 className={styles.name}>{name}</h1>
                     <p className={styles.company}>{company}</p>
-                    <p className={styles.title}>{title}</p>
                     <p className={styles.email}><b>{ email && `Email: `}</b>{email}</p>
                     <p className={styles.message}>{message}</p>
                 </div>
             </dt>
-            <dt className={`${styles.card} ${getStyles(theme)} ${shapeStyles(shape)}`}>
+            <dt className={`${styles.card} ${getStyles(theme2)} ${shapeStyles(shape)}`}>
                 <div className={styles.info}>
                     <p className={styles.name}>{name}</p>
                 </div>
@@ -69,8 +68,8 @@ function getStyles(theme) {
     }
 }
 
-function shapeStyles(theme) {
-    switch (theme) {
+function shapeStyles(shape) {
+    switch (shape) {
         case 'modern':
             return styles.modern;
         case 'round':
@@ -80,7 +79,7 @@ function shapeStyles(theme) {
         case 'weird':
             return styles.weird;
         default:
-            throw new Error(`Unknow theme: ${theme}`);
+            throw new Error(`Unknow theme: ${shape}`);
     }
 }
 
