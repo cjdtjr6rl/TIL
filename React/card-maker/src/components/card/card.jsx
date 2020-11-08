@@ -71,10 +71,12 @@ const Card = memo(({ card }) => {
                             </h1>
                             <p className={styles.company}>{company}</p>
                             <p className={styles.address}>{address}</p>
-                            <p className={styles.number}><b>{ number && `Mobile: `}</b>{number}</p>
-                            <p className={styles.comnumber}><b>{ comnumber && `Tel: `}</b>{comnumber}</p>
-                            <p className={styles.fax}><b>{ fax && `Fax: `}</b>{fax}</p>
-                            <p className={styles.email}><b>{ email && `Email: `}</b>{email}</p>
+                            <div className={styles.content}>
+                                <p className={styles.number}><b>{ number && `Mobile: `}</b>{number}</p>
+                                <p className={styles.comnumber}><b>{ comnumber && `Tel: `}</b>{comnumber}</p>
+                                <p className={styles.fax}><b>{ fax && `Fax: `}</b>{fax}</p>
+                                <p className={styles.email}><b>{ email && `Email: `}</b>{email}</p>
+                            </div>
                         </div>
                     </dt>
                     <dt className={`${styles.card} ${getStyles(theme2)} ${shapeStyles(shape)}`}>
