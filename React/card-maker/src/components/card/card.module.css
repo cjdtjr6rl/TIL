@@ -1,4 +1,4 @@
-@value makerWheat, makerColorful, makerBlack, makerWhite, makerShadow, makerLightCyan, makerLightSalmon, makerLightBlue, makerGold from '../../common/colors.css';
+@value makerWheat, makerColorful, makerBlack, makerWhite, makerShadow, makerLightCyan, makerLightSalmon, makerBlue, makerWood, makerGold from '../../common/colors.css';
 @value mobileQuery from '../../common/size.css';
 
 .groupcard {
@@ -19,12 +19,44 @@
   width: 20em;
   height: 11em;
   padding: 0.2em 0;
-  box-shadow: 6px 6px 8px 0px makerShadow;
+  box-shadow: 0px 0px 15px 0px makerShadow;
   max-width: 25rem;
   margin-right: 1em;
 }
 .card:last-child {
   margin-right: 0;
+}
+
+.card.simple {
+  align-items: baseline;
+  width: 11em;
+  height: 20em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.card.simple .name {
+  font-size: 1.1em;
+}
+
+.card.simple .position {
+  margin: 0;
+  font-size: 0.8em;
+}
+
+.card.simple .intro {
+  padding: 2em 0;
+}
+
+.card.simple .number {
+  padding: 2em 0;
+}
+
+.card.simple .content {
+  padding: 2em 0;
+  margin: 0;
+  float: none;
 }
 
 .card.round {
@@ -73,11 +105,17 @@
 }
 
 .card.blue {
-  background-color: makerLightBlue;
+  background-color: makerBlue;
+  color: makerWhite;
 }
 
 .card.gold {
   background-color: makerGold;
+  color: makerWhite;
+}
+
+.card.wood {
+  background-color: makerWood;
   color: makerWhite;
 }
 
@@ -102,6 +140,7 @@
 
 .back {
   width: 100%;
+  height: 100%;
   z-index: 1;
   display: flex;
   justify-content: center;

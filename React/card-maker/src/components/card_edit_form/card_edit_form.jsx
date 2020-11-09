@@ -46,9 +46,9 @@ const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
     return (
         <form className={styles.form}>
             <select ref={designRef} className={styles.select} name="design" value={design} onChange={onChange}>
-                <option placeholder="static">static</option>
-                <option placeholder="simple">simple</option>
                 <option placeholder="manyInfo">manyInfo</option>
+                <option placeholder="simple">simple</option>
+                <option placeholder="static">static</option>
             </select>
             <select ref={shapeRef} className={styles.select} name="shape" value={shape} onChange={onChange}>
                 <option placeholder="modern">modern</option>
@@ -62,6 +62,7 @@ const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
                 <option placeholder="slamon">salmon</option>
                 <option placeholder="blue">blue</option>
                 <option placeholder="gold">gold</option>
+                <option placeholder="wood">wood</option>
             </select>
             <select ref={themeRef2} className={styles.select} name="theme2" value={theme2} onChange={onChange}>
                 <option placeholder="light">light</option>
@@ -70,6 +71,7 @@ const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
                 <option placeholder="slamon">salmon</option>
                 <option placeholder="blue">blue</option>
                 <option placeholder="gold">gold</option>
+                <option placeholder="wood">wood</option>
             </select>
             <input ref={nameRef} className={styles.input} type="text" name="name" value={name} onChange={onChange} />
             <input ref={companyRef} className={styles.input} type="text" name="company" value={company} onChange={onChange} />

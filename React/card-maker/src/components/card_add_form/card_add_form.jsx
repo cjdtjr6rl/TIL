@@ -54,12 +54,13 @@ const CardAddForm = memo(({ FileInput, onAdd }) => {
         setFile({ fileName: null, fileURL: null })
         onAdd(card);
     }
+
     return (
         <form ref={formRef} className={styles.form}>
             <select ref={designRef} className={styles.select} name="design" placeholder="Design">
-                <option placeholder="static">static</option>
-                <option placeholder="simple">simple</option>
                 <option placeholder="manyInfo">manyInfo</option>
+                <option placeholder="simple">simple</option>
+                <option placeholder="static">static</option>
             </select>
             <select ref={shapeRef} className={styles.select} name="shape" placeholder="Shape">
                 <option placeholder="modern">modern</option>
@@ -73,6 +74,7 @@ const CardAddForm = memo(({ FileInput, onAdd }) => {
                 <option placeholder="slamon">salmon</option>
                 <option placeholder="blue">blue</option>
                 <option placeholder="gold">gold</option>
+                <option placeholder="wood">wood</option>
             </select>
             <select ref={themeRef2} className={styles.select} name="theme2" placeholder="Theme2">
                 <option placeholder="light">light</option>
@@ -81,6 +83,7 @@ const CardAddForm = memo(({ FileInput, onAdd }) => {
                 <option placeholder="slamon">salmon</option>
                 <option placeholder="blue">blue</option>
                 <option placeholder="gold">gold</option>
+                <option placeholder="wood">wood</option>
             </select>
             <input ref={nameRef} className={styles.input} type="text" name="name" placeholder='Name' />
             <input ref={companyRef} className={styles.input} type="text" name="company" placeholder='Company' />

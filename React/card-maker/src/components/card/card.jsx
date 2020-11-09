@@ -17,16 +17,13 @@ const Card = memo(({ card }) => {
         printDiv2.className = printRef.current.className;
         const printDiv3 = document.createElement('li');
         printDiv3.className = printRef.current.className;
-        const printDiv4 = document.createElement('li');
-        printDiv4.className = printRef.current.className;
-        const printDiv5 = document.createElement('li');
-        printDiv5.className = printRef.current.className;
         
 
         printUl.style.display = 'flex';
         printUl.style.flexDirection = 'column';
         printUl.style.alignItems = 'center';
         printUl.style.padding = 0;
+        printUl.style.marginTop = '5px';
 
         printDiv1.style.boxShadow = 'none';
         printDiv1.style.border = 0;
@@ -34,10 +31,6 @@ const Card = memo(({ card }) => {
         printDiv2.style.border = 0;
         printDiv3.style.boxShadow = 'none';
         printDiv3.style.border = 0;
-        printDiv4.style.boxShadow = 'none';
-        printDiv4.style.border = 0;
-        printDiv5.style.boxShadow = 'none';
-        printDiv5.style.border = 0;
 
         html.appendChild(printUl);
         printUl.appendChild(printDiv1);
@@ -46,10 +39,6 @@ const Card = memo(({ card }) => {
         printDiv2.innerHTML = printContents;
         printUl.appendChild(printDiv3);
         printDiv3.innerHTML = printContents;
-        printUl.appendChild(printDiv4);
-        printDiv4.innerHTML = printContents;
-        printUl.appendChild(printDiv5);
-        printDiv5.innerHTML = printContents;
 
         document.body.style.display = 'none';
         window.print();
@@ -60,9 +49,9 @@ const Card = memo(({ card }) => {
     return (
         <>
             {
-                design === 'static' ?
+                design === 'manyInfo' ?
                 (<li ref={printRef} className={styles.groupcard} onClick={print}>
-                    <dt id="modal-body" className={`${styles.card} ${getStyles(theme1)} ${shapeStyles(shape)}`}>
+                    <dt id="modal-body" className={`${styles.card} ${getStyles(theme1)} ${shapeStyles(shape)} ${styles.manyInfo}`}>
                         <img className={styles.avatar} src={url} alt="profile"/>
                         <div className={styles.front}>
                             <h1 className={styles.name}>
@@ -79,25 +68,49 @@ const Card = memo(({ card }) => {
                             </div>
                         </div>
                     </dt>
-                    <dt className={`${styles.card} ${getStyles(theme2)} ${shapeStyles(shape)}`}>
+                    <dt className={`${styles.card} ${getStyles(theme2)} ${shapeStyles(shape)} ${styles.manyInfo}`}>
                         <div className={styles.back}>
-                            <p className={styles.message}>{message}</p>
+                            <p className={styles.message}>
+                                {
+                                    message.split('\n').map( line => {
+                                        return (<span>{line}<br/></span>)
+                                    })
+                                }
+                            </p>
                         </div>
                     </dt>
                 </li>) : design === 'simple' ?
                 (<li ref={printRef} className={styles.groupcard} onClick={print}>
-                    <dt id="modal-body" className={`${styles.card} ${getStyles(theme1)} ${shapeStyles(shape)}`}>
-                        {address}, {comnumber}
+                    <dt id="modal-body" className={`${styles.card} ${getStyles(theme1)} ${shapeStyles(shape)} ${styles.simple}`}>
+                        <div className={styles.front}>
+                            <div className={styles.intro}>
+                                <h1 className={styles.name}>{name}</h1>
+                                <p className={styles.position}>{position}</p>
+                            </div>
+                            <p className={styles.number}>{number}</p>
+                            <div className={styles.content}>
+                                <p className={styles.email}>{email}</p>
+                                <p className={styles.message}>
+                                    {
+                                        message.split('\n').map( line => {
+                                            return (<span>{line}<br/></span>)
+                                        })
+                                    }
+                                </p>
+                            </div>
+                        </div>
                     </dt>
-                    <dt className={`${styles.card} ${getStyles(theme2)} ${shapeStyles(shape)}`}>
-                        {fax}, {number}, {position}
+                    <dt className={`${styles.card} ${getStyles(theme2)} ${shapeStyles(shape)} ${styles.simple}`}>
+                        <div className={styles.back}>
+                            <img className={styles.avatar} src={url} alt="profile"/>
+                        </div>
                     </dt>
-                </li>) : design === 'manyInfo' ?
+                </li>) : design === 'static' ?
                 (<li ref={printRef} className={styles.groupcard} onClick={print}>
-                    <dt id="modal-body" className={`${styles.card} ${getStyles(theme1)} ${shapeStyles(shape)}`}>
+                    <dt id="modal-body" className={`${styles.card} ${getStyles(theme1)} ${shapeStyles(shape)} ${styles.static}`}>
                         {address}, {comnumber}
                     </dt>
-                    <dt className={`${styles.card} ${getStyles(theme2)} ${shapeStyles(shape)}`}>
+                    <dt className={`${styles.card} ${getStyles(theme2)} ${shapeStyles(shape)} ${styles.static}`}>
                         {fax}, {number}, {position}
                     </dt>
                 </li>) : <li>이상하게 적지 마세요!!</li>
@@ -120,6 +133,8 @@ function getStyles(theme) {
             return styles.blue;
         case 'gold':
             return styles.gold;
+        case 'wood':
+            return styles.wood;
         default:
             throw new Error(`Unknow theme: ${theme}`);
     }
