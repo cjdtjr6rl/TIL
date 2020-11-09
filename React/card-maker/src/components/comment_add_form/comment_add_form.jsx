@@ -27,7 +27,7 @@ const CommentAddForm = ({ authService, createComment }) => {
             userId: userId || '',
         };
         formRef.current.reset();
-        createComment(comment)
+        createComment(comment);
     }
 
     return (

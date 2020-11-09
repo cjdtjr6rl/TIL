@@ -1,0 +1,6 @@
+@value makerLightGrey from '../../common/colors.css';
+
+.userlist {
+  flex-basis: 30%;
+  border-right: 1px solid makerLightGrey;
+}

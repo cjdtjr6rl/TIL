@@ -1,18 +1,9 @@
-@value makerLightGrey, makerGreen from '../../common/colors.css';
 @value mobileQuery from '../../common/size.css';
 
 .comments {
-  flex-basis: 100%;
+  flex-basis: 70%;
   overflow-y: auto;
   padding: 0 3em;
-}
-
-.title {
-  font-size: 1.1em;
-  width: 100%;
-  text-align: center;
-  margin-bottom: 1em;
-  color: makerGreen;
 }
 
 .comment {

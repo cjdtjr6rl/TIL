@@ -1,5 +1,5 @@
 @value mediaQuery from '../../common/size.css';
-@value makerWhite from '../../common/colors.css';
+@value makerWhite, makerGreen from '../../common/colors.css';
 
 .maker {
   width: 100%;
@@ -14,4 +14,12 @@
   display: flex;
   flex: 1;
   min-height: 0;
+}
+
+.title {
+  font-size: 1.1em;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1em;
+  color: makerGreen;
 }

@@ -5,7 +5,7 @@ import Maker from "./components/maker/maker";
 import Login from "./components/login/login";
 import Review from "./components/review/review";
 
-function App({ FileInput, authService, cardRepository, commentRepository }) {
+function App({ FileInput, authService, cardRepository, commentRepository, userRepository }) {
   return (
     <div className={styles.app}>
       <BrowserRouter>
@@ -17,7 +17,7 @@ function App({ FileInput, authService, cardRepository, commentRepository }) {
             <Maker FileInput={FileInput} authService={authService} cardRepository={cardRepository} />
           </Route>
           <Route path="/review">
-            <Review authService={authService} commentRepository={commentRepository} />
+            <Review authService={authService} commentRepository={commentRepository} userRepository={userRepository}/>
           </Route>
         </Switch>
       </BrowserRouter>

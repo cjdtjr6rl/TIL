@@ -5,7 +5,6 @@ import styles from './comments.module.css';
 
 const Comments = memo(({ myId, authService, comments, createComment }) => (
     <section className={styles.comments}>
-        <h1 className={styles.title}>Card Review</h1>
         <CommentAddForm authService={authService} createComment={createComment} />
         <ul className={styles.comment}>
             {Object.keys(comments).map(key => (

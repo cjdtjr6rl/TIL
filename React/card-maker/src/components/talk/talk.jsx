@@ -10,7 +10,13 @@ const Talk = memo(({ myId, authService, comments }) => {
             <img className={styles.avatar} src={url} alt="profile"/>
             <div className={styles.talk}>
                 <div className={styles.name}>{name}</div>
-                <div className={styles.comment}>{comment}</div>
+                <div className={styles.comment}>
+                    {
+                        comment.split('\n').map( line => {
+                            return (<span>{line}<br/></span>)
+                        })
+                    }
+                </div>
             </div>
         </li>
     );
