@@ -4,7 +4,7 @@ import styles from './userlist.module.css';
 
 const UserList = ({ users, myId }) => (
         <section className={styles.userlist}>
-            <ul>
+            <ul className={styles.users}>
                 {Object.keys(users).map(key => (
                     <UserTalk key={key} user={users[key]} myId={myId} />
                 ))}

@@ -6,7 +6,6 @@ import { useHistory } from 'react-router-dom';
 
 const CommentAddForm = ({ authService, createComment }) => {
     const formRef = useRef();
-    const nameRef = useRef();
     const commentRef = useRef();
     const historyState = useHistory();
     const [userId, setUserId] = useState(historyState && historyState.id);
@@ -22,7 +21,6 @@ const CommentAddForm = ({ authService, createComment }) => {
         e.preventDefault();
         const comment = {
             id: Date.now(),
-            name: nameRef.current.value || '',
             comment: commentRef.current.value || '',
             userId: userId || '',
         };
@@ -32,7 +30,6 @@ const CommentAddForm = ({ authService, createComment }) => {
 
     return (
         <form ref={formRef} className={styles.form}>
-            <input ref={nameRef} className={styles.input} type="text" name="name" placeholder="Name" />
             <textarea ref={commentRef} className={styles.textarea} name="comment" placeholder='Review' />
             <div className={styles.button}>
                 <Button name="입력" onClick={onSubmit} />

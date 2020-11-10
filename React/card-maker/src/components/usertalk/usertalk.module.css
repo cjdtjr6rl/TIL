@@ -1,0 +1,6 @@
+.user {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin: 1em 0;
+}
