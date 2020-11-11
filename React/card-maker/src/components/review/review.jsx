@@ -7,7 +7,7 @@ import Comments from '../comments/comments';
 import { useHistory } from 'react-router-dom';
 import UserList from '../userlist/userlist';
 
-const Review = memo(({ authService, commentRepository, userRepository }) => {
+const Review = memo(({ authService, commentRepository, userRepository, division }) => {
     const historyState = useHistory();
     const [comments, setUsers] = useState({});
     const [users, setUser] = useState({});
@@ -62,7 +62,7 @@ const Review = memo(({ authService, commentRepository, userRepository }) => {
             <h1 className={styles.title}>Review & Talk</h1>
             <section className={styles.container}>
                 <UserList users={users} myId={userId} />
-                <Comments authService={authService} comments={comments} createComment={createComment} myId={userId} />
+                <Comments authService={authService} comments={comments} createComment={createComment} myId={userId} division={division} />
             </section>
             <Footer />
         </section>

@@ -1,22 +1,17 @@
-import React, { memo, useRef } from 'react';
-import { useState } from 'react';
+import React, { memo } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './usertalk.module.css';
 
 const UserTalk = memo(({ myId, user }) => {
-    const [userr, setUser] = useState('');
-    const userRef = useRef();
-
-    const userChange = (e) => {
-        e.preventDefault();
-        setUser(userRef.current.value);
-        console.log(userr);
-    }
     return (
         <>
             { user !== myId ?
-                (<li ref={userRef} className={styles.user} onClick={userChange}>
-                    {user}
-                </li>) : <div></div>
+                (
+                    <Link className={styles.link} to={`/${user}`}>
+                        <li className={styles.user}>
+                        {user}
+                    </li>
+                </Link>) : <div className={styles.none}></div>
             }
         </>
     );
