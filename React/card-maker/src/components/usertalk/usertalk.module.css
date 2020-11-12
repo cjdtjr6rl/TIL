@@ -1,5 +1,8 @@
 .link {
-  margin: 1em 0;
+  padding: 1em 0.7em;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
 }
 
 .user {

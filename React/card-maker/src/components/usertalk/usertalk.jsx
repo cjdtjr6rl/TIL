@@ -6,8 +6,7 @@ const UserTalk = memo(({ myId, user }) => {
     return (
         <>
             { user !== myId ?
-                (
-                    <Link className={styles.link} to={`/${user}`}>
+                (<Link className={styles.link} to={`/${user}`}>
                         <li className={styles.user}>
                         {user}
                     </li>

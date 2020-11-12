@@ -11,7 +11,7 @@ class CommentRepository {
     }
 
     saveComment(userId, comment) {
-        firebaseDatabase.ref(`comments/common/${userId}`).set(comment);
+        firebaseDatabase.ref(`comments/common/${comment.id}`).set(comment);
     }
 }
 
