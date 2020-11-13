@@ -11,7 +11,7 @@ const Comments = memo(({ myId, authService, comments, createComment, division })
                 <CommentAddForm authService={authService} createComment={createComment} />
                 <ul className={styles.comment}>
                     {Object.keys(comments).map(key => (
-                        <Talk authService={authService} myId={myId} key={key} comments={comments[key]} division={division} />
+                        <Talk myId={myId} key={key} comments={comments[key]} />
                     ))}
                 </ul>
             </section>) : division === '2' ?

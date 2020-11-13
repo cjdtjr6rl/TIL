@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import styles from './talk.module.css';
 
-const Talk = memo(({ myId, authService, comments }) => {
+const Talk = memo(({ myId, comments }) => {
     const DEFAULT_IMAGE = '/images/dinosaur.png';
     const {comment, userId, fileURL} = comments;
     const url = fileURL || DEFAULT_IMAGE;
