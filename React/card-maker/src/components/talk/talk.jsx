@@ -12,7 +12,7 @@ const Talk = memo(({ myId, comments }) => {
                 <div className={styles.comment}>
                     {
                         comment.split('\n').map( line => {
-                            return (<span>{line}<br/></span>)
+                            return (<span key={line}>{line}<br/></span>)
                         })
                     }
                 </div>

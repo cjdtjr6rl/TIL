@@ -73,7 +73,7 @@ const Card = memo(({ card }) => {
                             <p className={styles.message}>
                                 {
                                     message.split('\n').map( line => {
-                                        return (<span>{line}<br/></span>)
+                                        return (<span key={line}>{line}<br/></span>)
                                     })
                                 }
                             </p>
@@ -93,7 +93,7 @@ const Card = memo(({ card }) => {
                                 <p className={styles.message}>
                                     {
                                         message.split('\n').map( line => {
-                                            return (<span>{line}<br/></span>)
+                                            return (<span key={line}>{line}<br/></span>)
                                         })
                                     }
                                 </p>
