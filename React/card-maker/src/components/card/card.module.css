@@ -134,7 +134,7 @@
 }
 
 .front .content {
-  margin: 0.5em 0.5em 0 0;
+  margin: 0.5em 1em 0 0;
   float: right;
 }
 
@@ -180,12 +180,13 @@
 
 .address {
   margin-bottom: 1em;
+  margin-right: 2em;
 }
 
 .address::after {
   content: "";
   display: block;
-  width: 90%;
+  width: 100%;
   height: 2px;
   background-color: makerWheat;
   transform: translateY(0.5em);

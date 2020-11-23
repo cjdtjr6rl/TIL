@@ -1,5 +1,4 @@
 .link {
-  padding: 1em 0.7em;
   text-decoration: none;
   color: black;
   font-weight: 500;
@@ -9,6 +8,7 @@
   cursor: pointer;
   display: flex;
   align-items: center;
+  padding: 1em 0.7em;
 }
 
 .none {
