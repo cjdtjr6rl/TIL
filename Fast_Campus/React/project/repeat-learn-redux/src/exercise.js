@@ -56,6 +56,7 @@ function reducer(state = initialState, action) {
   }
 }
 
+// createStore은 store를 만들어주는 함수
 const store = createStore(reducer);
 console.log(store.getState());
 
