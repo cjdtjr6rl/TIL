@@ -5,19 +5,25 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
-import rootReducer from "./modules";
+import rootReducer, { rootSaga } from "./modules";
 // 내가 만든 middleware
 // import myLogger from "./middlewares/myLogger";
 // redux-logger란 라이브러리를 사용한 middelware
 import logger from "redux-logger";
 import { composeWithDevTools } from "redux-devtools-extension";
+import createSagaMiddleware from "redux-saga";
+
+const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(
   rootReducer,
   // redux-devtools-extension을 사용하기 위하여 middleware를 감싸줌
   // applyMiddleware라는 라이브러리를 사용하여 middleware를 사용
-  composeWithDevTools(applyMiddleware(logger))
+  composeWithDevTools(applyMiddleware(sagaMiddleware, logger))
 );
+
+// run이란 함수를 등록해주어야 함 그때 rootSaga를 불러와 넣어 주어야 함
+sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
   <Provider store={store}>
