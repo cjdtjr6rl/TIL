@@ -6,7 +6,7 @@ import {
   createPromiseSaga,
   createPromiseSagaById,
 } from "../lib/asyncUtils";
-import { call, put, takeEvery } from "redux-saga/effects";
+import { takeEvery } from "redux-saga/effects";
 
 /* 액션 타입 */
 
@@ -74,10 +74,11 @@ export function* postsSaga() {
   yield takeEvery(GET_POST, getPostSaga);
 }
 
+// 얘가 함수 실행하는데 오류가 나서 그냥 PostContainer에서 history값을 변경해주었습니다.
 // 3번째 인자를 사용하면 withExtraArgument 에서 넣어준 값들을 사용 할 수 있습니다.
-export const goToHome = () => (dispatch, getState, { history }) => {
-  history.push("/");
-};
+// export const goToHome = () => (dispatch, getState, { history }) => {
+//   history.push("/");
+// };
 
 // initialState 쪽도 반복되는 코드를 initial() 함수를 사용해서 리팩토링 했습니다.
 const initialState = {
