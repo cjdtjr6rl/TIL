@@ -1,11 +1,9 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getPost } from "../modules/posts";
+import { getPost, goToHome } from "../modules/posts";
 import Post from "../components/Post";
-import { useHistory } from "react-router-dom";
 
 function PostContainer({ postId }) {
-  const history = useHistory();
   const { data, loading, error } = useSelector(
     (state) => state.posts.post[postId]
   ) || {
@@ -19,17 +17,13 @@ function PostContainer({ postId }) {
     dispatch(getPost(postId));
   }, [dispatch, postId]);
 
-  const goHome = () => {
-    history.push("/");
-  };
-
   if (loading && !data) return <div>로딩중...</div>; // 로딩중이고 데이터 없을때만
   if (error) return <div>에러 발생!</div>;
   if (!data) return null;
 
   return (
     <>
-      <button onClick={goHome}>홈으로 이동</button>
+      <button onClick={() => dispatch(goToHome())}>홈으로 이동</button>
       <Post post={data} />
     </>
   );

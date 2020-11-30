@@ -16,7 +16,11 @@ import { Router } from "react-router-dom";
 import { createBrowserHistory } from "history";
 
 const customHistory = createBrowserHistory();
-const sagaMiddleware = createSagaMiddleware();
+const sagaMiddleware = createSagaMiddleware({
+  context: {
+    history: customHistory,
+  },
+});
 
 const store = createStore(
   rootReducer,
