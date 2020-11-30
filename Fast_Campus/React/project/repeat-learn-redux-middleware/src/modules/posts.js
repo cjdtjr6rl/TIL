@@ -6,7 +6,8 @@ import {
   createPromiseSaga,
   createPromiseSagaById,
 } from "../lib/asyncUtils";
-import { takeEvery, getContext } from "redux-saga/effects";
+// select는 현재 redux 상태를 조회하는 것
+import { takeEvery, getContext, select } from "redux-saga/effects";
 
 /* 액션 타입 */
 
@@ -21,6 +22,8 @@ const GET_POST_SUCCESS = "GET_POST_SUCCESS";
 const GET_POST_ERROR = "GET_POST_ERROR";
 const GO_TO_HOME = "GO_TO_HOME"; // HOME으로
 
+const PRINT_STATE = "PRINT_STATE";
+
 export const getPosts = () => ({ type: GET_POSTS });
 export const getPost = (id) => ({
   type: GET_POST,
@@ -29,6 +32,7 @@ export const getPost = (id) => ({
   // meta값은 리듀서를 처리할 때 사용하는 것
   meta: id,
 });
+export const printState = () => ({ type: PRINT_STATE });
 
 // function* getPostsSaga() {
 //   try {
@@ -73,12 +77,18 @@ function* goToHomeSaga() {
   history.push("/");
 }
 
+function* printStateSaga() {
+  const state = yield select((state) => state.post);
+  console.log(state);
+}
+
 // 어떤 saga를 쓸지 POSTS인지 POST인지 구분
 // 이것을 rootSaga에 포함 시켜 주어야 함
 export function* postsSaga() {
   yield takeEvery(GET_POSTS, getPostsSaga);
   yield takeEvery(GET_POST, getPostSaga);
   yield takeEvery(GO_TO_HOME, goToHomeSaga);
+  yield takeEvery(PRINT_STATE, printStateSaga);
 }
 
 // thunk함수를 만들어서 반환하는 형식

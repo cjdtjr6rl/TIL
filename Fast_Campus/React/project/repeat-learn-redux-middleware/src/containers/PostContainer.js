@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getPost, goToHome } from "../modules/posts";
+import { getPost, goToHome, printState } from "../modules/posts";
 import Post from "../components/Post";
 
 function PostContainer({ postId }) {
@@ -24,6 +24,7 @@ function PostContainer({ postId }) {
   return (
     <>
       <button onClick={() => dispatch(goToHome())}>홈으로 이동</button>
+      <button onClick={() => dispatch(printState())}>상태출력</button>
       <Post post={data} />
     </>
   );
