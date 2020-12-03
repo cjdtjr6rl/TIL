@@ -14,6 +14,13 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import createSagaMiddleware from "redux-saga";
 import { Router } from "react-router-dom";
 import { createBrowserHistory } from "history";
+import Naver from "./service/naver";
+
+const naverConfig = {
+  apiKey: process.env.REACT_APP_NAVER_API_KEY,
+  secretKey: process.env.REACT_APP_NAVER_SECRET_KEY,
+};
+const naver = new Naver(naverConfig);
 
 const customHistory = createBrowserHistory();
 const sagaMiddleware = createSagaMiddleware({
@@ -35,7 +42,7 @@ sagaMiddleware.run(rootSaga);
 ReactDOM.render(
   <Router history={customHistory}>
     <Provider store={store}>
-      <App />
+      <App naver={naver} />
     </Provider>
   </Router>,
   document.getElementById("root")
