@@ -7,8 +7,13 @@ import SearchPage from "./pages/SearchPage";
 import Axios from "axios";
 
 function App() {
-  const clientId = process.env.REACT_APP_NAVER_API_KEY;
-  const clientSecret = process.env.REACT_APP_NAVER_SECRET_KEY;
+  const myHeaders = new Headers();
+  myHeaders.append("X-Naver-Client-Id", process.env.REACT_APP_NAVER_API_KEY);
+  myHeaders.append(
+    "X-Naver-Client-Secret",
+    process.env.REACT_APP_NAVER_SECRET_KEY
+  );
+  myHeaders.append("Access-Control-Allow-Origin", "*");
 
   const apiURL = `https://openapi.naver.com/v1/search/blog.json`;
 
@@ -16,12 +21,12 @@ function App() {
   const onClick = async () => {
     try {
       const response = await Axios.get(apiURL, {
+        method: "GET",
         params: { query: "신촌 피자몰", display: 10 },
-        headers: {
-          "X-Naver-Client-Id": clientId,
-          "X-Naver-Client-Secret": clientSecret,
-        },
+        headers: myHeaders,
+        redirect: "follow",
       });
+      console.log(response.data);
       setNaver(response.data);
     } catch (e) {
       console.log(e);
@@ -37,7 +42,6 @@ function App() {
       <div>
         <button onClick={onClick}>불러오기</button>
         {naver && <textarea value={JSON.stringify(naver, null, 2)} />}
-        {clientId} / {clientSecret}
       </div>
     </>
   );

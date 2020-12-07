@@ -17,8 +17,8 @@ import { createBrowserHistory } from "history";
 // import Naver from "./service/naver";
 
 // const naverConfig = {
-//   X-Naver-Client-Id: process.env.REACT_APP_NAVER_API_KEY,
-//   X-Naver-Client-Secret: process.env.REACT_APP_NAVER_SECRET_KEY,
+//   'X-Naver-Client-Id': process.env.REACT_APP_NAVER_API_KEY,
+//   'X-Naver-Client-Secret': process.env.REACT_APP_NAVER_SECRET_KEY,
 // };
 // const naver = new Naver(naverConfig);
 
