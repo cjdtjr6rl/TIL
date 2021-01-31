@@ -1,10 +1,18 @@
 
 
-Today I Learned...
+# 매일매일 공부한 내용을 정리 했습니다.
+
+## Today I Learned...
+
+### 진행상황
+
+> HTML5, CSS3, JavaScript, React, redux
+>
+> [가장 최신 Project 바로가기](https://github.com/cjdtjr6rl/TIL/tree/master/React/card-maker)
 
 -----------
 
-[프런트엔드 개발자가 되려면..?](https://github.com/cjdtjr6rl/TIL/blob/master/프런트엔드개발자.md)
+[프론트엔드 개발자가 되려면..?](https://github.com/cjdtjr6rl/TIL/blob/master/프런트엔드개발자.md)
 
 -------------
 
@@ -231,3 +239,12 @@ Today I Learned...
 - [2020-07-16](https://github.com/cjdtjr6rl/TIL/blob/master/Fast_Campus/React/20200716.md)
 - [2020-07-20](https://github.com/cjdtjr6rl/TIL/blob/master/Fast_Campus/React/20200720.md)
 
+<br/>
+
+---
+
+## Personal Project2
+
+### React
+
+- [Card Maker](https://github.com/cjdtjr6rl/TIL/tree/master/React/card-maker)
