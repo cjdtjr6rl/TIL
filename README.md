@@ -6,7 +6,7 @@
 
 ### 진행상황
 
-> HTML5, CSS3, JavaScript, React, redux
+> Java, Spring, MySQL, HTML5, CSS3, JavaScript, React, redux
 >
 > [가장 최신 Project 바로가기](https://github.com/cjdtjr6rl/TIL/tree/master/React/card-maker)
 
