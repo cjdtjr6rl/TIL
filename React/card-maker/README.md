@@ -75,7 +75,7 @@
   });
   ```
 
-  service폴더의 authService에서 login을 하면 <code>user_id</code 인 <code>data.user.uid</code> 를 가져와 로그인을 진행합니다.<br/>로그아웃을 눌렀을 때 user값이 null이 되기 때문에 로그인을 하는 화면으로 자동전환됩니다.
+  service폴더의 authService에서 login을 하면 <code>user_id</code> 인 <code>data.user.uid</code> 를 가져와 로그인을 진행합니다.<br/>로그아웃을 눌렀을 때 user값이 null이 되기 때문에 로그인을 하는 화면으로 자동전환됩니다.
 
   ---
 
